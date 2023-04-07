@@ -38,11 +38,23 @@ App
 
 */
 
-const App = () => (
-  <div id="appContainer">
-    <h1>Hello World</h1>
-  </div>
-);
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo">
+        <img src="" alt="" id="logo" />
+      </div>
+    </div>
+  );
+};
+
+const App = () => {
+  return (
+    <div class="appContainer">
+      <h1>Hello World</h1>
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
