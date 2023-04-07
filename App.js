@@ -40,7 +40,7 @@ App
 
 const NavBar = () => {
   return (
-    <nav>
+    <nav className="header-nav">
       <ul>
         <li>Home</li>
         <li>About</li>
@@ -69,14 +69,14 @@ const Logo = () => {
 // Header Component
 const Header = () => {
   return (
-    <div className="header">
+    <>
       <div className="logo-container">
         <Logo />
       </div>
       <div className="nav-container">
         <NavBar />
       </div>
-    </div>
+    </>
   );
 };
 
