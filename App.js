@@ -38,18 +38,43 @@ App
 
 */
 
+const NavBar = () => {
+  return (
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact Us</li>
+      </ul>
+    </nav>
+  );
+};
+
+// Logo Component
+const Logo = () => {
+  return (
+    <>
+      <img
+        className="logo"
+        src="https://cdn-icons-png.flaticon.com/512/649/649438.png"
+        alt="-logo"
+        id="logo"
+        width={"50px"}
+        height={"50px"}
+      />
+    </>
+  );
+};
+
+// Header Component
 const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        <img
-          className="logo"
-          src="https://cdn-icons-png.flaticon.com/512/649/649438.png"
-          alt="-logo"
-          id="logo"
-          width={"50px"}
-          height={"50px"}
-        />
+        <Logo />
+      </div>
+      <div className="nav-container">
+        <NavBar />
       </div>
     </div>
   );
