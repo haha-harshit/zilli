@@ -42,7 +42,14 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo">
-        <img src="" alt="" id="logo" />
+        <img
+          className="logo"
+          src="https://cdn-icons-png.flaticon.com/512/649/649438.png"
+          alt="-logo"
+          id="logo"
+          width={"50px"}
+          height={"50px"}
+        />
       </div>
     </div>
   );
@@ -51,7 +58,9 @@ const Header = () => {
 const App = () => {
   return (
     <div class="appContainer">
-      <h1>Hello World</h1>
+      <div className="headerContainer">
+        <Header />
+      </div>
     </div>
   );
 };
