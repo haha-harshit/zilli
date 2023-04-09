@@ -5,6 +5,7 @@
 .header-nav > ul > li {
   list-style-type: none;
   margin-right: 5vw;
+  font-size: 18px;
 }
 
 .headerContainer-main {
