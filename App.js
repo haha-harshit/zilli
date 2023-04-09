@@ -43,12 +43,9 @@ const Logo = () => {
   return (
     <>
       <img
-        className="logo"
         src="https://cdn-icons-png.flaticon.com/512/649/649438.png"
         alt="-logo"
         id="logo"
-        width={"50px"}
-        height={"50px"}
       />
     </>
   );
@@ -75,8 +72,6 @@ const Cart = () => {
         src="https://cdn-icons-png.flaticon.com/512/1250/1250712.png?w=740&t=st=1681030436~exp=1681031036~hmac=ac0bd375fd16ddd11e7d769aed3c5529d684eaa6d5edffcf2a15c250105e38d8"
         alt="cart-logo"
         id="cart-logo"
-        width={"50px"}
-        height={"50px"}
       />
     </>
   );
