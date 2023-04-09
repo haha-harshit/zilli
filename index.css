@@ -1,3 +1,20 @@
+.header-nav > ul {
+  display: flex;
+}
+
 .header-nav > ul > li {
   list-style-type: none;
+  margin-right: 5vw;
+}
+
+.headerContainer-main {
+  display: flex;
+  justify-content: center;
+}
+
+.headerContainer-main > header {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  padding: 15px;
 }
