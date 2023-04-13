@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import logo from "./assets/images/app-logo.png";
 import cartLogo from "./assets/images/food-cart.png";
+// import ZilliLogo from "./assets/images/";
 
 // layout
 /*
@@ -76,9 +77,9 @@ const Cart = () => {
 const Header = () => {
   return (
     <header className="header">
-      <div className="logo-container">
+      {/* <div className="logo-container">
         <Logo />
-      </div>
+      </div> */}
       <div className="nav-container">
         <NavBar />
       </div>
@@ -92,17 +93,14 @@ const Header = () => {
 const AppName = () => {
   return (
     <div className="app-name">
-      <h1>Zilli</h1>
+      zilli
+      {/* <img src={ZilliLogo} alt="app-name" /> */}
     </div>
   );
 };
 
 const Tagline = () => {
-  return (
-    <div className="tagline">
-      <h2>Begin your food hunt!</h2>
-    </div>
-  );
+  return <div className="tagline">Discover the best food & drinks</div>;
 };
 
 const Search = () => {
