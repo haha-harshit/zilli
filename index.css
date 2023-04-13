@@ -3,21 +3,34 @@
 }
 
 .header-nav > ul > li {
-  list-style-type: none;
-  margin-right: 5vw;
-  font-size: 18px;
+  list-style: none;
+  padding: 0vw 5vw;
+  font-size: 20px;
+}
+
+.headerSection {
+  display: flex;
+  justify-content: center;
+  background-image: url("./assets/images/top-sec-bg-img.jpeg");
+  background-size: cover;
+  margin: -8px;
+  padding: 15px;
+  color: #ffffff;
+  height: 60vh;
+  /* font-family: ; */
 }
 
 .headerContainer-main {
-  display: flex;
+  /* display: flex;
   justify-content: center;
+  flex-direction: column; */
+  width: 70%;
 }
 
 .headerContainer-main > header {
   display: flex;
-  width: 70%;
+  /* width: 70%; */
   justify-content: space-between;
-  padding: 15px;
 }
 
 .logo-container > img {
@@ -28,4 +41,25 @@
 .cart-container > img {
   width: 50px;
   height: 50px;
+}
+
+.app-name {
+  display: flex;
+  justify-content: center;
+}
+
+.tagline {
+  display: flex;
+  justify-content: center;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  /* width: ; */
+  position: absolute;
+  bottom: 0;
 }

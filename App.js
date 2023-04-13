@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import logo from "./assets/images/app-logo.png";
+import cartLogo from "./assets/images/food-cart.png";
 
 // layout
 /*
@@ -7,6 +9,7 @@ App
 - Header Component
   - Logo
   - Navbar
+  - Cart
 
 - Body Component
   - SECTION 1
@@ -42,11 +45,7 @@ App
 const Logo = () => {
   return (
     <>
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/649/649438.png"
-        alt="-logo"
-        id="logo"
-      />
+      <img src={logo} alt="-logo" id="logo" />
     </>
   );
 };
@@ -68,11 +67,7 @@ const NavBar = () => {
 const Cart = () => {
   return (
     <>
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/1250/1250712.png?w=740&t=st=1681030436~exp=1681031036~hmac=ac0bd375fd16ddd11e7d769aed3c5529d684eaa6d5edffcf2a15c250105e38d8"
-        alt="cart-logo"
-        id="cart-logo"
-      />
+      <img src={cartLogo} alt="cart-logo" id="cart-logo" />
     </>
   );
 };
@@ -94,12 +89,66 @@ const Header = () => {
   );
 };
 
+const AppName = () => {
+  return (
+    <div className="app-name">
+      <h1>Zilli</h1>
+    </div>
+  );
+};
+
+const Tagline = () => {
+  return (
+    <div className="tagline">
+      <h2>Begin your food hunt!</h2>
+    </div>
+  );
+};
+
+const Search = () => {
+  return (
+    <div className="search-box">
+      <h3>Search</h3>
+    </div>
+  );
+};
+
+const Footer = () => {
+  return (
+    <>
+      <footer>
+        <div>
+          {" "}
+          Icons made by{" "}
+          <a href="https://www.freepik.com" title="Freepik">
+            {" "}
+            Freepik{" "}
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com'
+          </a>
+        </div>
+      </footer>
+    </>
+  );
+};
+
 const App = () => {
   return (
     <div class="appContainer">
-      <div className="headerContainer-main">
-        <Header />
-      </div>
+      <section className="headerSection">
+        <div className="headerContainer-main">
+          <Header />
+          {/* Name / Tagline / Search */}
+          <AppName />
+          <Tagline />
+          <Search />
+        </div>
+      </section>
+      <section className="footer">
+        <Footer />
+      </section>
     </div>
   );
 };
