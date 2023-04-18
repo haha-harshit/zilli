@@ -75,3 +75,7 @@
   position: absolute;
   bottom: 0;
 }
+
+.card-layout {
+  border: 1px solid black;
+}

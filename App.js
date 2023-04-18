@@ -111,6 +111,14 @@ const Search = () => {
   );
 };
 
+const Card = () => {
+  return (
+    <>
+      <div className="card-layout"></div>
+    </>
+  );
+};
+
 const Footer = () => {
   return (
     <>
@@ -135,15 +143,22 @@ const Footer = () => {
 const App = () => {
   return (
     <div class="appContainer">
+      {/* HEADE SECTION */}
       <section className="headerSection">
         <div className="headerContainer-main">
           <Header />
-          {/* Name / Tagline / Search */}
           <AppName />
           <Tagline />
           <Search />
         </div>
       </section>
+
+      {/* OFFERINGS CARD SECTION */}
+      <section className="offeringSection">
+        <Card />
+      </section>
+
+      {/* FOOTER SECTION */}
       <section className="footer">
         <Footer />
       </section>
