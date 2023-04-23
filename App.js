@@ -142,9 +142,9 @@ const Footer = () => {
 
 const App = () => {
   return (
-    <div class="appContainer">
-      {/* HEADE SECTION */}
-      <section className="headerSection">
+    <div className="appContainer">
+      {/* HEADER SECTION */}
+      <section className="headerSection section">
         <div className="headerContainer-main">
           <Header />
           <AppName />
@@ -154,12 +154,16 @@ const App = () => {
       </section>
 
       {/* OFFERINGS CARD SECTION */}
-      <section className="offeringSection">
-        <Card />
+      <section className="offeringSection section">
+        <div className="offeringSection-main">
+          <Card />
+          <Card />
+          <Card />
+        </div>
       </section>
 
       {/* FOOTER SECTION */}
-      <section className="footer">
+      <section className="footer section">
         <Footer />
       </section>
     </div>

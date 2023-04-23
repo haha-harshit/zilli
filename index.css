@@ -2,6 +2,11 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.section {
+  margin: -0.51%;
+  padding: 2rem;
+}
+
 .header-nav > ul {
   display: flex;
   padding: 0;
@@ -18,8 +23,6 @@
   justify-content: center;
   background-image: url("./assets/images/top-sec-bg-img.jpeg");
   background-size: cover;
-  margin: -0.51%;
-  padding: 2rem;
   color: #f8f8f8;
   height: 60vh;
   /* font-family: ; */
@@ -77,5 +80,19 @@
 }
 
 .card-layout {
+  height: 50px;
+  width: 50px;
   border: 1px solid black;
+}
+
+.offeringSection {
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+}
+
+.offeringSection-main {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
 }
