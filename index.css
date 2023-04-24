@@ -73,15 +73,15 @@
   justify-content: center;
 }
 
-.footer {
+.footerSection {
   /* width: ; */
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
 }
 
 .card-layout {
-  height: 50px;
-  width: 50px;
+  height: 10rem;
+  width: 10rem;
   border: 1px solid black;
 }
 

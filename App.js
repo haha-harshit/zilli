@@ -144,28 +144,30 @@ const App = () => {
   return (
     <div className="appContainer">
       {/* HEADER SECTION */}
-      <section className="headerSection section">
+      <div className="headerSection section">
         <div className="headerContainer-main">
           <Header />
           <AppName />
           <Tagline />
           <Search />
         </div>
-      </section>
+      </div>
 
       {/* OFFERINGS CARD SECTION */}
-      <section className="offeringSection section">
+      <div className="offeringSection section">
         <div className="offeringSection-main">
           <Card />
           <Card />
           <Card />
         </div>
-      </section>
+      </div>
 
       {/* FOOTER SECTION */}
-      <section className="footer section">
-        <Footer />
-      </section>
+      <div className="footerSection section">
+        <div className="footerSection-main">
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 };
