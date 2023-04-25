@@ -111,10 +111,48 @@ const Search = () => {
   );
 };
 
-const Card = () => {
+const temp = {
+  heading: "Online Order",
+  info: "Stay home and order online",
+};
+
+const offerCardDetails = [
+  {
+    url: "https://b.zmtcdn.com/webFrontend/e5b8785c257af2a7f354f1addaf37e4e1647364814.jpeg",
+    heading: "Online Order",
+    info: "Stay home and order online",
+  },
+  {
+    url: "https://b.zmtcdn.com/webFrontend/d026b357feb0d63c997549f6398da8cc1647364915.jpeg",
+    heading: "Dining",
+    info: "View the city's favorite dining views",
+  },
+  {
+    url: "https://b.zmtcdn.com/webFrontend/d9d80ef91cb552e3fdfadb3d4f4379761647365057.jpeg",
+    heading: "Nightlife and Clubs",
+    info: "Explore the city's top nightlife outlets",
+  },
+];
+
+const OfferCard = (props) => {
+  const { details } = props;
+
   return (
     <>
-      <div className="card-layout"></div>
+      <div className="offer-card-layout">
+        <div className="offer-card-img-main">
+          <img
+            className="offer-card-img"
+            src={details.url}
+            alt="offer-card-image"
+          />
+        </div>
+        <div className="offer-card-info">
+          <span className="offer-card-head">{details.heading}</span>
+          <br />
+          <span className="offer-card-sub-info">{details.info}</span>
+        </div>
+      </div>
     </>
   );
 };
@@ -156,9 +194,9 @@ const App = () => {
       {/* OFFERINGS CARD SECTION */}
       <div className="offeringSection section">
         <div className="offeringSection-main">
-          <Card />
-          <Card />
-          <Card />
+          <OfferCard details={offerCardDetails[0]} />
+          <OfferCard details={offerCardDetails[1]} />
+          <OfferCard details={offerCardDetails[2]} />
         </div>
       </div>
 
