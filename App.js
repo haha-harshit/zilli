@@ -1,8 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import logo from "./assets/images/app-logo.png";
-import cartLogo from "./assets/images/food-cart.png";
-// import ZilliLogo from "./assets/images/";
+
+// components import
+import Header from "./src/components/Header";
+import AppName from "./src/components/AppName";
+import Tagline from "./src/components/Tagline";
+import Search from "./src/components/Search";
+import OfferCard from "./src/components/OfferCard";
+import Footer from "./src/components/Footer";
 
 // layout
 /*
@@ -42,80 +47,6 @@ App
 
 */
 
-// Logo Component
-const Logo = () => {
-  return (
-    <>
-      <img src={logo} alt="-logo" id="logo" />
-    </>
-  );
-};
-
-// Navbar Component
-const NavBar = () => {
-  return (
-    <nav className="header-nav">
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact Us</li>
-      </ul>
-    </nav>
-  );
-};
-
-// Cart Component
-const Cart = () => {
-  return (
-    <>
-      <img src={cartLogo} alt="cart-logo" id="cart-logo" />
-    </>
-  );
-};
-
-// Header Component
-const Header = () => {
-  return (
-    <header className="header">
-      {/* <div className="logo-container">
-        <Logo />
-      </div> */}
-      <div className="nav-container">
-        <NavBar />
-      </div>
-      <div className="cart-container">
-        <Cart />
-      </div>
-    </header>
-  );
-};
-
-const AppName = () => {
-  return (
-    <div className="app-name">
-      zilli
-      {/* <img src={ZilliLogo} alt="app-name" /> */}
-    </div>
-  );
-};
-
-const Tagline = () => {
-  return <div className="tagline">Discover the best food & drinks</div>;
-};
-
-const Search = () => {
-  return (
-    <div className="search-box">
-      <h3>Search</h3>
-    </div>
-  );
-};
-
-// const temp = {
-//   heading: "Online Order",
-//   info: "Stay home and order online",
-// };
-
 const offerCardDetails = [
   {
     id: "001",
@@ -136,46 +67,6 @@ const offerCardDetails = [
     info: "Explore the city's top nightlife outlets",
   },
 ];
-
-const OfferCard = (props) => {
-  const { details } = props;
-  const { url, heading, info } = details;
-  return (
-    <>
-      <div className="offer-card-layout">
-        <div className="offer-card-img-main">
-          <img className="offer-card-img" src={url} alt="offer-card-image" />
-        </div>
-        <div className="offer-card-info">
-          <span className="offer-card-head">{heading}</span>
-          <br />
-          <span className="offer-card-sub-info">{info}</span>
-        </div>
-      </div>
-    </>
-  );
-};
-
-const Footer = () => {
-  return (
-    <>
-      <footer>
-        <div>
-          {" "}
-          Icons made by{" "}
-          <a href="https://www.freepik.com" title="Freepik">
-            {" "}
-            Freepik{" "}
-          </a>{" "}
-          from{" "}
-          <a href="https://www.flaticon.com/" title="Flaticon">
-            www.flaticon.com'
-          </a>
-        </div>
-      </footer>
-    </>
-  );
-};
 
 const App = () => {
   return (
