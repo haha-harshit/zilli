@@ -1,21 +1,23 @@
 const Footer = () => {
   return (
-    <>
-      <footer>
-        <div>
-          {" "}
-          Icons made by{" "}
-          <a href="https://www.freepik.com" title="Freepik">
+    <div className="footerSection section">
+      <div className="footerSection-main">
+        <footer>
+          <div>
             {" "}
-            Freepik{" "}
-          </a>{" "}
-          from{" "}
-          <a href="https://www.flaticon.com/" title="Flaticon">
-            www.flaticon.com'
-          </a>
-        </div>
-      </footer>
-    </>
+            Icons made by{" "}
+            <a href="https://www.freepik.com" title="Freepik">
+              {" "}
+              Freepik{" "}
+            </a>{" "}
+            from{" "}
+            <a href="https://www.flaticon.com/" title="Flaticon">
+              www.flaticon.com'
+            </a>
+          </div>
+        </footer>
+      </div>
+    </div>
   );
 };
 

@@ -1,7 +1,7 @@
 import NavBar from "./Navbar";
 import Cart from "./Cart";
 
-const Header = () => {
+const HeaderTop = () => {
   return (
     <header className="header">
       <div className="nav-container">
@@ -14,4 +14,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderTop;
