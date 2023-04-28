@@ -1,10 +1,5 @@
 const AppName = () => {
-  return (
-    <div className="app-name">
-      zilli
-      {/* <img src={ZilliLogo} alt="app-name" /> */}
-    </div>
-  );
+  return <div className="app-name">zilli</div>;
 };
 
 export default AppName;

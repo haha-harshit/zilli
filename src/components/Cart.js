@@ -1,4 +1,4 @@
-import cartLogo from "../../assets/images/food-cart.png";
+import cartLogo from "../utils/images/food-cart.png";
 
 const Cart = () => {
   return (

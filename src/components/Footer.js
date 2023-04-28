@@ -1,3 +1,6 @@
+import { FREEPIK_URL } from "../utils/constants";
+import { FLATICON_URL } from "../utils/constants";
+
 const Footer = () => {
   return (
     <div className="footerSection section">
@@ -6,13 +9,13 @@ const Footer = () => {
           <div>
             {" "}
             Icons made by{" "}
-            <a href="https://www.freepik.com" title="Freepik">
+            <a href={FREEPIK_URL} title="Freepik">
               {" "}
               Freepik{" "}
             </a>{" "}
             from{" "}
-            <a href="https://www.flaticon.com/" title="Flaticon">
-              www.flaticon.com'
+            <a href={FLATICON_URL} title="Flaticon">
+              www.flaticon.com
             </a>
           </div>
         </footer>
