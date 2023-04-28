@@ -19,6 +19,36 @@ const offerCardDetails = [
     heading: "Nightlife and Clubs",
     info: "Explore the city's top nightlife outlets",
   },
+  {
+    id: "004",
+    url: "https://b.zmtcdn.com/webFrontend/e5b8785c257af2a7f354f1addaf37e4e1647364814.jpeg",
+    heading: "Online Order",
+    info: "Stay home and order online",
+  },
+  {
+    id: "005",
+    url: "https://b.zmtcdn.com/webFrontend/e5b8785c257af2a7f354f1addaf37e4e1647364814.jpeg",
+    heading: "Online Order",
+    info: "Stay home and order online",
+  },
+  {
+    id: "006",
+    url: "https://b.zmtcdn.com/webFrontend/e5b8785c257af2a7f354f1addaf37e4e1647364814.jpeg",
+    heading: "Online Order",
+    info: "Stay home and order online",
+  },
+  {
+    id: "007",
+    url: "https://b.zmtcdn.com/webFrontend/e5b8785c257af2a7f354f1addaf37e4e1647364814.jpeg",
+    heading: "Online Order",
+    info: "Stay home and order online",
+  },
+  {
+    id: "008",
+    url: "https://b.zmtcdn.com/webFrontend/e5b8785c257af2a7f354f1addaf37e4e1647364814.jpeg",
+    heading: "Online Order",
+    info: "Stay home and order online",
+  },
 ];
 
 const Body = () => {

@@ -84,6 +84,7 @@
   width: 21rem;
   border: 0.01rem solid rgb(227, 227, 227);
   border-radius: 0.7rem;
+  margin: 2%;
 }
 
 .offer-card-img-main {
@@ -99,18 +100,18 @@
 }
 
 .offer-card-info {
-  line-height: 1.65rem;
+  /* line-height: 1.65rem; */
   padding: 0.7rem;
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
 }
 
 .offer-card-head {
-  font-size: 1.4rem;
+  font-size: x-large;
   font-weight: 500;
 }
 
 .offer-card-sub-info {
-  font-size: 1.1rem;
+  font-size: large;
   font-weight: 350;
 }
 
@@ -121,7 +122,8 @@
 }
 
 .offeringSection-main {
+  width: 80%;
+  justify-content: flex-start;
   display: flex;
-  justify-content: space-between;
-  width: 85%;
+  flex-wrap: wrap;
 }

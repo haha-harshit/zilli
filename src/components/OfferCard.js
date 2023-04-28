@@ -8,9 +8,8 @@ const OfferCard = (props) => {
           <img className="offer-card-img" src={url} alt="offer-card-image" />
         </div>
         <div className="offer-card-info">
-          <span className="offer-card-head">{heading}</span>
-          <br />
-          <span className="offer-card-sub-info">{info}</span>
+          <div className="offer-card-head">{heading}</div>
+          <div className="offer-card-sub-info">{info}</div>
         </div>
       </div>
     </>
