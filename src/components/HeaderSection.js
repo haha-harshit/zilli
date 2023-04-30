@@ -5,7 +5,7 @@ import Search from "./Search";
 
 const HeaderSection = () => {
   return (
-    <div className="headerSection section">
+    <div className="headerSection">
       <div className="headerContainer-main">
         <HeaderTop />
         <AppName />

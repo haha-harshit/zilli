@@ -1,10 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .appContainer {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: aliceblue;
 }
 
 .section {
-  margin: -0.51%;
+  /* margin: -0.51%; */
+  width: 75vw;
   padding: 2rem;
+  margin: auto;
+}
+
+.nav-container {
+  display: flex;
+}
+
+.cart-container {
+  display: flex;
+}
+
+.header-nav {
+  align-self: center;
 }
 
 .header-nav > ul {
@@ -21,7 +41,7 @@
 .headerSection {
   display: flex;
   justify-content: center;
-  background-image: url("./assets/images/top-sec-bg-img.jpeg");
+  background-image: url("./src/utils/images/top-sec-bg-img.jpeg");
   background-size: cover;
   color: #f8f8f8;
   height: 65vh;
@@ -40,6 +60,7 @@
   /* width: 70%; */
   flex-grow: 0.5;
   justify-content: space-between;
+  height: 0;
 }
 
 .logo-container > img {
@@ -50,6 +71,7 @@
 .cart-container > img {
   width: 3rem;
   height: 2.5rem;
+  align-self: center;
 }
 
 .app-name {
@@ -71,12 +93,6 @@
 .search-box {
   display: flex;
   justify-content: center;
-}
-
-.footerSection {
-  /* width: ; */
-  /* position: absolute; */
-  bottom: 0;
 }
 
 .offer-card-layout {
@@ -105,14 +121,16 @@
   /* padding-left: 1.5rem; */
 }
 
-.offer-card-head {
+.offer-card-title {
   font-size: x-large;
   font-weight: 500;
+  color: rgb(54, 54, 54);
 }
 
-.offer-card-sub-info {
-  font-size: large;
-  font-weight: 350;
+.offer-card-sub-title {
+  /* font-size: large; */
+  font-weight: 400;
+  color: rgb(79, 79, 79);
 }
 
 .offeringSection {
@@ -122,8 +140,42 @@
 }
 
 .offeringSection-main {
-  width: 80%;
+  width: inherit;
   justify-content: flex-start;
   display: flex;
   flex-wrap: wrap;
+}
+
+.collection-title {
+  font-size: 2.2rem;
+  line-height: 1.5;
+  font-weight: 550;
+  color: rgb(28, 28, 28);
+}
+
+.sub-title-and-link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collection-sub-title {
+  line-height: 1.4;
+  font-weight: 350;
+  color: rgb(54, 54, 54);
+  font-size: 1.3rem;
+}
+
+.see-more-collections {
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 350;
+  line-height: 1.4rem;
+  color: rgb(255, 126, 139);
+  padding: 0.3rem;
+}
+
+.footerSection {
+  /* width: ; */
+  /* position: absolute; */
+  /* bottom: 0; */
 }
