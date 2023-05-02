@@ -1,5 +1,5 @@
 import NavBar from "./Navbar";
-import Cart from "./Cart";
+import Cart from "../Cart";
 
 const HeaderTop = () => {
   return (

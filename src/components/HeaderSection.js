@@ -1,6 +1,6 @@
-import HeaderTop from "./HeaderTop";
-import AppName from "./AppName";
-import Tagline from "./Tagline";
+import HeaderTop from "./BaseHeader/HeaderTop";
+import AppName from "./BaseHeader/AppName";
+import Tagline from "./BaseHeader/Tagline";
 import Search from "./Search";
 
 const HeaderSection = () => {
