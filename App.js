@@ -4,7 +4,11 @@ import ReactDOM from "react-dom/client";
 // components import
 import HeaderSection from "./src/components/HeaderSection";
 import Body from "./src/components/Body";
+import OrderOnline from "./src/components/OrderOnline/OrderOnline";
+import Dining from "./src/components/Dining/Dining";
+import NightlifeAndClubs from "./src/components/NightlifeAndClubs/NightlifeAndClubs";
 import Footer from "./src/components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // layout
 /*
@@ -46,16 +50,31 @@ App
 
 const App = () => {
   return (
-    <div className="appContainer">
-      {/* HEADER SECTION */}
-      <HeaderSection />
+    <>
+      <BrowserRouter>
+        <div className="appContainer">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <HeaderSection />
+                  <Body />
+                </>
+              }
+            />
+            <Route path="/online-order" element={<OrderOnline />} />
+            <Route path="/dining" element={<Dining />} />
+            <Route
+              path="/night-life-and-clubs"
+              element={<NightlifeAndClubs />}
+            />
+          </Routes>
 
-      {/* OFFERINGS CARD SECTION */}
-      <Body />
-
-      {/* FOOTER SECTION */}
-      <Footer />
-    </div>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </>
   );
 };
 

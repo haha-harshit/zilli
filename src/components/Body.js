@@ -1,15 +1,20 @@
 import OfferCard from "./OfferCard";
 import offerCardDetails from "../utils/mockData";
 import Collections from "./Collection/Collections";
+import OrderOnline from "./OrderOnline/OrderOnline";
+import Dining from "./Dining/Dining";
+import NightlifeAndClubs from "./NightlifeAndClubs/NightlifeAndClubs";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 const Body = () => {
   return (
     <>
       {/* order-dining-nightlife cards */}
+
       <div className="offeringSection section">
         <div className="offeringSection-main">
-          {offerCardDetails.map((offerCard) => (
-            <OfferCard key={offerCard.id} details={offerCard} />
+          {offerCardDetails.map((offerCardItem) => (
+            <OfferCard key={offerCardItem.id} details={offerCardItem} />
           ))}
         </div>
       </div>
