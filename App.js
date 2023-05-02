@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 // components import
-import HeaderSection from "./src/components/HeaderSection";
+import BaseHeaderSection from "./src/components/BaseHeader/BaseHeaderSection";
 import Body from "./src/components/Body";
 import OrderOnline from "./src/components/OrderOnline/OrderOnline";
 import Dining from "./src/components/Dining/Dining";
 import NightlifeAndClubs from "./src/components/NightlifeAndClubs/NightlifeAndClubs";
-import Footer from "./src/components/Footer";
+import Footer from "./src/components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // layout
@@ -58,7 +58,7 @@ const App = () => {
               path="/"
               element={
                 <>
-                  <HeaderSection />
+                  <BaseHeaderSection />
                   <Body />
                 </>
               }

@@ -1,4 +1,4 @@
-import OfferCard from "./OfferCard";
+import OfferCard from "./OfferingCards/OfferCard";
 import offerCardDetails from "../utils/mockData";
 import Collections from "./Collection/Collections";
 import OrderOnline from "./OrderOnline/OrderOnline";

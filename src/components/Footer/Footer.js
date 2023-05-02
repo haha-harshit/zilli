@@ -1,5 +1,5 @@
-import { FREEPIK_URL } from "../utils/constants";
-import { FLATICON_URL } from "../utils/constants";
+import { FREEPIK_URL } from "../../utils/constants";
+import { FLATICON_URL } from "../../utils/constants";
 
 const Footer = () => {
   return (
