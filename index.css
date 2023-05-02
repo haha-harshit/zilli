@@ -38,7 +38,7 @@
   font-size: 1.1em;
 }
 
-.headerSection {
+.landingHeaderSection {
   display: flex;
   justify-content: center;
   background-image: url("./src/utils/images/top-sec-bg-img.jpeg");
@@ -48,14 +48,14 @@
   /* font-family: ; */
 }
 
-.headerContainer-main {
+.landingHeaderContainer-main {
   display: flex;
   /*justify-content: center;*/
   flex-direction: column;
   width: 70vw;
 }
 
-.headerContainer-main > header {
+.landingHeaderContainer-main > header {
   display: flex;
   /* width: 70%; */
   flex-grow: 0.5;
@@ -174,8 +174,8 @@
   padding: 0.3rem;
 }
 
-.footerSection {
-  /* width: ; */
-  /* position: absolute; */
-  /* bottom: 0; */
-}
+/* .footerSection {
+  width: ;
+  position: absolute;
+  bottom: 0;
+} */

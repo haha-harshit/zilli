@@ -3,7 +3,7 @@ import Cart from "../Cart";
 
 const HeaderTop = () => {
   return (
-    <header className="header">
+    <header className="landingHeader">
       <div className="nav-container">
         <NavBar />
       </div>

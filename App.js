@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 // components import
-import BaseHeaderSection from "./src/components/BaseHeader/BaseHeaderSection";
+import LandingHeaderSection from "./src/components/LandingHeader/LandingHeaderSection";
 import Body from "./src/components/Body";
 import OrderOnline from "./src/components/OrderOnline/OrderOnline";
 import Dining from "./src/components/Dining/Dining";
 import NightlifeAndClubs from "./src/components/NightlifeAndClubs/NightlifeAndClubs";
+import PageNotFound from "./src/components/PageNotFound/PageNotFound";
 import Footer from "./src/components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -58,7 +59,7 @@ const App = () => {
               path="/"
               element={
                 <>
-                  <BaseHeaderSection />
+                  <LandingHeaderSection />
                   <Body />
                 </>
               }
@@ -69,6 +70,7 @@ const App = () => {
               path="/night-life-and-clubs"
               element={<NightlifeAndClubs />}
             />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
 
           <Footer />

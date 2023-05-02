@@ -3,10 +3,10 @@ import AppName from "./AppName";
 import Tagline from "./Tagline";
 import Search from "../Search";
 
-const BaseHeaderSection = () => {
+const LandingHeaderSection = () => {
   return (
-    <div className="headerSection">
-      <div className="headerContainer-main">
+    <div className="landingHeaderSection">
+      <div className="landingHeaderContainer-main">
         <HeaderTop />
         <AppName />
         <Tagline />
@@ -16,4 +16,4 @@ const BaseHeaderSection = () => {
   );
 };
 
-export default BaseHeaderSection;
+export default LandingHeaderSection;
