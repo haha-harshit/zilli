@@ -1,7 +1,9 @@
 const NightlifeAndClubs = () => {
   return (
     <>
-      <h1>NightLife and Clubs</h1>
+      <div className="section">
+        <h1>NightLife and Clubs</h1>
+      </div>
     </>
   );
 };
