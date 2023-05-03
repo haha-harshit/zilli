@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 // components import
 import LandingHeaderSection from "./src/components/LandingHeader/LandingHeaderSection";
-import Body from "./src/components/Body";
+import LandingBody from "./src/components/LandingBody/Body";
 import OrderOnline from "./src/components/OrderOnline/OrderOnline";
 import Dining from "./src/components/Dining/Dining";
 import NightlifeAndClubs from "./src/components/NightlifeAndClubs/NightlifeAndClubs";
@@ -60,7 +60,7 @@ const App = () => {
               element={
                 <>
                   <LandingHeaderSection />
-                  <Body />
+                  <LandingBody />
                 </>
               }
             />

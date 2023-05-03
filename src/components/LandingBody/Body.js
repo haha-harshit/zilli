@@ -1,12 +1,12 @@
-import OfferCard from "./OfferingCards/OfferCard";
-import offerCardDetails from "../utils/mockData";
-import Collections from "./Collection/Collections";
-import OrderOnline from "./OrderOnline/OrderOnline";
-import Dining from "./Dining/Dining";
-import NightlifeAndClubs from "./NightlifeAndClubs/NightlifeAndClubs";
+import OfferCard from "../OfferingCards/OfferCard";
+import offerCardDetails from "../../utils/mockData";
+import Collections from "../Collection/Collections";
+import OrderOnline from "../OrderOnline/OrderOnline";
+import Dining from "../Dining/Dining";
+import NightlifeAndClubs from "../NightlifeAndClubs/NightlifeAndClubs";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-const Body = () => {
+const LandingBody = () => {
   return (
     <>
       {/* order-dining-nightlife cards */}
@@ -25,4 +25,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+export default LandingBody;
