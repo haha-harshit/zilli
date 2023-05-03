@@ -10,6 +10,7 @@ import NightlifeAndClubs from "./src/components/NightlifeAndClubs/NightlifeAndCl
 import PageNotFound from "./src/components/PageNotFound/PageNotFound";
 import Footer from "./src/components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CommonHeader from "./src/components/CommonHeader/CommonHeader";
 
 // layout
 /*
@@ -64,13 +65,42 @@ const App = () => {
                 </>
               }
             />
-            <Route path="/online-order" element={<OrderOnline />} />
-            <Route path="/dining" element={<Dining />} />
+            <Route
+              path="/online-order"
+              element={
+                <>
+                  <CommonHeader />
+                  <OrderOnline />
+                </>
+              }
+            />
+            <Route
+              path="/dining"
+              element={
+                <>
+                  <CommonHeader />
+                  <Dining />
+                </>
+              }
+            />
             <Route
               path="/night-life-and-clubs"
-              element={<NightlifeAndClubs />}
+              element={
+                <>
+                  <CommonHeader />
+                  <NightlifeAndClubs />
+                </>
+              }
             />
-            <Route path="*" element={<PageNotFound />} />
+            <Route
+              path="*"
+              element={
+                <>
+                  <CommonHeader />
+                  <PageNotFound />
+                </>
+              }
+            />
           </Routes>
 
           <Footer />
