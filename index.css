@@ -103,6 +103,10 @@
   margin: 2%;
 }
 
+.offer-card-layout > a {
+  text-decoration: none;
+}
+
 .offer-card-img-main {
   height: 65%;
 }

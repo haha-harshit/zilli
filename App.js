@@ -65,6 +65,7 @@ const App = () => {
                 </>
               }
             />
+
             <Route
               path="/online-order"
               element={
@@ -74,6 +75,7 @@ const App = () => {
                 </>
               }
             />
+
             <Route
               path="/dining"
               element={

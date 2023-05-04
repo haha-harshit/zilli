@@ -5,4 +5,20 @@
 
 .tab-link {
   margin-right: 2rem;
+  text-decoration: none;
+}
+
+.tab-link-title {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: rgb(239, 79, 95);
+}
+
+.hr-below-tablink {
+  height: 0.05rem;
+  border-color: transparent;
+  border-radius: 0.7rem;
+  background-color: rgb(255, 126, 139);
+  transform: none;
+  margin: 0.8rem 0rem;
 }
