@@ -1,14 +1,15 @@
 import { Distance, PubsAndBars } from "../Filters/NightLifeFilters";
 import { RatingAbove4 } from "../Filters/OnlineOrderFilters";
-import offeringTitleStyle from "../../utils/css/OfferingTitle.css";
+import { tabListStyle } from "../../utils/css/OfferingTab.css";
+import OfferingTab from "../OfferingTab/OfferingTab";
 
 const NightlifeAndClubs = () => {
   return (
     <>
       <div className="section">
-        <h1 style={offeringTitleStyle} className="offering-title">
-          NightLife and Clubs
-        </h1>
+        <div style={tabListStyle} className="offering-tab-list">
+          <OfferingTab />
+        </div>
         <div className="filter-section">
           <RatingAbove4 />
           <Distance />

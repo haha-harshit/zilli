@@ -1,13 +1,14 @@
 import { OutdoorSeating, ServesAlcohol } from "../Filters/DiningOutFilters";
 import { RatingAbove4 } from "../Filters/OnlineOrderFilters";
-import offeringTitleStyle from "../../utils/css/OfferingTitle.css";
+import { tabListStyle } from "../../utils/css/OfferingTab.css";
+import OfferingTab from "../OfferingTab/OfferingTab";
 const Dining = () => {
   return (
     <>
       <div className="section">
-        <h1 style={offeringTitleStyle} className="offering-title">
-          Dining
-        </h1>
+        <div style={tabListStyle} className="offering-tab-list">
+          <OfferingTab />
+        </div>
         <div className="filter-section">
           <RatingAbove4 />
           <OutdoorSeating />

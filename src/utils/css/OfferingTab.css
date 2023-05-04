@@ -1,0 +1,8 @@
+.offering-tab-list {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tab-link {
+  margin-right: 2rem;
+}
