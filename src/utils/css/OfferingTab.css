@@ -4,6 +4,7 @@
 }
 
 .tab-link {
+  color: rgb(105, 105, 105);
   margin-right: 2rem;
   text-decoration: none;
 }
@@ -13,6 +14,14 @@
   font-size: 1.5rem;
   /* color: rgb(239, 79, 95); */
 }
+
+.tab-link-delivery-img > img {
+  width: 2.5rem;
+}
+
+/* .link-title {
+  color: rgb(105, 105, 105);
+} */
 
 .hr-below-tablink {
   height: 0.05rem;
@@ -24,9 +33,9 @@
 }
 
 .active {
-  color: rgb(239, 79, 95);
+  color: rgb(239, 79, 95) !important;
 }
 
-.active > hr {
+.active .hr-below-tablink {
   background-color: rgb(255, 126, 139);
 }
