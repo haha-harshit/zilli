@@ -19,6 +19,14 @@
   width: 2.5rem;
 }
 
+.tab-link-dining-out-img > img {
+  width: 2.5rem;
+}
+
+.tab-link-nightlife-img > img {
+  width: 2.5rem;
+}
+
 /* .link-title {
   color: rgb(105, 105, 105);
 } */
@@ -38,4 +46,16 @@
 
 .active .hr-below-tablink {
   background-color: rgb(255, 126, 139);
+}
+
+.active .tab-link-delivery-img img {
+  content: url("../images/delivery-man-color.png");
+}
+
+.active .tab-link-dining-out-img img {
+  content: url("../images/dine-out-color.png");
+}
+
+.active .tab-link-nightlife-img img {
+  content: url("../images/beer-color.png");
 }

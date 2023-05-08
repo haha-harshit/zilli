@@ -34,7 +34,12 @@ const OfferingTab = () => {
         activeClassName="active"
       >
         <div style={tabLinkStyle} className="tab-link-dining-out">
-          <h2 className="tab-link-title">Dining Out</h2>
+          <h2 className="tab-link-title">
+            <div className="tab-link-dining-out-img">
+              <img src={tabLinkDiningImgBw} />
+            </div>
+            <div className="link-title">Dining Out</div>
+          </h2>
           <hr className="hr-below-tablink" />
         </div>
       </NavLink>
@@ -46,7 +51,12 @@ const OfferingTab = () => {
         activeClassName="active"
       >
         <div style={tabLinkStyle} className="tab-link-nightlife">
-          <h2 className="tab-link-title">Nightlife</h2>
+          <h2 className="tab-link-title">
+            <div className="tab-link-nightlife-img">
+              <img src={tabLinkNightlifeImgBw} />
+            </div>
+            <div className="link-title">Nightlife</div>
+          </h2>
           <hr className="hr-below-tablink" />
         </div>
       </NavLink>
