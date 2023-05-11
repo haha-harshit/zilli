@@ -1,7 +1,13 @@
 .filter-section {
   display: flex;
   justify-content: flex-start;
-  margin-top: 2.5rem;
+  margin-top: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: #fefefe;
+  height: 6rem;
+  border-bottom: 0.1rem inset;
 }
 
 .filter {
@@ -14,4 +20,6 @@
   font-size: 0.9rem;
   margin-right: 1rem;
   line-height: 0.5rem;
+  height: 0.6rem;
+  align-self: center;
 }

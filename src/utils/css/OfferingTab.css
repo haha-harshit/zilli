@@ -1,18 +1,32 @@
 .offering-tab-list {
   display: flex;
   justify-content: flex-start;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .tab-link {
   color: rgb(105, 105, 105);
-  margin-right: 2rem;
+  margin-right: 3rem;
   text-decoration: none;
+  align-self: center;
 }
 
 .tab-link-title {
   font-weight: 500;
   font-size: 1.5rem;
+  display: flex;
+  padding: 0.5rem;
   /* color: rgb(239, 79, 95); */
+}
+
+.link-title {
+  align-self: center;
+}
+
+.tab-link-img {
+  margin-right: 1rem;
 }
 
 .tab-link-delivery-img > img {
@@ -58,4 +72,11 @@
 
 .active .tab-link-nightlife-img img {
   content: url("../images/beer-color.png");
+}
+
+.hr-after-tab-list {
+  margin-top: -0.8rem;
+  height: 0.01rem;
+  border: transparent;
+  background-color: #ebebeb;
 }

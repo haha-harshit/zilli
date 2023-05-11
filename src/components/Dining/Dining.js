@@ -9,6 +9,7 @@ const Dining = () => {
         <div style={tabListStyle} className="offering-tab-list">
           <OfferingTab />
         </div>
+
         <div className="filter-section">
           <RatingAbove4 />
           <OutdoorSeating />
