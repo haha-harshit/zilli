@@ -1,0 +1,8 @@
+.order-in-location-layout {
+  margin-top: 1rem;
+}
+
+.order-in-location-layout > h1 {
+  color: rgb(28, 28, 28);
+  font-weight: 400;
+}

@@ -1,8 +1,11 @@
 import { NonVeg, PureVeg, RatingAbove4 } from "../Filters/OnlineOrderFilters";
-import { tabListStyle } from "../../utils/css/OfferingTab.css";
 import OfferingTab from "../OfferingTab/OfferingTab";
-import OfferCard from "../OfferingCards/OfferCard";
+import OfferCard from "../Cards/OfferingCards/OfferCard";
 import offerCardDetails from "../../utils/mockData";
+
+// style imports
+import { tabListStyle } from "../../utils/css/OfferingTab.css";
+import { OrderOnlineStyle } from "../../utils/css/OrderOnline.css";
 
 const OrderOnline = () => {
   return (
@@ -18,81 +21,9 @@ const OrderOnline = () => {
           <NonVeg />
         </div>
 
-        <div className="something">
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
+        {/* <hr /> */}
+        <div style={OrderOnlineStyle} className="order-in-location-layout">
+          <h1>Order food online in NIT - 3, Faridabad, India</h1>
         </div>
       </div>
     </>
