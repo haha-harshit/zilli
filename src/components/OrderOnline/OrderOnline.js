@@ -1,5 +1,6 @@
 import { NonVeg, PureVeg, RatingAbove4 } from "../Filters/OnlineOrderFilters";
 import OfferingTab from "../OfferingTab/OfferingTab";
+import ResCard from "../Cards/ResCards/ResCard";
 import OfferCard from "../Cards/OfferingCards/OfferCard";
 import offerCardDetails from "../../utils/mockData";
 
@@ -21,10 +22,11 @@ const OrderOnline = () => {
           <NonVeg />
         </div>
 
-        {/* <hr /> */}
         <div style={OrderOnlineStyle} className="order-in-location-layout">
           <h1>Order food online in NIT - 3, Faridabad, India</h1>
         </div>
+
+        <ResCard />
       </div>
     </>
   );

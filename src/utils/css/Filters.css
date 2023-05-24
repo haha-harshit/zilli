@@ -1,7 +1,6 @@
 .filter-section {
   display: flex;
   justify-content: flex-start;
-  margin-top: 1rem;
   position: sticky;
   top: 0;
   z-index: 3;

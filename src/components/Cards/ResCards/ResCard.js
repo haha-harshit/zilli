@@ -1,7 +1,9 @@
 const ResCard = () => {
   return (
     <>
-      <div></div>
+      <div className="res-card-layout"></div>
     </>
   );
 };
+
+export default ResCard;
