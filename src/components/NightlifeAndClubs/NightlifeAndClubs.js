@@ -16,6 +16,7 @@ const NightlifeAndClubs = () => {
           <Distance />
           <PubsAndBars />
         </div>
+        <div className="something"></div>
       </div>
     </>
   );

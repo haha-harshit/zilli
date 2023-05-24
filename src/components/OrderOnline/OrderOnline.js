@@ -18,12 +18,81 @@ const OrderOnline = () => {
           <NonVeg />
         </div>
 
-        <div className="offeringSection section">
-          <div className="offeringSection-main">
-            {offerCardDetails.map((offerCardItem) => (
-              <OfferCard key={offerCardItem.id} details={offerCardItem} />
-            ))}
-          </div>
+        <div className="something">
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
+          <h1>hey</h1>
         </div>
       </div>
     </>

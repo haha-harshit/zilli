@@ -14,7 +14,7 @@ const OfferingTab = () => {
         to="/online-order"
         replace
         className="tab-link"
-        activeClassName="active"
+        activeclassName="active"
       >
         <div style={tabLinkStyle} className="tab-link-delivery ">
           <h2 className="tab-link-title">
@@ -31,7 +31,7 @@ const OfferingTab = () => {
         to="/dining"
         replace
         className="tab-link"
-        activeClassName="active"
+        activeclassName="active"
       >
         <div style={tabLinkStyle} className="tab-link-dining-out">
           <h2 className="tab-link-title">
@@ -48,7 +48,7 @@ const OfferingTab = () => {
         to="/night-life-and-clubs"
         replace
         className="tab-link"
-        activeClassName="active"
+        activeclassName="active"
       >
         <div style={tabLinkStyle} className="tab-link-nightlife">
           <h2 className="tab-link-title">
