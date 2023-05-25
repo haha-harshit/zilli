@@ -7,6 +7,7 @@ import offerCardDetails from "../../utils/mockData";
 // style imports
 import { tabListStyle } from "../../utils/css/OfferingTab.css";
 import { OrderOnlineStyle } from "../../utils/css/OrderOnline.css";
+import resList from "../../utils/resData";
 
 const OrderOnline = () => {
   return (
@@ -26,7 +27,11 @@ const OrderOnline = () => {
           <h1>Order food online in NIT - 3, Faridabad, India</h1>
         </div>
 
-        <ResCard />
+        <div className="res-container">
+          {resList.map((restaurant) => (
+            <ResCard resData={restaurant} key={restaurant.data.id} />
+          ))}
+        </div>
       </div>
     </>
   );
