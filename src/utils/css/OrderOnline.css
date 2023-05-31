@@ -6,3 +6,27 @@
   color: rgb(28, 28, 28);
   font-weight: 400;
 }
+
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.res-card-layout {
+  height: 15rem;
+  width: 21rem;
+  border: 0.01rem solid rgb(227, 227, 227);
+  margin: 1rem;
+}
+
+.res-card-img-main {
+  height: 65%;
+}
+
+.res-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
