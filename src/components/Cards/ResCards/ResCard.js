@@ -7,7 +7,7 @@ const ResCard = (props) => {
     <>
       <div className="res-card-layout">
         <div className="res-contents">
-          <Link to={"/" + resData.data.name}>
+          <Link className="res-link" to={"/" + resData.data.name}>
             <div className="res-card-img-main">
               <img
                 className="res-img"
@@ -19,7 +19,12 @@ const ResCard = (props) => {
               />
             </div>
 
-            <h3 className="res-card-title">{resData.data.name}</h3>
+            <div className="res-card-info">
+              <h4 className="res-card-title">{resData.data.name}</h4>
+              <div className="res-rating">
+                {resData.data.avgRating + " stars"}
+              </div>
+            </div>
           </Link>
         </div>
       </div>
