@@ -1,0 +1,32 @@
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.res-card-layout {
+  /* height: 15rem; */
+  width: 21rem;
+  margin: 1.5rem 1rem;
+  /* border: 0.01rem solid #fbfdff; */
+  border: 0.01rem solid rgb(227, 227, 227);
+  border-radius: 0.5rem;
+}
+
+.res-card-layout:hover {
+  /* border: 0.01rem solid rgb(227, 227, 227); */
+}
+
+.res-contents {
+  margin: 0.7rem;
+}
+
+.res-card-img-main {
+  height: 65%;
+}
+
+.res-img {
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+}
