@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 const ResCard = (props) => {
   const { resData } = props;
-
   return (
     <>
       <div className="res-card-layout">
@@ -17,6 +16,18 @@ const ResCard = (props) => {
                 }
                 alt="res-logo"
               />
+              <div className="img-header-info">
+                <div className="discount-info">
+                  {"aggregatedDiscountInfoV3" in resData.data
+                    ? resData.data.aggregatedDiscountInfoV3.header +
+                      " " +
+                      resData.data.aggregatedDiscountInfoV3.subHeader
+                    : ""}
+                </div>
+                <div className="delivery-time">
+                  {resData.data.sla.deliveryTime + " min"}
+                </div>
+              </div>
             </div>
 
             <div className="res-card-info">

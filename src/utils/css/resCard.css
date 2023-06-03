@@ -38,19 +38,58 @@
 .res-img {
   height: 100%;
   width: 100%;
-  border-radius: inherit;
+  border-radius: 0.9rem;
 }
 
 .res-card-info > h4 {
   width: 80%;
-  font-weight: 500;
-  font-size: 1.2rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 500;
+  font-size: 1.2rem;
   color: rgb(28, 28, 28);
+}
+
+.res-card-info {
+  margin-top: 1.25rem;
 }
 
 .res-rating {
   align-self: center;
+  background: rgb(36, 150, 63);
+  color: rgb(255, 255, 255);
+  height: 1.2rem;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  font-weight: 500;
+  font-size: smaller;
+}
+
+.img-header-info {
+  margin-top: -2.2rem;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.discount-info {
+  color: rgb(255, 255, 255);
+  background: rgb(37, 111, 239);
+  font-size: 0.8rem;
+  padding: 0rem 0.5rem;
+  font-weight: 400;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+
+.delivery-time {
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(0.4rem);
+  border-radius: 0.3rem;
+  line-height: 1.2rem;
+  padding: 0 0.5rem;
+  color: rgb(54, 54, 54);
 }

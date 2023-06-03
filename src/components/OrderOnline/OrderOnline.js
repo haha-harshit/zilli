@@ -18,7 +18,7 @@ const OrderOnline = () => {
         <div style={tabListStyle} className="offering-tab-list">
           <OfferingTab />
         </div>
-
+        {/* <hr className="hr-after-tablist" /> */}
         <div className="filter-section">
           <RatingAbove4 />
           <PureVeg />
