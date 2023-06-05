@@ -2,6 +2,20 @@ import { Link } from "react-router-dom";
 
 const ResCard = (props) => {
   const { resData } = props;
+  const isDiscounted = "aggregatedDiscountInfoV3" in resData.data;
+  console.log(isDiscounted);
+  let discountInfo;
+  if (isDiscounted) {
+    discountInfo = (
+      <div className="discount-info">
+        {resData.data.aggregatedDiscountInfoV3.header +
+          " " +
+          resData.data.aggregatedDiscountInfoV3.subHeader}
+      </div>
+    );
+  } else {
+    discountInfo = <div className="no-discount-info"></div>;
+  }
   return (
     <>
       <div className="res-card-layout">
@@ -17,13 +31,7 @@ const ResCard = (props) => {
                 alt="res-logo"
               />
               <div className="img-header-info">
-                <div className="discount-info">
-                  {"aggregatedDiscountInfoV3" in resData.data
-                    ? resData.data.aggregatedDiscountInfoV3.header +
-                      " " +
-                      resData.data.aggregatedDiscountInfoV3.subHeader
-                    : ""}
-                </div>
+                {discountInfo}
                 <div className="delivery-time">
                   {resData.data.sla.deliveryTime + " min"}
                 </div>
