@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
+import star_rating from "../../../utils/images/star_rating.png";
 
 const ResCard = (props) => {
   const { resData } = props;
   const isDiscounted = "aggregatedDiscountInfoV3" in resData.data;
-  console.log(isDiscounted);
   let discountInfo;
   if (isDiscounted) {
     discountInfo = (
@@ -41,7 +41,9 @@ const ResCard = (props) => {
             <div className="res-card-info">
               <h4 className="res-card-title">{resData.data.name}</h4>
               <div className="res-rating">
-                {resData.data.avgRating + " stars"}
+                <div>{resData.data.avgRating}</div>
+                &nbsp;
+                <img className="star_rating" src={star_rating} alt="" />
               </div>
             </div>
           </Link>
