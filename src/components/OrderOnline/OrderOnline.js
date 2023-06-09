@@ -5,6 +5,7 @@ import OfferCard from "../Cards/OfferingCards/OfferCard";
 import offerCardDetails from "../../utils/mockData";
 
 // style imports
+import filterStyle from "../../utils/css/Filters.css";
 import { tabListStyle } from "../../utils/css/OfferingTab.css";
 import { OrderOnlineStyle } from "../../utils/css/OrderOnline.css";
 import { resStyle } from "../../utils/css/resCard.css";
@@ -13,12 +14,11 @@ import resList from "../../utils/resList";
 const OrderOnline = () => {
   return (
     <>
-      {/* {console.log(resList)} */}
       <div className="section">
         <div style={tabListStyle} className="offering-tab-list">
           <OfferingTab />
         </div>
-        {/* <hr className="hr-after-tablist" /> */}
+
         <div className="filter-section">
           <RatingAbove4 />
           <PureVeg />

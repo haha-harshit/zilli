@@ -1,3 +1,4 @@
+import { CDN_URL } from "../../../utils/constants";
 import { Link } from "react-router-dom";
 import star_rating from "../../../utils/images/star_rating.png";
 
@@ -24,10 +25,7 @@ const ResCard = (props) => {
             <div className="res-card-img-main">
               <img
                 className="res-img"
-                src={
-                  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,g_auto,w_508,h_320,c_fill/" +
-                  resData.data.cloudinaryImageId
-                }
+                src={CDN_URL + resData.data.cloudinaryImageId}
                 alt="res-logo"
               />
               <div className="img-header-info">
