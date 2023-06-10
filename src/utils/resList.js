@@ -1,4 +1,4 @@
-let resList = [
+let restaurantList = [
   {
     type: "restaurant",
     data: {
@@ -1555,4 +1555,4 @@ let resList = [
   },
 ];
 
-export default resList;
+export default restaurantList;
