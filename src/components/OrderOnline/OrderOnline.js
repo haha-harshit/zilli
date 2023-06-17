@@ -32,16 +32,25 @@ const OrderOnline = () => {
 
   let list;
   if (filteredList.length < 1) {
-    list = resList?.map((restaurant) => (
-      <ResCard resData={restaurant} key={restaurant.data.id} />
-    ));
-    if (list === undefined) {
-      console.log("no res open");
+    console.log(resList);
+    if (resList?.length === 0) {
       list = (
-        <div>
-          <h1>No restaurants delivering in your area 😭</h1>
+        <div className="res-card-layout">
+          <h1>Loading...</h1>
         </div>
       );
+    } else {
+      list = resList?.map((restaurant) => (
+        <ResCard resData={restaurant} key={restaurant.data.id} />
+      ));
+      if (list === undefined) {
+        console.log("no res open");
+        list = (
+          <div className="">
+            <h1>No restaurants delivering in your area 😭</h1>
+          </div>
+        );
+      }
     }
   } else {
     list = filteredList?.map((restaurant) => (
