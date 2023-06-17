@@ -2,29 +2,26 @@ import { useState } from "react";
 import filterStyle from "../../utils/css/Filters.css";
 import restaurantList from "../../utils/resList";
 
+// let above4FilteredList;
+let pureVegFilteredList;
+
 export const RatingAbove4 = (props) => {
-  // const [resList, setResList] = useState(restaurantList);
-  // const [isAbove4FilterOn, setIsAbove4FilterOn] = useState(false);
   return (
     <>
       <div
         style={filterStyle}
         className="rating-4-plus-filter filter"
         onClick={() => {
-          let filteredList;
-          if (!props.isAbove4FilterOn) {
-            filteredList = restaurantList.filter(
-              (res) => res.data.avgRating > 4.0
-            );
-            props.setResList(filteredList);
-            // setResList(filteredList);
-            console.log(filteredList);
-            props.setIsAbove4FilterOn(true);
-          } else {
-            props.setResList(restaurantList);
-            // console.log(resList);
-            console.log("filter off");
-            props.setIsAbove4FilterOn(false);
+          if (props.list.length > 0) {
+            if (!props.isAbove4FilterOn) {
+              props.setFilteredList(
+                props.resList.filter((res) => res.data.avgRating > 4.0)
+              );
+              props.setIsAbove4FilterOn(true);
+            } else {
+              props.setFilteredList([]);
+              props.setIsAbove4FilterOn(false);
+            }
           }
         }}
       >
@@ -34,10 +31,25 @@ export const RatingAbove4 = (props) => {
   );
 };
 
-export const PureVeg = () => {
+export const PureVeg = (props) => {
   return (
     <>
-      <div style={filterStyle} className="pure-veg-filter filter">
+      <div
+        style={filterStyle}
+        className="pure-veg-filter filter"
+        onClick={() => {
+          if (!props.isPureVegFilterOn) {
+            pureVegFilteredList = props.resList.filter(
+              (res) => res.data.veg == true
+            );
+            props.setResList(pureVegFilteredList);
+            props.setIsPureVegFilterOn(true);
+          } else {
+            props.setResList(restaurantList);
+            props.setIsPureVegFilterOn(false);
+          }
+        }}
+      >
         <div className="pure-veg-filter-btn">Pure Veg</div>
       </div>
     </>
