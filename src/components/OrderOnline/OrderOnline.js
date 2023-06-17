@@ -1,12 +1,12 @@
+// COMPONENT AND STATE IMPORTS
 import { useState, useEffect } from "react";
 import { NonVeg, PureVeg, RatingAbove4 } from "../Filters/OnlineOrderFilters";
 import OfferingTab from "../OfferingTab/OfferingTab";
 import ResCard from "../Cards/ResCards/ResCard";
-import restaurantList from "../../utils/resList";
-import OfferCard from "../Cards/OfferingCards/OfferCard";
-import offerCardDetails from "../../utils/mockData";
 
-// style imports
+// URL IMPORTS
+import { RES_API_URL } from "../../utils/constants";
+// STYLE IMPORTS
 import filterStyle from "../../utils/css/Filters.css";
 import { tabListStyle } from "../../utils/css/OfferingTab.css";
 import { OrderOnlineStyle } from "../../utils/css/OrderOnline.css";
@@ -24,9 +24,7 @@ const OrderOnline = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4594965&lng=77.0266383&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(RES_API_URL);
 
     const json = await data.json();
     setResList(json?.data?.cards[2]?.data?.data?.cards);

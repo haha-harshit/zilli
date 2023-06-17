@@ -1,9 +1,4 @@
-import { useState } from "react";
 import filterStyle from "../../utils/css/Filters.css";
-import restaurantList from "../../utils/resList";
-
-// let above4FilteredList;
-// let pureVegFilteredList;
 
 export const RatingAbove4 = (props) => {
   return (

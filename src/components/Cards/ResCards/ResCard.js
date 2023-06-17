@@ -1,4 +1,4 @@
-import { CDN_URL } from "../../../utils/constants";
+import { CDN_IMG_URL } from "../../../utils/constants";
 import { Link } from "react-router-dom";
 import star_rating from "../../../utils/images/star_rating.png";
 
@@ -25,7 +25,7 @@ const ResCard = (props) => {
             <div className="res-card-img-main">
               <img
                 className="res-img"
-                src={CDN_URL + resData.data.cloudinaryImageId}
+                src={CDN_IMG_URL + resData.data.cloudinaryImageId}
                 alt="res-logo"
               />
               <div className="img-header-info">
