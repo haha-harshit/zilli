@@ -3,7 +3,7 @@ import filterStyle from "../../utils/css/Filters.css";
 import restaurantList from "../../utils/resList";
 
 // let above4FilteredList;
-let pureVegFilteredList;
+// let pureVegFilteredList;
 
 export const RatingAbove4 = (props) => {
   return (
@@ -14,12 +14,24 @@ export const RatingAbove4 = (props) => {
         onClick={() => {
           if (props.list.length > 0) {
             if (!props.isAbove4FilterOn) {
-              props.setFilteredList(
-                props.resList.filter((res) => res.data.avgRating > 4.0)
-              );
+              if (props.isPureVegFilterOn) {
+                props.setFilteredList(
+                  props.filteredList.filter((res) => res.data.avgRating > 4.0)
+                );
+              } else {
+                props.setFilteredList(
+                  props.resList.filter((res) => res.data.avgRating > 4.0)
+                );
+              }
               props.setIsAbove4FilterOn(true);
             } else {
-              props.setFilteredList([]);
+              if (props.isPureVegFilterOn) {
+                props.setFilteredList(
+                  props.resList.filter((res) => res.data.veg == true)
+                );
+              } else {
+                props.setFilteredList([]);
+              }
               props.setIsAbove4FilterOn(false);
             }
           }
@@ -38,15 +50,28 @@ export const PureVeg = (props) => {
         style={filterStyle}
         className="pure-veg-filter filter"
         onClick={() => {
-          if (!props.isPureVegFilterOn) {
-            pureVegFilteredList = props.resList.filter(
-              (res) => res.data.veg == true
-            );
-            props.setResList(pureVegFilteredList);
-            props.setIsPureVegFilterOn(true);
-          } else {
-            props.setResList(restaurantList);
-            props.setIsPureVegFilterOn(false);
+          if (props.list.length > 0) {
+            if (!props.isPureVegFilterOn) {
+              if (props.isAbove4FilterOn) {
+                props.setFilteredList(
+                  props.filteredList.filter((res) => res.data.veg == true)
+                );
+              } else {
+                props.setFilteredList(
+                  props.resList.filter((res) => res.data.veg == true)
+                );
+              }
+              props.setIsPureVegFilterOn(true);
+            } else {
+              if (props.isAbove4FilterOn) {
+                props.setFilteredList(
+                  props.resList.filter((res) => res.data.avgRating > 4.0)
+                );
+              } else {
+                props.setFilteredList([]);
+              }
+              props.setIsPureVegFilterOn(false);
+            }
           }
         }}
       >

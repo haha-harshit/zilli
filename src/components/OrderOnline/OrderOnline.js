@@ -45,10 +45,6 @@ const OrderOnline = () => {
         </div>
       );
     }
-    // } else {
-    //   console.log("res open");
-    // }
-    // console.log(resList);
   } else {
     list = filteredList?.map((restaurant) => (
       <ResCard resData={restaurant} key={restaurant.data.id} />
@@ -65,16 +61,21 @@ const OrderOnline = () => {
         <div className="filter-section">
           <RatingAbove4
             list={list}
-            filteredList={filteredList}
             setFilteredList={setFilteredList}
+            filteredList={filteredList}
             resList={resList}
-            setResList={setResList}
             setIsAbove4FilterOn={setIsAbove4FilterOn}
             isAbove4FilterOn={isAbove4FilterOn}
+            setIsPureVegFilterOn={setIsPureVegFilterOn}
+            isPureVegFilterOn={isPureVegFilterOn}
           />
           <PureVeg
+            list={list}
+            setFilteredList={setFilteredList}
+            filteredList={filteredList}
             resList={resList}
-            setResList={setResList}
+            setIsAbove4FilterOn={setIsAbove4FilterOn}
+            isAbove4FilterOn={isAbove4FilterOn}
             setIsPureVegFilterOn={setIsPureVegFilterOn}
             isPureVegFilterOn={isPureVegFilterOn}
           />
