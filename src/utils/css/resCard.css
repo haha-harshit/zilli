@@ -18,10 +18,10 @@
   border: 0.001rem solid rgb(227, 227, 227);
 }
 
-.res-card-info {
+/* .res-card-info {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .res-contents {
   margin: 0.7rem;
@@ -41,7 +41,7 @@
   border-radius: 0.9rem;
 }
 
-.res-card-info > h4 {
+.res-card-title {
   width: 80%;
   white-space: nowrap;
   overflow: hidden;
@@ -57,7 +57,7 @@
 
 .res-rating {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   background: rgb(36, 150, 63);
   color: rgb(255, 255, 255);
   height: 1.2rem;
@@ -98,4 +98,23 @@
 .star_rating {
   height: 0.65rem;
   width: 0.65rem;
+}
+
+.res-card-info-body-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.res-card-info-body-subhead {
+  margin-top: 0.4rem;
+}
+
+.res-card-cuisines {
+  font-size: 1rem;
+  color: rgb(105, 105, 105);
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 65%;
 }

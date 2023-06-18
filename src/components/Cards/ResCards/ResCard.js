@@ -17,6 +17,9 @@ const ResCard = (props) => {
   } else {
     discountInfo = <div className="no-discount-info"></div>;
   }
+
+  const cuisines = resData.data.cuisines.map((cuisine) => cuisine).join(", ");
+
   return (
     <>
       <div className="res-card-layout">
@@ -37,11 +40,18 @@ const ResCard = (props) => {
             </div>
 
             <div className="res-card-info">
-              <h4 className="res-card-title">{resData.data.name}</h4>
-              <div className="res-rating">
-                <div>{resData.data.avgRating}</div>
-                &nbsp;
-                <img className="star_rating" src={star_rating} alt="" />
+              <div className="res-card-info-body">
+                <div className="res-card-info-body-head">
+                  <h4 className="res-card-title">{resData.data.name}</h4>
+                  <div className="res-rating">
+                    <div>{resData.data.avgRating}</div>
+                    &nbsp;
+                    <img className="star_rating" src={star_rating} alt="" />
+                  </div>
+                </div>
+                <div className="res-card-info-body-subhead">
+                  <h4 className="res-card-cuisines">{cuisines}</h4>
+                </div>
               </div>
             </div>
           </Link>
