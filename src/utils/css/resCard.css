@@ -106,15 +106,23 @@
 }
 
 .res-card-info-body-subhead {
+  display: flex;
+  justify-content: space-between;
   margin-top: 0.4rem;
 }
 
-.res-card-cuisines {
+.res-cuisines {
   font-size: 1rem;
   color: rgb(105, 105, 105);
-  font-weight: 400;
+  font-weight: 350;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 65%;
+}
+
+.res-costForTwo {
+  font-size: 1rem;
+  color: rgb(105, 105, 105);
+  font-weight: 350;
 }

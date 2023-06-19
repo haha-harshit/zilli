@@ -50,7 +50,12 @@ const ResCard = (props) => {
                   </div>
                 </div>
                 <div className="res-card-info-body-subhead">
-                  <h4 className="res-card-cuisines">{cuisines}</h4>
+                  <h4 className="res-cuisines">{cuisines}</h4>
+                  <div className="res-costForTwo">
+                    <div>
+                      {"₹" + resData.data.costForTwo / 100 + " for two"}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
