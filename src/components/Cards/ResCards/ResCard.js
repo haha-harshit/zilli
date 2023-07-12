@@ -6,6 +6,7 @@ const ResCard = (props) => {
   const { resData } = props;
   const isDiscounted = "aggregatedDiscountInfoV3" in resData.data;
   let discountInfo;
+  
   if (isDiscounted) {
     discountInfo = (
       <div className="discount-info">

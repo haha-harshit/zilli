@@ -41,13 +41,12 @@ const OrderOnline = () => {
     if (resList?.length === 0) {
       list =  Array(10).fill(<Shimmer/>)
     } else {
-      // list = <Shimmer/>
       list = resList?.map((restaurant) => (
         <ResCard resData={restaurant} key={restaurant.data.id} />
       ));
       if (list === undefined) {
         list =  
-          <div className="">
+          <div>
             <h1>No restaurants delivering in your area 😭</h1>
           </div>
       }

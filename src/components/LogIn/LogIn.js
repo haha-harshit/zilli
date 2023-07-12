@@ -1,7 +1,8 @@
-const LogIn = () => {
+
+const LogIn = (props) => {
   return (
     <>
-      <div className="log-in">Log in</div>
+    <button className="log-in" onClick={() => props.setIsLogin(true)}>Log in</button>
     </>
   );
 };
