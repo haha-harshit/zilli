@@ -1,0 +1,82 @@
+.offering-tab-list {
+  display: flex;
+  justify-content: flex-start;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.tab-link {
+  color: rgb(105, 105, 105);
+  margin-right: 3rem;
+  text-decoration: none;
+  align-self: center;
+}
+
+.tab-link-title {
+  font-weight: 500;
+  font-size: 1.5rem;
+  display: flex;
+  padding: 0.5rem;
+  /* color: rgb(239, 79, 95); */
+}
+
+.link-title {
+  align-self: center;
+}
+
+.tab-link-img {
+  margin-right: 1rem;
+}
+
+.tab-link-delivery-img > img {
+  width: 2.5rem;
+}
+
+.tab-link-dining-out-img > img {
+  width: 2.5rem;
+}
+
+.tab-link-nightlife-img > img {
+  width: 2.5rem;
+}
+
+/* .link-title {
+  color: rgb(105, 105, 105);
+} */
+
+.hr-below-tablink {
+  height: 0.05rem;
+  border-color: transparent;
+  border-radius: 0.7rem;
+  /* background-color: rgb(255, 126, 139); */
+  transform: none;
+  margin: 0.8rem 0rem;
+}
+
+.active {
+  color: rgb(239, 79, 95) !important;
+}
+
+.active .hr-below-tablink {
+  background-color: rgb(255, 126, 139);
+}
+
+.active .tab-link-delivery-img img {
+  content: url("../images/delivery-man-color.png");
+}
+
+.active .tab-link-dining-out-img img {
+  content: url("../images/dine-out-color.png");
+}
+
+.active .tab-link-nightlife-img img {
+  content: url("../images/beer-color.png");
+}
+
+.hr-after-tab-list {
+  margin-top: -0.8rem;
+  height: 0.01rem;
+  border: transparent;
+  background-color: #ebebeb;
+}
