@@ -3,10 +3,6 @@ import filterStyle from "../../utils/css/Filters.css";
 
 export const RatingAbove4 = (props) => {
 
-  useEffect(()=> {
-    console.log("rating above 4 useEffect")
-  }, [])
-
   const [color4, setColor4] = useState("#9c9c9c");
   const [backgroundColor4, setBackgroundColor4] = useState("#fff");
   const [borderColor4, setBorderColor4] = useState("#cfcfcf");
@@ -46,7 +42,6 @@ export const RatingAbove4 = (props) => {
           if (props.list.length > 0) {
             setTimeout(() => {
               above4ColorHandle();
-              console.log("loading...")
               props.setIsLoading(true);
             }, 500)
             setTimeout(() => {
@@ -125,7 +120,6 @@ export const PureVeg = (props) => {
           if (props.list.length > 0) {
             setTimeout(() => {
               VEGColorHandle();
-              console.log("loading...")
               props.setIsLoading(true);
             }, 250)
             setTimeout(() => {
