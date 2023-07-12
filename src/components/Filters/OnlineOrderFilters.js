@@ -127,7 +127,7 @@ export const PureVeg = (props) => {
               VEGColorHandle();
               console.log("loading...")
               props.setIsLoading(true);
-            }, 250)
+            }, 500)
             setTimeout(() => {
               props.setIsLoading(false);
               if (!props.isPureVegFilterOn) {
