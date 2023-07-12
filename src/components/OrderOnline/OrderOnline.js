@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { NonVeg, PureVeg, RatingAbove4 } from "../Filters/OnlineOrderFilters";
 import OfferingTab from "../OfferingTab/OfferingTab";
 import ResCard from "../Cards/ResCards/ResCard";
+import Shimmer from "../ShimmerUI/Shimmer";
 
 // URL IMPORTS
 import { RES_API_URL } from "../../utils/constants";
@@ -33,18 +34,14 @@ const OrderOnline = () => {
     setResList(json?.data?.cards[2]?.data?.data?.cards);
   };
 
-  let loadingDiv = ( <div className="res-card-layout">
-  <h1>Loading...</h1>
-</div>);
+  let loadingDiv = Array(10).fill(<Shimmer/>)
 
   let list;
   if (filteredList.length < 1) {
     if (resList?.length === 0) {
-      list =  
-        <div className="res-card-layout">
-          <h1>Loading...</h1>
-        </div>
+      list =  Array(10).fill(<Shimmer/>)
     } else {
+      // list = <Shimmer/>
       list = resList?.map((restaurant) => (
         <ResCard resData={restaurant} key={restaurant.data.id} />
       ));
