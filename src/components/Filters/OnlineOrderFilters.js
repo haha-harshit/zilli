@@ -43,7 +43,7 @@ export const RatingAbove4 = (props) => {
             setTimeout(() => {
               above4ColorHandle();
               props.setIsLoading(true);
-            }, 500)
+            }, 100)
             setTimeout(() => {
               props.setIsLoading(false);
               if (!props.isAbove4FilterOn) {
@@ -70,7 +70,7 @@ export const RatingAbove4 = (props) => {
                 }
                 props.setIsAbove4FilterOn(false);
               }
-            }, 2500);
+            }, 2000);
           }
         }}
       >
@@ -121,7 +121,7 @@ export const PureVeg = (props) => {
             setTimeout(() => {
               VEGColorHandle();
               props.setIsLoading(true);
-            }, 250)
+            }, 100)
             setTimeout(() => {
               props.setIsLoading(false);
               if (!props.isPureVegFilterOn) {
