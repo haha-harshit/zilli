@@ -2,7 +2,10 @@ import { OutdoorSeating, ServesAlcohol } from "../Filters/DiningOutFilters";
 import { RatingAbove4 } from "../Filters/OnlineOrderFilters";
 import { tabListStyle } from "../../utils/css/OfferingTab.css";
 import OfferingTab from "../OfferingTab/OfferingTab";
-const Dining = () => {
+const Dining = (props) => {
+
+  console.log(props.searchText, "dining")
+
   return (
     <>
       <div className="section">
@@ -17,74 +20,6 @@ const Dining = () => {
         </div>
 
         <div className="something">
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
-          <h1>hey</h1>
           <h1>hey</h1>
           <h1>hey</h1>
           <h1>hey</h1>

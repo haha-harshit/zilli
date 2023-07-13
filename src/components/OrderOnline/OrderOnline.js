@@ -13,7 +13,7 @@ import { tabListStyle } from "../../utils/css/OfferingTab.css";
 import { OrderOnlineStyle } from "../../utils/css/OrderOnline.css";
 import { resStyle } from "../../utils/css/resCard.css";
 
-const OrderOnline = () => {
+const OrderOnline = (props) => {
   const [resList, setResList] = useState([]);
   const [isAbove4FilterOn, setIsAbove4FilterOn] = useState(false);
   const [isPureVegFilterOn, setIsPureVegFilterOn] = useState(false);
@@ -35,6 +35,8 @@ const OrderOnline = () => {
   };
 
   let loadingDiv = Array(10).fill(<Shimmer/>)
+
+  console.log(props.searchText, "from Order Online")
 
   let list;
   if (filteredList.length < 1) {

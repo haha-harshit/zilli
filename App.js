@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-
+import { useState } from "react";
 // components import
 import LandingHeaderSection from "./src/components/LandingHeader/LandingHeaderSection";
 import LandingBody from "./src/components/LandingBody/Body";
@@ -13,6 +13,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CommonHeader from "./src/components/CommonHeader/CommonHeader";
 
 const App = () => {
+  const [searchText, setSearchText] = useState("")
   return (
     <>
       <BrowserRouter>
@@ -32,8 +33,8 @@ const App = () => {
               path="/online-order"
               element={
                 <>
-                  <CommonHeader />
-                  <OrderOnline />
+                  <CommonHeader searchText={searchText} setSearchText={setSearchText}/>
+                  <OrderOnline searchText={searchText}/>
                 </>
               }
             />
@@ -42,8 +43,8 @@ const App = () => {
               path="/dining"
               element={
                 <>
-                  <CommonHeader />
-                  <Dining />
+                  <CommonHeader searchText={searchText} setSearchText={setSearchText}/>
+                  <Dining searchText={searchText}/>
                 </>
               }
             />
@@ -51,8 +52,8 @@ const App = () => {
               path="/night-life-and-clubs"
               element={
                 <>
-                  <CommonHeader />
-                  <NightlifeAndClubs />
+                  <CommonHeader searchText={searchText} setSearchText={setSearchText}/>
+                  <NightlifeAndClubs searchText={searchText}/>
                 </>
               }
             />
@@ -60,6 +61,7 @@ const App = () => {
               path="*"
               element={
                 <>
+                {/* PAGE NOT FOUND HEADER TO BE ADDED */}
                   <CommonHeader />
                   <PageNotFound />
                 </>
