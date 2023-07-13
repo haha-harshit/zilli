@@ -70,7 +70,7 @@ export const RatingAbove4 = (props) => {
                 }
                 props.setIsAbove4FilterOn(false);
               }
-            }, 2000);
+            }, 1500);
           }
         }}
       >
@@ -145,7 +145,7 @@ export const PureVeg = (props) => {
                 }
                 props.setIsPureVegFilterOn(false);
               }
-            }, 2000);
+            }, 1500);
           }
         }}
       >

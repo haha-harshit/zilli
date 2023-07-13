@@ -1,0 +1,22 @@
+.search-box{
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    width: 40%;
+    /* border: 0.2rem solid gray; */
+    /* border-radius: 0.4rem; */
+}
+
+.search-box > input[type=text], select{
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
+    box-sizing: border-box;
+    height: 2.5rem;
+    width: 25rem;
+}
+
+.submit-search{
+    height: 2.5rem;
+}
