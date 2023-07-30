@@ -25,14 +25,11 @@
 
 .res-contents {
   margin: 0.7rem;
+  /* height: 18rem; */
 }
 
 .res-link {
   text-decoration: none;
-}
-
-.res-card-img-main {
-  height: 65%;
 }
 
 .res-img {

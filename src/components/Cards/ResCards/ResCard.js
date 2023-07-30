@@ -4,38 +4,38 @@ import star_rating from "../../../utils/images/star_rating.png";
 
 const ResCard = (props) => {
   const { resData } = props;
-  const isDiscounted = "aggregatedDiscountInfoV3" in resData.data;
+  const isDiscounted = "aggregatedDiscountInfoV3" in resData.info;
   let discountInfo;
   
-  if (isDiscounted) {
+  if (isDiscounted && resData.info.aggregatedDiscountInfoV3.header && resData.info.aggregatedDiscountInfoV3?.subHeader) {
     discountInfo = (
       <div className="discount-info">
-        {resData.data.aggregatedDiscountInfoV3.header +
+        {resData.info.aggregatedDiscountInfoV3?.header +
           " " +
-          resData.data.aggregatedDiscountInfoV3.subHeader}
+          resData.info.aggregatedDiscountInfoV3?.subHeader}
       </div>
     );
   } else {
     discountInfo = <div className="no-discount-info"></div>;
   }
 
-  const cuisines = resData.data.cuisines.map((cuisine) => cuisine).join(", ");
+  const cuisines = resData.info.cuisines.map((cuisine) => cuisine).join(", ");
 
   return (
     <>
       <div className="res-card-layout">
         <div className="res-contents">
-          <Link className="res-link" to={"/" + resData.data.name}>
+          <Link className="res-link" to={"/" + resData.info.name}>
             <div className="res-card-img-main">
               <img
                 className="res-img"
-                src={CDN_IMG_URL + resData.data.cloudinaryImageId}
+                src={CDN_IMG_URL + resData.info.cloudinaryImageId}
                 alt="res-logo"
               />
               <div className="img-header-info">
                 {discountInfo}
                 <div className="delivery-time">
-                  {resData.data.sla.deliveryTime + " min"}
+                  {resData.info.sla.deliveryTime + " min"}
                 </div>
               </div>
             </div>
@@ -43,9 +43,9 @@ const ResCard = (props) => {
             <div className="res-card-info">
               <div className="res-card-info-body">
                 <div className="res-card-info-body-head">
-                  <h4 className="res-card-title">{resData.data.name}</h4>
+                  <h4 className="res-card-title">{resData.info.name}</h4>
                   <div className="res-rating">
-                    <div>{resData.data.avgRating}</div>
+                    <div>{resData.info.avgRating}</div>
                     &nbsp;
                     <img className="star_rating" src={star_rating} alt="" />
                   </div>
@@ -54,7 +54,7 @@ const ResCard = (props) => {
                   <h4 className="res-cuisines">{cuisines}</h4>
                   <div className="res-costForTwo">
                     <div>
-                      {"₹" + resData.data.costForTwo / 100 + " for two"}
+                      {resData.info.costForTwo}
                     </div>
                   </div>
                 </div>

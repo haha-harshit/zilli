@@ -31,20 +31,19 @@ const OrderOnline = (props) => {
     const data = await fetch(RES_API_URL);
 
     const json = await data.json();
-    setResList(json?.data?.cards[2]?.data?.data?.cards);
+    setResList(json?.restaurants);
+    // console.log(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   };
 
   let loadingDiv = Array(10).fill(<Shimmer/>)
 
-  console.log(props.searchText, "from Order Online")
-
   let list;
   if (filteredList.length < 1) {
     if (resList?.length === 0) {
-      list =  Array(10).fill(<Shimmer/>)
+      list = Array(10).fill(<Shimmer/>)
     } else {
       list = resList?.map((restaurant) => (
-        <ResCard resData={restaurant} key={restaurant.data.id} />
+        <ResCard resData={restaurant} key={restaurant.info.id} />
       ));
       if (list === undefined) {
         list =  
@@ -56,8 +55,29 @@ const OrderOnline = (props) => {
   } 
   if(filteredList.length > 1) {
     list = filteredList?.map((restaurant) => (
-      <ResCard resData={restaurant} key={restaurant.data.id} />
+      <ResCard resData={restaurant} key={restaurant.info.id} />
     ));
+  }
+
+  if(props.searchText.length > 0){
+    let list=[]
+    if(filteredList.length > 1){
+      setFilteredList(filteredList.filter((res)=> res.info.name === props.searchText))
+      console.log(filteredList)
+    }else{
+      // setResList(resList.filter((res) => res.data.name === props.searchText))
+      // console.log(resList.filter((res)=> res.data.name === props.searchText))
+      // let flag
+      console.log(props.searchText)
+      resList?.map((res)=>res.info.name.toLowerCase().includes(props.searchText.toLowerCase()) ? console.log(res.info.name) : "")
+      // console.log(list)
+      // if(res.data.name.includes(props.searchText)){
+      //   console.log(res)
+      // }
+      // console.log(resList)
+      // resList.map((res) => ( res.data.name.includes(props.searchText) ? console.log(res.data.name, "complete") : "" ))
+      // setResList(list)
+    }
   }
 
   return (

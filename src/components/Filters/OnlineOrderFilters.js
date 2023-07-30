@@ -50,12 +50,12 @@ export const RatingAbove4 = (props) => {
                 if (props.isPureVegFilterOn) {
                   props.setFilteredList(
                     props.filteredList.filter(
-                      (res) => res.data.avgRating >= 4.0
+                      (res) => res.info.avgRating >= 4.0
                     )
                   );
                 } else {
                   props.setFilteredList(
-                    props.resList.filter((res) => res.data.avgRating >= 4.0)
+                    props.resList.filter((res) => res.info.avgRating >= 4.0)
                   );
                 }
 
@@ -63,7 +63,7 @@ export const RatingAbove4 = (props) => {
               } else {
                 if (props.isPureVegFilterOn) {
                   props.setFilteredList(
-                    props.resList.filter((res) => res.data.veg == true)
+                    props.resList.filter((res) => res.info.veg == true)
                   );
                 } else {
                   props.setFilteredList([]);
@@ -127,18 +127,18 @@ export const PureVeg = (props) => {
               if (!props.isPureVegFilterOn) {
                 if (props.isAbove4FilterOn) {
                   props.setFilteredList(
-                    props.filteredList.filter((res) => res.data.veg == true)
+                    props.filteredList.filter((res) => res.info.veg == true)
                   );
                 } else {
                   props.setFilteredList(
-                    props.resList.filter((res) => res.data.veg == true)
+                    props.resList.filter((res) => res.info.veg == true)
                   );
                 }
                 props.setIsPureVegFilterOn(true);
               } else {
                 if (props.isAbove4FilterOn) {
                   props.setFilteredList(
-                    props.resList.filter((res) => res.data.avgRating >= 4.0)
+                    props.resList.filter((res) => res.info.avgRating >= 4.0)
                   );
                 } else {
                   props.setFilteredList([]);

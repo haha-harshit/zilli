@@ -1,15 +1,17 @@
 .shimmer-layout{
+    width: 19rem;
+    margin: 1.5rem 1.5rem;
+    border: 0.001rem solid rgb(227, 227, 227);
+    border-radius: 0.9rem; 
     /* background-color: lightgray; */
     /* color: gray; */
     box-shadow: 0px 5px 25px -20px;
-  border: 0.001rem solid rgb(227, 227, 227);
-    height: 15rem;  
-    width: 19rem;
-    margin: 1.5rem 1.5rem;
+    height: 15rem;
 }
 
 .shimmer-content{
     margin: 0.7rem;
+    /* height: 17rem; */
 }
 
 .shimmer-img{
