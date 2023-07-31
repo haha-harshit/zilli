@@ -4,7 +4,7 @@ import { NonVeg, PureVeg, RatingAbove4 } from "../Filters/OnlineOrderFilters";
 import OfferingTab from "../OfferingTab/OfferingTab";
 import ResCard from "../Cards/ResCards/ResCard";
 import Shimmer from "../ShimmerUI/Shimmer";
-import mock_id from "../../utils/mockData";
+import {mock_id} from "../../utils/mockData";
 
 // URL IMPORTS
 import { RES_API_URL } from "../../utils/constants";

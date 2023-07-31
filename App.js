@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { useState } from "react";
+
 // components import
 import LandingHeaderSection from "./src/components/LandingHeader/LandingHeaderSection";
 import LandingBody from "./src/components/LandingBody/Body";
@@ -11,6 +12,7 @@ import PageNotFound from "./src/components/PageNotFound/PageNotFound";
 import Footer from "./src/components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CommonHeader from "./src/components/CommonHeader/CommonHeader";
+import ResMenu from "./src/components/ResMenu/ResMenu";
 
 const App = () => {
   const [searchText, setSearchText] = useState("")
@@ -60,11 +62,11 @@ const App = () => {
               }
             />
             <Route
-              path="/restaurant/:resId"
+              path="/restaurant/:resName/:resId"
               element={
                 <>
                   <CommonHeader searchText={searchText} setSearchText={setSearchText}/>
-                  <NightlifeAndClubs searchText={searchText}/>
+                  <ResMenu/>
                 </>
               }
             />

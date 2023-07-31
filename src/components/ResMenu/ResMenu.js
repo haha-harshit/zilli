@@ -1,4 +1,5 @@
 const ResMenu = () => {
+    return(
     <>
         <h1>Restaurant Name</h1>
         <h2>Res Menu</h2>
@@ -11,6 +12,7 @@ const ResMenu = () => {
             </li>
         </ul>
     </>
+    )
 }
 
 export default ResMenu;

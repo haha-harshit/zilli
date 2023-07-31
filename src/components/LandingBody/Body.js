@@ -1,5 +1,5 @@
 import OfferCard from "../Cards/OfferingCards/OfferCard";
-import offerCardDetails from "../../utils/mockData";
+import {offerCardDetails} from "../../utils/mockData";
 import Collections from "../Collection/Collections";
 import OrderOnline from "../OrderOnline/OrderOnline";
 import Dining from "../Dining/Dining";
