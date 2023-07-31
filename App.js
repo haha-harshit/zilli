@@ -14,6 +14,8 @@ import CommonHeader from "./src/components/CommonHeader/CommonHeader";
 
 const App = () => {
   const [searchText, setSearchText] = useState("")
+  const [searchList, setSearchList] = useState([])
+
   return (
     <>
       <BrowserRouter>
@@ -33,7 +35,7 @@ const App = () => {
               path="/online-order"
               element={
                 <>
-                  <CommonHeader searchText={searchText} setSearchText={setSearchText}/>
+                  <CommonHeader searchText={searchText} setSearchText={setSearchText} searchList={searchList} setSearchList={setSearchList}/>
                   <OrderOnline searchText={searchText}/>
                 </>
               }
@@ -50,6 +52,15 @@ const App = () => {
             />
             <Route
               path="/night-life-and-clubs"
+              element={
+                <>
+                  <CommonHeader searchText={searchText} setSearchText={setSearchText}/>
+                  <NightlifeAndClubs searchText={searchText}/>
+                </>
+              }
+            />
+            <Route
+              path="/restaurant/:resId"
               element={
                 <>
                   <CommonHeader searchText={searchText} setSearchText={setSearchText}/>

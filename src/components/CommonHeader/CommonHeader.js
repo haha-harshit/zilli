@@ -18,7 +18,7 @@ const CommonHeader = (props) => {
           <Link to="/">
             <i><h2>Zilli</h2></i>
           </Link>
-          <Search searchText={props.searchText} setSearchText={props.setSearchText}/>
+          <Search searchText={props.searchText} setSearchText={props.setSearchText} searchList={props.searchList} setSearchList={props.setSearchList}/>
           {isLogin ? <LogOut setIsLogin={setIsLogin}/> : <LogIn setIsLogin={setIsLogin}/>}
         </header>
       </div>

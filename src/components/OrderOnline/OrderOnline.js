@@ -4,6 +4,7 @@ import { NonVeg, PureVeg, RatingAbove4 } from "../Filters/OnlineOrderFilters";
 import OfferingTab from "../OfferingTab/OfferingTab";
 import ResCard from "../Cards/ResCards/ResCard";
 import Shimmer from "../ShimmerUI/Shimmer";
+import mock_id from "../../utils/mockData";
 
 // URL IMPORTS
 import { RES_API_URL } from "../../utils/constants";
@@ -35,15 +36,15 @@ const OrderOnline = (props) => {
     // console.log(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   };
 
-  let loadingDiv = Array(10).fill(<Shimmer/>)
+  let loadingDiv = Array(10).fill(<Shimmer />)
 
   let list;
   if (filteredList.length < 1) {
     if (resList?.length === 0) {
-      list = Array(10).fill(<Shimmer/>)
+      list = Array(10).fill(<Shimmer />)
     } else {
       list = resList?.map((restaurant) => (
-        <ResCard resData={restaurant} key={restaurant.info.id} />
+        <ResCard resData={restaurant} key={restaurant?.info?.id} />
       ));
       if (list === undefined) {
         list =  
@@ -55,28 +56,28 @@ const OrderOnline = (props) => {
   } 
   if(filteredList.length > 1) {
     list = filteredList?.map((restaurant) => (
-      <ResCard resData={restaurant} key={restaurant.info.id} />
+      <ResCard resData={restaurant} key={restaurant?.info?.id} />
     ));
   }
 
   if(props.searchText.length > 0){
-    let list=[]
+    let afterSearchList=[]
     if(filteredList.length > 1){
-      setFilteredList(filteredList.filter((res)=> res.info.name === props.searchText))
-      console.log(filteredList)
+      setFilteredList(filteredList.filter((res)=> res?.info?.name.toLowerCase().includes(props.searchText.toLowerCase())))
+      console.log(filteredList.map((result) => result.info.name))
     }else{
       // setResList(resList.filter((res) => res.data.name === props.searchText))
       // console.log(resList.filter((res)=> res.data.name === props.searchText))
       // let flag
       console.log(props.searchText)
-      resList?.map((res)=>res.info.name.toLowerCase().includes(props.searchText.toLowerCase()) ? console.log(res.info.name) : "")
-      // console.log(list)
+      resList?.map((res)=>res?.info?.name.toLowerCase().includes(props.searchText.toLowerCase()) ? afterSearchList.push(res?.info?.name) : "")
+      console.log(afterSearchList)
       // if(res.data.name.includes(props.searchText)){
       //   console.log(res)
       // }
       // console.log(resList)
       // resList.map((res) => ( res.data.name.includes(props.searchText) ? console.log(res.data.name, "complete") : "" ))
-      // setResList(list)
+      setResList(afterSearchList)
     }
   }
 
