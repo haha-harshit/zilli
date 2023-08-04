@@ -1,4 +1,4 @@
-const ResMenu = () => {
+const ResMainEntry = () => {
     return(
     <>
         <h1>Restaurant Name</h1>
@@ -15,4 +15,4 @@ const ResMenu = () => {
     )
 }
 
-export default ResMenu;
+export default ResMainEntry;
