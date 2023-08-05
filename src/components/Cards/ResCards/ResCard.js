@@ -25,7 +25,7 @@ const ResCard = (props) => {
     <>
       <div className="res-card-layout">
         <div className="res-contents">
-          <Link className="res-link" to={`/restaurant/${resData.info.name}/${resData.info.id}`}>
+          <Link className="res-link" to={"/restaurant/"+resData.info.id}>
             <div className="res-card-img-main">
               <img
                 className="res-img"

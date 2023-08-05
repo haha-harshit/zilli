@@ -12,7 +12,7 @@ import PageNotFound from "./src/components/PageNotFound/PageNotFound";
 import Footer from "./src/components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CommonHeader from "./src/components/CommonHeader/CommonHeader";
-import ResMenu from "./src/components/ResMainEntry/ResMainEntry";
+// import ResMenu from "./src/components/ResMainEntry/ResMainEntry";
 import ResMainEntry from "./src/components/ResMainEntry/ResMainEntry";
 
 const App = () => {
@@ -63,7 +63,7 @@ const App = () => {
               }
             />
             <Route
-              path="/restaurant/:resName/:resId"
+              path="/restaurant/:resId"
               element={
                 <>
                   <CommonHeader searchText={searchText} setSearchText={setSearchText}/>
