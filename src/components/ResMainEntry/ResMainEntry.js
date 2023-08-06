@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { RES_DETAILS_URL } from "../../utils/constants";
+import Shimmer from "../../components/ShimmerUI/Shimmer"
 
 const ResMainEntry = () => {
     const location = useLocation()
-
+    // console.log(location)
     // used state coming from parent - basic res details, so that no need to be fetched again
-    let resMainInfo = location.state?.resData.info
+    let resMainInfo = location.state?.resMainInfo.info
 
     // for menu and other details
     const [resMenu, setResMenu] = useState(null)
@@ -21,21 +22,45 @@ const ResMainEntry = () => {
     const fetchResDetails = async ()=> {
         const data = await fetch(RES_DETAILS_URL + resId)
         const json = await data.json()
-        console.log(json)
-        console.log(resMainInfo)
+        // console.log(json)
+        // console.log(resMainInfo)
+        setResMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
+        // console.log(json.data)
+        // console.log(itemCard)
     }
+    console.log(resMenu)
+    
+    
+    if(resMenu === null) return <Shimmer/>
+    // console.log(resMenu)
     
     return(
     <>
-        <h1>{}</h1>
-        <h2>Res Menu</h2>
+        <h2>{resMainInfo.name}</h2>
+        <hr/>
+        <br/>
+        <h2>Menu</h2>
+        <br/>
         <ul>
-            <li>
-                Item 1
-            </li>
-            <li>
-                Item 2
-            </li>
+            { resMenu?.map((singleCardItem) => 
+                ( 
+                    
+                    <li>
+                        {singleCardItem?.card?.card?.title}
+                        <ul>
+                            {singleCardItem?.card?.card?.itemCards?.map((sub_item) => (
+                                <h4>
+                                <li>
+                                    --{sub_item.card.info.name} - ₹{sub_item.card.info.defaultPrice/100 || sub_item.card.info.price/100}
+                                </li>
+                                </h4>
+                            ))}
+                        </ul>
+                    </li>
+                    
+                ))
+            }
+            
         </ul>
     </>
     )
