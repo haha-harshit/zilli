@@ -13,7 +13,7 @@ const CommonHeader = (props) => {
 
   return (
     <>
-      <div className="common-header">
+      <div className="common-header" style={{boxShadow: "rgba(33, 35, 38, 0.1) 0px 10px 10px -10px"}}>
         <header style={style}>
           <Link to="/">
             <i><h2>Zilli</h2></i>

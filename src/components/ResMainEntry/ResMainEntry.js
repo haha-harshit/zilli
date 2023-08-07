@@ -36,8 +36,8 @@ const ResMainEntry = () => {
     
     return(
     <>
-        <h2>{resMainInfo.name}</h2>
-        <hr/>
+    <div className="section">
+        <h2 className="restaurant-name">{resMainInfo.name}</h2>
         <br/>
         <h2>Menu</h2>
         <br/>
@@ -62,6 +62,7 @@ const ResMainEntry = () => {
             }
             
         </ul>
+    </div>
     </>
     )
 }
