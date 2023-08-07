@@ -1,0 +1,8 @@
+.restaurant-sub-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-section{
+    width: 50vw;
+}

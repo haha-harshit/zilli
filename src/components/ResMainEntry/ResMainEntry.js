@@ -3,6 +3,10 @@ import { useParams, useLocation } from "react-router-dom";
 import { RES_DETAILS_URL } from "../../utils/constants";
 import Shimmer from "../../components/ShimmerUI/Shimmer"
 
+// import style
+import {ResMainEntryStyle} from "../../utils/css/ResMainEntry.css"
+import RestaurantHeader from "./RestaurantHeader";
+
 const ResMainEntry = () => {
     const location = useLocation()
     // console.log(location)
@@ -36,30 +40,8 @@ const ResMainEntry = () => {
 
     return(
     <>
-    <div className="section">
-        <div className="restaurant-main-header">
-            <div className="restaurant-sub-header">
-                <div className="RestaurantNameAddress_wrapper">
-
-                    <div className="RestaurantName">
-                        {resMainInfo.name}
-                    </div>
-                    <div className="RestaurantCuisines">
-                        {cuisines.join(", ")}
-                    </div>
-                    <div className="RestaurantAddessDistance_wrapper">
-                        {resMainInfo.areaName}, {resMainInfo.sla.lastMileTravel} km
-                    </div>
-                    
-                </div>
-                <div className="RestaurantRating_wrapper">
-                    <div>{resMainInfo.avgRating}</div>
-                    <div className="RestaurantRatingCount">
-                        {resMainInfo.totalRatingsString}
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div className="section menu-section" style={ResMainEntryStyle}>
+        <RestaurantHeader resMainInfo={resMainInfo} cuisines={cuisines} />
         <br/>
         <h2>Menu</h2>
         <br/>
