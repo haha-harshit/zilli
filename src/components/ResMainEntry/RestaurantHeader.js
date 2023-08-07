@@ -1,3 +1,6 @@
+// import style
+// import {ResMainEntryStyle} from "../../utils/css/ResMainEntry.css"
+
 const RestaurantHeader = (props) => {
 
     const {resMainInfo, cuisines} = props
@@ -20,12 +23,13 @@ const RestaurantHeader = (props) => {
                     
                 </div>
                 <div className="RestaurantRating_wrapper">
-                    <div>{resMainInfo.avgRating}</div>
+                    <div className="avgRatingWrapper" >{resMainInfo.avgRating}</div>
                     <div className="RestaurantRatingCount">
-                        {resMainInfo.totalRatingsString}
+                        {resMainInfo.totalRatingsString} ratings
                     </div>
                 </div>
             </div>
+            <hr className="RestaurantDottedSeparator"/>
         </div>
         </>
     )

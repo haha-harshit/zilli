@@ -6,3 +6,62 @@
 .menu-section{
     width: 50vw;
 }
+
+.RestaurantName{
+    font-size: 1.43rem;
+    font-weight: 600;
+    color: #282c3f;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+
+.RestaurantCuisines{
+    font-size: .88rem;
+    color: #7e808c;
+    height: calc(.9rem + .25rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.2rem;
+    white-space: nowrap;
+}
+
+.RestaurantAddessDistance_wrapper{
+    font-size: .88rem;
+    color: #7e808c;
+}
+
+.RestaurantRating_wrapper{
+    border: 0.1rem solid #e9e9eb;
+    box-shadow: 0 0.1rem 0.5rem #f9f9f9;
+    border-radius: 0.3rem;
+    text-align: center;
+    padding: 0.7rem;
+    max-width: 100px;
+    float: right;
+}
+
+.avgRatingWrapper{
+    font-size: 0.9rem;
+    color: #3d9b6d;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9e9eb;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.RestaurantRatingCount{
+    font-stretch: condensed;
+    font-size: 0.7rem;
+    color: #8b8d97;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.RestaurantDottedSeparator{
+    border: none;
+    border-bottom: 0.07rem dashed #d3d3d3;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+

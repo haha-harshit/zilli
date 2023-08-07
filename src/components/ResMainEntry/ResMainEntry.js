@@ -42,7 +42,7 @@ const ResMainEntry = () => {
     <>
     <div className="section menu-section" style={ResMainEntryStyle}>
         <RestaurantHeader resMainInfo={resMainInfo} cuisines={cuisines} />
-        <br/>
+        {/* <br/> */}
         <h2>Menu</h2>
         <br/>
         { resMenu?.map((singleCardItem) => 
