@@ -41,10 +41,12 @@ const ResMainEntry = () => {
         <br/>
         <h2>Menu</h2>
         <br/>
-        <ul>
-            { resMenu?.map((singleCardItem) => 
-                ( 
-                    
+        { resMenu?.map((singleCardItem) => 
+
+            (singleCardItem?.card?.card?.title ? 
+
+                <ul>
+                
                     <li>
                         {singleCardItem?.card?.card?.title}
                         <ul>
@@ -58,10 +60,11 @@ const ResMainEntry = () => {
                         </ul>
                     </li>
                     
-                ))
-            }
+
+                </ul>
+            : "")
+        )}
             
-        </ul>
     </div>
     </>
     )
