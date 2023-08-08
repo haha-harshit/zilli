@@ -19,4 +19,11 @@
 
 .submit-search{
     height: 2.5rem;
+    padding: .5rem;
+    align-items: center;
+    display: inherit;
+    background-color: transparent;
+    border: 0.09rem dotted gainsboro;
+    border-radius: 0.4rem;
+    cursor: pointer;
 }

@@ -9,7 +9,7 @@
 
 .RestaurantName{
     font-size: 1.43rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #282c3f;
     margin-bottom: 0.5rem;
     text-transform: capitalize;
@@ -45,7 +45,7 @@
     color: #3d9b6d;
     padding-bottom: 10px;
     border-bottom: 1px solid #e9e9eb;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 8px;
     display: block;
 }
@@ -63,5 +63,19 @@
     border-bottom: 0.07rem dashed #d3d3d3;
     margin-bottom: 1rem;
     margin-top: 1rem;
+}
+
+.RestaurantTimeCost_wrapper{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #3e4152;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.RestaurantTimeCost_item{
+    display: inline-block;
+    margin-right: 2rem;
+
 }
 

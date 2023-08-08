@@ -29,7 +29,20 @@ const RestaurantHeader = (props) => {
                     </div>
                 </div>
             </div>
+            
             <hr className="RestaurantDottedSeparator"/>
+
+            <div className="RestaurantTimeCost_wrapper">
+                <ul>
+                    <li className="RestaurantTimeCost_item">
+                        {resMainInfo.sla.deliveryTime} MINS
+                    </li>
+                    <li className="RestaurantTimeCost_item">
+                        {resMainInfo.costForTwo}
+                    </li>
+                </ul>
+            </div>
+
         </div>
         </>
     )
