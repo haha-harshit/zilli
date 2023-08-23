@@ -13,9 +13,10 @@ import filterStyle from "../../utils/css/Filters.css";
 import { tabListStyle } from "../../utils/css/OfferingTab.css";
 import { OrderOnlineStyle } from "../../utils/css/OrderOnline.css";
 import { resStyle } from "../../utils/css/resCard.css";
+import { useResList } from "../../utils/customHooks/useFetchApi";
 
 const OrderOnline = (props) => {
-  const [resList, setResList] = useState([]);
+  // const [resList, setResList] = useState([]);
   const [isAbove4FilterOn, setIsAbove4FilterOn] = useState(false);
   const [isPureVegFilterOn, setIsPureVegFilterOn] = useState(false);
   const [isNonVegFilterOn, setIsNonVegFilterOn] = useState(false);
@@ -24,17 +25,19 @@ const OrderOnline = (props) => {
 
   // const [list, setList] = useState();
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  let resList = useResList()
 
-  const fetchData = async () => {
-    const data = await fetch(RES_API_URL);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
-    const json = await data.json();
-    setResList(json?.restaurants);
-    // console.log(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-  };
+  // const fetchData = async () => {
+  //   const data = await fetch(RES_API_URL);
+
+  //   const json = await data.json();
+  //   setResList(json?.restaurants);
+  //   // console.log(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+  // };
 
   let loadingDiv = Array(10).fill(<Shimmer />)
 
@@ -77,7 +80,7 @@ const OrderOnline = (props) => {
       // }
       // console.log(resList)
       // resList.map((res) => ( res.data.name.includes(props.searchText) ? console.log(res.data.name, "complete") : "" ))
-      setResList(afterSearchList)
+      resList = afterSearchList
     }
   }
 
@@ -115,7 +118,7 @@ const OrderOnline = (props) => {
           />
           <NonVeg
             resList={resList}
-            setResList={setResList}
+            // setResList={setResList}
             setIsNonVegFilterOn={setIsNonVegFilterOn}
             isNonVegFilterOn={isNonVegFilterOn}
           />

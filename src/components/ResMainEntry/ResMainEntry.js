@@ -1,14 +1,13 @@
-import { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
-import { RES_DETAILS_URL } from "../../utils/constants";
 import Shimmer from "../../components/ShimmerUI/Shimmer"
+import RestaurantHeader from "./RestaurantHeader";
 
 // import style
 import {ResMainEntryStyle} from "../../utils/css/ResMainEntry.css"
-import RestaurantHeader from "./RestaurantHeader";
+import {useResMenuItems } from "../../utils/customHooks/useFetchApi";
 
 // import custom hooks
-import useResMenu from "../../utils/customHooks/useResMenu";
+
 
 const ResMainEntry = () => {
     const location = useLocation()
@@ -19,8 +18,9 @@ const ResMainEntry = () => {
     // fetch id from URL
     const { resId } = useParams()
 
-    const resMenu = useResMenu(resId)
-    
+    // using resMenu custom hook for making code modular and maintaing Single Responsibility Principle - hook to fetch menu items as otherwise done by below commented code.
+    const resMenu = useResMenuItems(resId)
+
     // // for menu and other details
     // const [resMenu, setResMenu] = useState(null)
     
@@ -47,7 +47,6 @@ const ResMainEntry = () => {
     <>
     <div className="section menu-section" style={ResMainEntryStyle}>
         <RestaurantHeader resMainInfo={resMainInfo} cuisines={cuisines} />
-        {/* <br/> */}
         <h2>Menu</h2>
         <br/>
         { resMenu?.map((singleCardItem) => 
