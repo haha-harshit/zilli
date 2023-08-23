@@ -7,30 +7,35 @@ import Shimmer from "../../components/ShimmerUI/Shimmer"
 import {ResMainEntryStyle} from "../../utils/css/ResMainEntry.css"
 import RestaurantHeader from "./RestaurantHeader";
 
+// import custom hooks
+import useResMenu from "../../utils/customHooks/useResMenu";
+
 const ResMainEntry = () => {
     const location = useLocation()
     // console.log(location)
-    // used state coming from parent - basic res details, so that no need to be fetched again
+    // used state coming from parent - basic res details like name, price, rating, so that no need to be fetched again
     let resMainInfo = location.state?.resMainInfo.info
-
-    // for menu and other details
-    const [resMenu, setResMenu] = useState(null)
-
+    
     // fetch id from URL
     const { resId } = useParams()
 
-    useEffect(() => {
-        fetchResDetails();
-    }, [])
+    const resMenu = useResMenu(resId)
+    
+    // // for menu and other details
+    // const [resMenu, setResMenu] = useState(null)
+    
+    // useEffect(() => {
+    //     fetchResDetails();
+    // }, [])
 
-    const fetchResDetails = async ()=> {
-        const data = await fetch(RES_DETAILS_URL + resId)
-        const json = await data.json()
-        // console.log(json)
-        setResMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
-        // console.log(json.data)
-        // console.log(itemCard)
-    }
+    // const fetchResDetails = async ()=> {
+    //     const data = await fetch(RES_DETAILS_URL + resId)
+    //     const json = await data.json()
+    //     // console.log(json)
+    //     setResMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
+    //     // console.log(json.data)
+    //     // console.log(itemCard)
+    // }
     console.log(resMenu)
     
     if(resMenu === null) return <Shimmer/>
