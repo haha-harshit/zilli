@@ -36,11 +36,11 @@ const ResMainEntry = () => {
     //     // console.log(json.data)
     //     // console.log(itemCard)
     // }
-    console.log(resMenu)
+    // console.log(resMenu)
     
     if(resMenu === null) return <Shimmer/>
     
-    console.log(resMainInfo)
+    // console.log(resMainInfo)
     const {cuisines} = resMainInfo
 
     return(

@@ -6,10 +6,20 @@ import { useState } from "react";
 import LogOut from "../LogOut/LogOut";
 
 import "../../utils/css/Search.css"
+import useOnlineStatus from "../../utils/customHooks/useOnlineStatus";
 
 const CommonHeader = (props) => {
 
   const [isLogin, setIsLogin] = useState(false);
+  const [isNetworkStatus, setIsNetworkStatus] = useState("🟢")
+  let networkStatusDisplay;
+
+  setInterval(async () => {
+    console.log("checking network...")
+    const result = await useOnlineStatus();
+    console.log(result)
+    setIsNetworkStatus(result ? "🟢" : "🔴");
+  }, 30000)
 
   return (
     <>
@@ -20,6 +30,8 @@ const CommonHeader = (props) => {
           </Link>
           <Search searchText={props.searchText} setSearchText={props.setSearchText} searchList={props.searchList} setSearchList={props.setSearchList}/>
           {isLogin ? <LogOut setIsLogin={setIsLogin}/> : <LogIn setIsLogin={setIsLogin}/>}
+          network status: {isNetworkStatus}
+          
         </header>
       </div>
     </>
