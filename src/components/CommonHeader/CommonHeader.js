@@ -2,7 +2,7 @@ import Search from "../Search/Search";
 import LogIn from "../LogIn/LogIn";
 import style from "../../utils/css/CommonHeader.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LogOut from "../LogOut/LogOut";
 
 import "../../utils/css/Search.css"
@@ -14,12 +14,21 @@ const CommonHeader = (props) => {
   const [isNetworkStatus, setIsNetworkStatus] = useState("🟢")
   let networkStatusDisplay;
 
-  setInterval(async () => {
-    console.log("checking network...")
-    const result = await useOnlineStatus();
-    console.log(result)
-    setIsNetworkStatus(result ? "🟢" : "🔴");
-  }, 30000)
+  
+
+  useEffect(()=>{
+    const interval = setInterval(async () => {
+      console.log("checking network...")
+      const result = await useOnlineStatus();
+      console.log(result)
+      setIsNetworkStatus(result ? "🟢" : "🔴");
+    }, 3000)
+
+    return() => {
+      clearInterval(interval)
+      console.log("clearing interval");
+    }
+  },[])
 
   return (
     <>

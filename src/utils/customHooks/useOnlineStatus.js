@@ -21,7 +21,6 @@ import { useEffect, useState } from "react"
 const useOnlineStatus = async() => {
     try {
         const url = "https://www.zomato.com/"
-        const ms = Date.now();
         console.log(url)
         const online = await fetch(url, {cache: "no-store"});
         // either true or false
