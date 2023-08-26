@@ -14,13 +14,9 @@ const CommonHeader = (props) => {
   const [isNetworkStatus, setIsNetworkStatus] = useState("🟢")
   let networkStatusDisplay;
 
-  
-
   useEffect(()=>{
     const interval = setInterval(async () => {
-      console.log("checking network...")
       const result = await useOnlineStatus();
-      console.log(result)
       setIsNetworkStatus(result ? "🟢" : "🔴");
     }, 3000)
 

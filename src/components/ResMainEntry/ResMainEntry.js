@@ -54,20 +54,15 @@ const ResMainEntry = () => {
             (singleCardItem?.card?.card?.title ? 
 
                 <ul>
-                
-                    <li>
                         {singleCardItem?.card?.card?.title}
-                        <ul>
+                        
                             {singleCardItem?.card?.card?.itemCards?.map((sub_item) => (
-                                <h4>
-                                <li>
-                                    --{sub_item.card.info.name} - ₹{sub_item.card.info.defaultPrice/100 || sub_item.card.info.price/100}
+                                <h4 key={sub_item?.info?.id}>
+                                <li key={sub_item?.info?.id}>
+                                    {sub_item.card.info.name} - ₹{sub_item.card.info.defaultPrice/100 || sub_item.card.info.price/100}
                                 </li>
                                 </h4>
                             ))}
-                        </ul>
-                    </li>
-
                 </ul>
             : "")
         )}

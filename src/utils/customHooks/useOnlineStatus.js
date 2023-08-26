@@ -21,16 +21,15 @@ import { useEffect, useState } from "react"
 const useOnlineStatus = async() => {
     try {
         const url = "https://www.zomato.com/"
-        console.log(url)
         const online = await fetch(url, {cache: "no-store"});
         // either true or false
         if(online.status >= 200 && online.status < 300){
             return true;
+        }else{
+            return false;
         }
          
     } catch (error) {
-        console.log("not fetch")
-        console.log(error)
         return false;
     }
 }

@@ -5,6 +5,7 @@ import OfferingTab from "../OfferingTab/OfferingTab";
 import ResCard from "../Cards/ResCards/ResCard";
 import Shimmer from "../ShimmerUI/Shimmer";
 import {mock_id} from "../../utils/mockData";
+import useOnlineStatus from "../../utils/customHooks/useOnlineStatus";
 
 // URL IMPORTS
 import { RES_API_URL } from "../../utils/constants";
@@ -24,21 +25,21 @@ const OrderOnline = (props) => {
   const [filteredList, setFilteredList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(()=> {
+    const checkConnection = setInterval(async ()=> {
+      const result = await useOnlineStatus();
+      if(result){
+        console.log("network ok")
+      }
+    }, 10000)
+
+    return()=>{
+      clearInterval(checkConnection);
+    }
+  }, [])
+
   // const [list, setList] = useState();
-
   let resList = useResList()
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-  // const fetchData = async () => {
-  //   const data = await fetch(RES_API_URL);
-
-  //   const json = await data.json();
-  //   setResList(json?.restaurants);
-  //   // console.log(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-  // };
 
   let loadingDiv = Array(10).fill(<Shimmer />)
 
@@ -83,6 +84,12 @@ const OrderOnline = (props) => {
       // resList.map((res) => ( res.data.name.includes(props.searchText) ? console.log(res.data.name, "complete") : "" ))
       resList = afterSearchList
     }
+  }
+
+  const onlineStatus = useOnlineStatus();
+  if(!onlineStatus){
+    // console.log("huhu")
+    list = <h1>Looks like you're offline! Check your internet connection</h1>
   }
 
   return (

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { RES_API_URL, RES_DETAILS_URL } from "../constants"
+import useOnlineStatus from "./useOnlineStatus";
 
 export const useResMenuItems = (resId) => {
     // for res menu and other details
@@ -23,9 +24,16 @@ export const useResList = () => {
        fetchData();
     }, [])
     const fetchData = async() => {
-        const data = await fetch(RES_API_URL);
-        const json = await data.json()
-        setResList(json?.restaurants);
+        // check for active network connection
+        const result = await useOnlineStatus()
+        console.log(result, "hey")
+        if(result){
+            const data = await fetch(RES_API_URL);
+            const json = await data.json()
+            setResList(json?.restaurants);
+        }else{
+            return <h1>Your network is down</h1>
+        }
     }
     return resList;
 }
