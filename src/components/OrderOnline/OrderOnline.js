@@ -24,12 +24,20 @@ const OrderOnline = (props) => {
   const [isNonVegFilterOn, setIsNonVegFilterOn] = useState(false);
   const [filteredList, setFilteredList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
+  
+  let resList = useResList()
   useEffect(()=> {
     const checkConnection = setInterval(async ()=> {
       const result = await useOnlineStatus();
-      if(result){
-        console.log("network ok")
+      if(!result){
+        console.log("network not ok")
+        return(
+          <h1>Looks like you're offline! Check your internet connection</h1>)
+          // loadingDiv = <h1>Looks like you're offline! Check your internet connection</h1>
+        // }
+      }else{
+        console.log("ok")
+        // console.log(resList)
       }
     }, 10000)
 
@@ -39,7 +47,6 @@ const OrderOnline = (props) => {
   }, [])
 
   // const [list, setList] = useState();
-  let resList = useResList()
 
   let loadingDiv = Array(10).fill(<Shimmer />)
 
@@ -71,25 +78,11 @@ const OrderOnline = (props) => {
       setFilteredList(filteredList.filter((res)=> res?.info?.name.toLowerCase().includes(props.searchText.toLowerCase())))
       console.log(filteredList.map((result) => result.info.name))
     }else{
-      // setResList(resList.filter((res) => res.data.name === props.searchText))
-      // console.log(resList.filter((res)=> res.data.name === props.searchText))
-      // let flag
       console.log(props.searchText)
       resList?.map((res)=>res?.info?.name.toLowerCase().includes(props.searchText.toLowerCase()) ? afterSearchList.push(res?.info?.name) : "")
       console.log(afterSearchList)
-      // if(res.data.name.includes(props.searchText)){
-      //   console.log(res)
-      // }
-      // console.log(resList)
-      // resList.map((res) => ( res.data.name.includes(props.searchText) ? console.log(res.data.name, "complete") : "" ))
       resList = afterSearchList
     }
-  }
-
-  const onlineStatus = useOnlineStatus();
-  if(!onlineStatus){
-    // console.log("huhu")
-    list = <h1>Looks like you're offline! Check your internet connection</h1>
   }
 
   return (
