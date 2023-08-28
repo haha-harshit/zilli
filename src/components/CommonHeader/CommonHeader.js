@@ -13,17 +13,19 @@ const CommonHeader = (props) => {
   const [isLogin, setIsLogin] = useState(false);
   const [isNetworkStatus, setIsNetworkStatus] = useState("🟢")
   let networkStatusDisplay;
+  // console.log(props.connectionResult)
 
   useEffect(()=>{
-    const interval = setInterval(async () => {
-      const result = await useOnlineStatus();
-      setIsNetworkStatus(result ? "🟢" : "🔴");
-    }, 3000)
+    // const interval = setInterval(async () => {
+    //   const result = await useOnlineStatus();
+    //   setIsNetworkStatus(result ? "🟢" : "🔴");
+    // }, 3000)
 
-    return() => {
-      clearInterval(interval)
-      console.log("clearing interval");
-    }
+    // return() => {
+    //   clearInterval(interval)
+    //   console.log("clearing interval");
+    // }
+    // console.log(props.connectionResult)
   },[])
 
   return (
@@ -35,7 +37,7 @@ const CommonHeader = (props) => {
           </Link>
           <Search searchText={props.searchText} setSearchText={props.setSearchText} searchList={props.searchList} setSearchList={props.setSearchList}/>
           {isLogin ? <LogOut setIsLogin={setIsLogin}/> : <LogIn setIsLogin={setIsLogin}/>}
-          network status: {isNetworkStatus}
+          network status: {props.isConnectionResult? "🟢" : "🔴"}
           
         </header>
       </div>

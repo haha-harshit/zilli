@@ -5,6 +5,8 @@ import OrderOnline from "../OrderOnline/OrderOnline";
 import Dining from "../Dining/Dining";
 import NightlifeAndClubs from "../NightlifeAndClubs/NightlifeAndClubs";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { useEffect } from "react";
+import useOnlineStatus from "../../utils/customHooks/useOnlineStatus";
 
 const LandingBody = () => {
   return (

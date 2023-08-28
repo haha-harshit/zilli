@@ -24,16 +24,9 @@ export const useResList = () => {
        fetchData();
     }, [])
     const fetchData = async() => {
-        // check for active network connection
-        const result = await useOnlineStatus()
-        console.log(result, "hey")
-        if(result){
-            const data = await fetch(RES_API_URL);
-            const json = await data.json()
-            setResList(json?.restaurants);
-        }else{
-            return <h1>Your network is down</h1>
-        }
+        const data = await fetch(RES_API_URL);
+        const json = await data.json()
+        setResList(json?.restaurants);
     }
     return resList;
 }

@@ -25,26 +25,29 @@ const OrderOnline = (props) => {
   const [filteredList, setFilteredList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   
-  let resList = useResList()
   useEffect(()=> {
-    const checkConnection = setInterval(async ()=> {
-      const result = await useOnlineStatus();
-      if(!result){
-        console.log("network not ok")
-        return(
-          <h1>Looks like you're offline! Check your internet connection</h1>)
-          // loadingDiv = <h1>Looks like you're offline! Check your internet connection</h1>
-        // }
-      }else{
-        console.log("ok")
-        // console.log(resList)
-      }
-    }, 10000)
-
-    return()=>{
-      clearInterval(checkConnection);
-    }
-  }, [])
+    // const checkConnection = setInterval(async ()=> {
+      //   const result = await useOnlineStatus();
+      //   if(!result){
+        //     console.log("network not ok")
+        //     return(
+          //       <>
+          //         <h1>Looks like you're offline! Check your internet connection</h1>
+          //       </>
+          //       )
+    //   }else{
+    //     console.log("ok")
+    //   }
+    // }, 10000)
+    
+    // return()=>{
+      //   clearInterval(checkConnection);
+      console.log(props.isConnectionResult, "later")
+      // }
+    }, [props.isConnectionResult])
+    
+    let resList = useResList()
+    // console.log(props.connectionResult, "ii")
 
   // const [list, setList] = useState();
 
