@@ -25,7 +25,7 @@ const CommonHeader = (props) => {
     //   clearInterval(interval)
     //   console.log("clearing interval");
     // }
-    // console.log(props.connectionResult)
+    console.log(props.isConnectionResult)
   },[])
 
   return (

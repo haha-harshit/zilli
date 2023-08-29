@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { FREEPIK_URL } from "../../utils/constants";
 import { FLATICON_URL } from "../../utils/constants";
 
-const Footer = () => {
+const Footer = (props) => {
+
+  const [isNetworkStatus, setIsNetworkStatus] = useState(props.isConnectionResult)
+  console.log(isNetworkStatus, "footer");
+
   return (
     <div className="footerSection section">
       <div className="footerSection-main">

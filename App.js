@@ -18,14 +18,15 @@ import useOnlineStatus from "./src/utils/customHooks/useOnlineStatus";
 const App = () => {
   const [searchText, setSearchText] = useState("")
   const [searchList, setSearchList] = useState([])
-  const[isConnectionResult, setIsConnectionResult] = useState(true)
-  let connectionResult
+  const [isConnectionResult, setIsConnectionResult] = useState()
+  // let connectionResult
 
   const checkConnection = setInterval(async ()=> {
-    connectionResult = await useOnlineStatus();
+    const connectionResult = await useOnlineStatus();
     setIsConnectionResult(connectionResult);
-    if(!isConnectionResult){
+    if(!connectionResult){
       console.log("network not ok")
+      console.log(isConnectionResult, "in app.js")
       // return(
       //   <>
       //     <h1>Looks like you're offline! Check your internet connection</h1>
@@ -38,9 +39,9 @@ const App = () => {
   }, 10000)
 
   useEffect(()=>{
-    // return()=>{
-    //   clearInterval(checkConnection);
-    // }
+    return()=>{
+      clearInterval(checkConnection);
+    }
   }, [])
 
   return (
@@ -134,7 +135,7 @@ const App = () => {
             />
           </Routes>
 
-          <Footer />
+          <Footer isConnectionResult={isConnectionResult}/>
         </div>
       </BrowserRouter>
     </>
