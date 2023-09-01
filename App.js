@@ -27,11 +27,11 @@ const App = () => {
     if(!connectionResult){
       console.log("network not ok")
       console.log(isConnectionResult, "in app.js")
-      // return(
-      //   <>
-      //     <h1>Looks like you're offline! Check your internet connection</h1>
-      //   </>
-      //   )
+      return(
+        <>
+          <h1>Looks like you're offline! Check your internet connection</h1>
+        </>
+        )
     }else{
       console.log("ok")
       console.log(isConnectionResult, "in app.js")
