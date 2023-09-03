@@ -18,26 +18,26 @@ import useOnlineStatus from "./src/utils/customHooks/useOnlineStatus";
 const App = () => {
   const [searchText, setSearchText] = useState("")
   const [searchList, setSearchList] = useState([])
-  const [isConnectionResult, setIsConnectionResult] = useState()
-  // let connectionResult
-
+  const [isConnectionResult, setIsConnectionResult] = useState(true)
+  
   const checkConnection = setInterval(async ()=> {
     const connectionResult = await useOnlineStatus();
-    setIsConnectionResult(connectionResult);
     if(!connectionResult){
       console.log("network not ok")
-      console.log(isConnectionResult, "in app.js")
-      return(
-        <>
-          <h1>Looks like you're offline! Check your internet connection</h1>
-        </>
-        )
-    }else{
-      console.log("ok")
-      console.log(isConnectionResult, "in app.js")
-    }
-  }, 10000)
-
+      console.log(connectionResult, "in app.js f wala ")
+      // return(
+        //   <>
+        //     <h1>Looks like you're offline! Check your internet connection</h1>
+        //   </>
+        //   )
+      }else{
+        console.log("ok")
+        console.log(connectionResult, "in app.js")
+      }
+      setIsConnectionResult(connectionResult);
+    }, 10000)
+    console.log(isConnectionResult, "updated")
+    
   useEffect(()=>{
     return()=>{
       clearInterval(checkConnection);
