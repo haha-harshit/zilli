@@ -4,26 +4,27 @@ import { FLATICON_URL } from "../../utils/constants";
 
 const Footer = (props) => {
   const [isCount, setIsCount] = useState(0);
-  console.log(props.isConnectionResult, "footer");
+  const [isNetworkText, setIsNetworkText] = useState("");
+
+  const offlineStatusDisplay = () => {
+    setIsNetworkText("Your connection seems offline!")
+  }
+
+  const onlineStatusDisplay = () => {
+    setIsNetworkText("Back Online")
+    setTimeout(() => {
+      setIsNetworkText("")
+    }, 2000);
+  }
 
   useEffect(()=>{
     const networkStatus = () => {
       if(!props.isConnectionResult){
         setIsCount(1);
-        console.log(isCount)
-        console.log("changed to offline")
-        let statusBox = document.getElementById('display_network_status');
-        statusBox.innerHTML = "Your connection seems offline!";
+        offlineStatusDisplay()
       }
-      console.log(isCount)
       if((isCount>0) && (props.isConnectionResult)){
-        console.log("back online")
-        // setIsNetworkStatus(<h1>Online</h1>)
-        let statusBox = document.getElementById('display_network_status');
-        statusBox.innerHTML = "Back Online";
-        setTimeout(() => {
-          statusBox.innerHTML = ""
-        }, 2000);
+        onlineStatusDisplay()
       }
     }
     networkStatus();
@@ -47,6 +48,7 @@ const Footer = (props) => {
             </a>
           </div>
           <div id="display_network_status">
+            {isNetworkText}
           </div>
 
         </footer>
