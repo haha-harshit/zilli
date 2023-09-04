@@ -3,37 +3,27 @@ import { FREEPIK_URL } from "../../utils/constants";
 import { FLATICON_URL } from "../../utils/constants";
 
 const Footer = (props) => {
-
-  const [isNetworkStatus, setIsNetworkStatus] = useState()
+  const [isCount, setIsCount] = useState(0);
   console.log(props.isConnectionResult, "footer");
 
-  let displayOffline = <h1>offline</h1>
-  let displayOnline = <h1>Online</h1>
-  // let displayOnline = () => {
-  //   setTimeout(() => {
-  //     return (<h1>Back Online</h1>)
-  //   }, timeout);
-  // }
-
-  let network_status;
-  
-  // if(!props.isConnectionResult){
-  //   displayOffline
-  // }
-  
   useEffect(()=>{
     const networkStatus = () => {
       if(!props.isConnectionResult){
+        setIsCount(1);
+        console.log(isCount)
+        console.log("changed to offline")
         let statusBox = document.getElementById('display_network_status');
-        statusBox.innerHTML = "Offline";
-        // setIsNetworkStatus(<h1>Offline</h1>)
-      }else{
+        statusBox.innerHTML = "Your connection seems offline!";
+      }
+      console.log(isCount)
+      if((isCount>0) && (props.isConnectionResult)){
+        console.log("back online")
         // setIsNetworkStatus(<h1>Online</h1>)
         let statusBox = document.getElementById('display_network_status');
-        statusBox.innerHTML = "Online";
+        statusBox.innerHTML = "Back Online";
         setTimeout(() => {
-          statusBox.style.display = 'none'
-        }, 1500);
+          statusBox.innerHTML = ""
+        }, 2000);
       }
     }
     networkStatus();
@@ -57,7 +47,6 @@ const Footer = (props) => {
             </a>
           </div>
           <div id="display_network_status">
-            {isNetworkStatus}
           </div>
 
         </footer>
