@@ -9,14 +9,14 @@ const Footer = (props) => {
   const [isNetworkText, setIsNetworkText] = useState("");
 
   const offlineStatusDisplay = () => {
-    setIsNetworkText("No internet connectivity! Check your network.")
+    setIsNetworkText("No internet connectivity! Check your network")
   }
 
   const onlineStatusDisplay = () => {
     setIsNetworkText("Back Online")
     setTimeout(() => {
       setIsNetworkText("")
-    }, 2000);
+    }, 2500);
   }
 
   useEffect(()=>{
@@ -30,8 +30,8 @@ const Footer = (props) => {
       }
     }
     networkStatus();
-
-}, [props.isConnectionResult])
+    
+  }, [props.isConnectionResult])
 
   return (
     <div className="footerSection">
@@ -51,8 +51,13 @@ const Footer = (props) => {
           </div>
           {isNetworkText.length > 0 ? 
             <div id="display_network_status" style={footer_style}>
-            {isNetworkText}
-          </div>
+              {isNetworkText == "No internet connectivity! Check your network"
+                ?
+                <div style={{backgroundColor: "rgb(191, 41, 56)", padding: "0.1rem", paddingBottom: "0.2rem"}}>{isNetworkText}</div>
+                :
+                <div style={{backgroundColor: "rgb(36, 150, 63)", padding: "0.1rem", paddingBottom: "0.2rem"}}>{isNetworkText}</div>
+              }
+            </div>
           :
           "" 
           }
