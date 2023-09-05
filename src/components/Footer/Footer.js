@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { FREEPIK_URL } from "../../utils/constants";
 import { FLATICON_URL } from "../../utils/constants";
 
+import {footer_style} from "../../utils/css/footer.css"
+
 const Footer = (props) => {
   const [isCount, setIsCount] = useState(0);
   const [isNetworkText, setIsNetworkText] = useState("");
 
   const offlineStatusDisplay = () => {
-    setIsNetworkText("Your connection seems offline!")
+    setIsNetworkText("No internet connectivity! Check your network.")
   }
 
   const onlineStatusDisplay = () => {
@@ -32,7 +34,7 @@ const Footer = (props) => {
 }, [props.isConnectionResult])
 
   return (
-    <div className="footerSection section">
+    <div className="footerSection">
       <div className="footerSection-main">
         <footer>
           <div>
@@ -47,10 +49,14 @@ const Footer = (props) => {
               www.flaticon.com
             </a>
           </div>
-          <div id="display_network_status">
+          {isNetworkText.length > 0 ? 
+            <div id="display_network_status" style={footer_style}>
             {isNetworkText}
           </div>
-
+          :
+          "" 
+          }
+          
         </footer>
       </div>
     </div>

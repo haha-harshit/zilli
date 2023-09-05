@@ -30,7 +30,6 @@ const useOnlineStatus = async() => {
         }
          
     } catch (error) {
-        console.log(error, "err")
         return false;
     }
 }

@@ -1,0 +1,19 @@
+#display_network_status{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 4;
+    /* border: 0.1rem solid black; */
+    font-size: 0.8rem;
+    padding: 0.1rem 0.1rem;
+    text-align: center;
+    background: rgb(191, 41, 56);
+    color: rgb(255, 255, 255);
+    transform: translateY(0px);
+    transition: transform 0.25s ease 0s, visibility 0.25s ease 0s, opacity 0.25s ease 0s;
+    transition-duration: 0.25s, 0.25s, 0.25s;
+    transition-timing-function: ease, ease, ease;
+    transition-delay: 0s, 0s, 0s;
+    transition-property: transform, visibility, opacity;
+}
