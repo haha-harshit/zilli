@@ -50,12 +50,12 @@ const Footer = (props) => {
             </a>
           </div>
           {isNetworkText.length > 0 ? 
-            <div id="display_network_status" style={footer_style}>
+            <div id="display_network_status_wrapper" style={footer_style}>
               {isNetworkText == "No internet connectivity! Check your network"
                 ?
-                <div style={{backgroundColor: "rgb(191, 41, 56)", padding: "0.1rem", paddingBottom: "0.2rem"}}>{isNetworkText}</div>
+                <div className="display_network_status" style={{backgroundColor: "rgb(191, 41, 56)"}}>{isNetworkText}</div>
                 :
-                <div style={{backgroundColor: "rgb(36, 150, 63)", padding: "0.1rem", paddingBottom: "0.2rem"}}>{isNetworkText}</div>
+                <div className="display_network_status" style={{backgroundColor: "rgb(36, 150, 63)"}}>{isNetworkText}</div>
               }
             </div>
           :

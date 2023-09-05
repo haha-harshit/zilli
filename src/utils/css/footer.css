@@ -1,4 +1,4 @@
-#display_network_status{
+#display_network_status_wrapper{
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -7,9 +7,20 @@
     font-size: 0.8rem;
     text-align: center;
     color: rgb(255, 255, 255);
+    /* transform: translateY(0px);
+    transition: transform 1s ease 0s, visibility 1s ease 0s, opacity 1s ease 0s;
+    transition-duration: 1s, 1s, 1s;
+    transition-timing-function: ease, ease, ease;
+    transition-delay: 0s, 0s, 0s;
+    transition-property: transform, visibility, opacity; */
+}
+
+.display_network_status{
+    padding: 0.1rem;
+    padding-bottom: 0.2rem;
     transform: translateY(0px);
-    transition: transform 0.25s ease 0s, visibility 0.25s ease 0s, opacity 0.25s ease 0s;
-    transition-duration: 0.25s, 0.25s, 0.25s;
+    transition: transform 1s ease 0s, visibility 1s ease 0s, opacity 1s ease 0s;
+    transition-duration: 1s, 1s, 1s;
     transition-timing-function: ease, ease, ease;
     transition-delay: 0s, 0s, 0s;
     transition-property: transform, visibility, opacity;
