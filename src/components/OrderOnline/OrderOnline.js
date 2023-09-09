@@ -26,30 +26,10 @@ const OrderOnline = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   
   useEffect(()=> {
-    // const checkConnection = setInterval(async ()=> {
-      //   const result = await useOnlineStatus();
-      //   if(!result){
-        //     console.log("network not ok")
-        //     return(
-          //       <>
-          //         <h1>Looks like you're offline! Check your internet connection</h1>
-          //       </>
-          //       )
-    //   }else{
-    //     console.log("ok")
-    //   }
-    // }, 10000)
+    console.log(props.isConnectionResult, "later")
+  }, [props.isConnectionResult])
     
-    // return()=>{
-      //   clearInterval(checkConnection);
-      console.log(props.isConnectionResult, "later")
-      // }
-    }, [props.isConnectionResult])
-    
-    let resList = useResList()
-    // console.log(props.connectionResult, "ii")
-
-  // const [list, setList] = useState();
+  let resList = useResList()
 
   let loadingDiv = Array(10).fill(<Shimmer />)
 

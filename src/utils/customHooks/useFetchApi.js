@@ -9,10 +9,13 @@ export const useResMenuItems = (resId) => {
         fetchData()
     }, [])
     const fetchData = async() => {
-        const data = await fetch(RES_DETAILS_URL + resId);
-        const json = await data.json()
-        // return json;
-        setResMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
+        try {
+            const data = await fetch(RES_DETAILS_URL + resId);
+            const json = await data.json()
+            setResMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
+        } catch (error) {
+            console.log(error)
+        }
     }
     return resMenu;
 }
@@ -24,9 +27,13 @@ export const useResList = () => {
        fetchData();
     }, [])
     const fetchData = async() => {
-        const data = await fetch(RES_API_URL);
-        const json = await data.json()
-        setResList(json?.restaurants);
+        try {
+            const data = await fetch(RES_API_URL);
+            const json = await data.json()
+            setResList(json?.restaurants);
+        } catch (error) {
+            console.log(error)
+        }
     }
     return resList;
 }
