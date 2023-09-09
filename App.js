@@ -15,6 +15,7 @@ import CommonHeader from "./src/components/CommonHeader/CommonHeader";
 import ResMainEntry from "./src/components/ResMainEntry/ResMainEntry";
 import useOnlineStatus from "./src/utils/customHooks/useOnlineStatus";
 import GroceryStore from "./src/components/GoceryStore/GroceryStore";
+import About from "./src/components/About/About";
 
 const App = () => {
   const [searchText, setSearchText] = useState("")
@@ -59,6 +60,23 @@ const App = () => {
                 </>
               }
             />
+
+            <Route
+              path="/about"
+              element={
+                <>
+                  <CommonHeader
+                    searchText={searchText} 
+                    setSearchText={setSearchText}
+                    searchList={searchList}
+                    setSearchList={setSearchList}
+                    isConnectionResult={isConnectionResult}
+                  />
+                  <About/>
+                </>
+              }
+            
+            />    
 
             <Route
               path="/grocery-store"
