@@ -14,10 +14,9 @@ import CommonHeader from "./src/components/CommonHeader/CommonHeader";
 // import ResMenu from "./src/components/ResMainEntry/ResMainEntry";
 import ResMainEntry from "./src/components/ResMainEntry/ResMainEntry";
 import useOnlineStatus from "./src/utils/customHooks/useOnlineStatus";
-// import GroceryStore from "./src/components/GoceryStore/GroceryStore";
-import About from "./src/components/About/About";
 
 const GroceryStore = lazy(()=>import("./src/components/GroceryStore/GroceryStore"))
+const About = lazy(()=>import("./src/components/About/About"))
 
 const App = () => {
   const [searchText, setSearchText] = useState("")
@@ -68,14 +67,16 @@ const App = () => {
               path="/about"
               element={
                 <>
-                  <CommonHeader
-                    searchText={searchText} 
-                    setSearchText={setSearchText}
-                    searchList={searchList}
-                    setSearchList={setSearchList}
-                    isConnectionResult={isConnectionResult}
-                  />
-                  <About/>
+                  <Suspense fallback={<h1>Loading...</h1>}>
+                    <CommonHeader
+                      searchText={searchText} 
+                      setSearchText={setSearchText}
+                      searchList={searchList}
+                      setSearchList={setSearchList}
+                      isConnectionResult={isConnectionResult}
+                    />
+                    <About/>
+                  </Suspense>
                 </>
               }
             
