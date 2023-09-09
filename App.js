@@ -1,22 +1,22 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-
-// components import
-import LandingHeaderSection from "./src/components/LandingHeader/LandingHeaderSection";
-import LandingBody from "./src/components/LandingBody/Body"
-import OrderOnline from "./src/components/OrderOnline/OrderOnline";
-import Dining from "./src/components/Dining/Dining";
-import NightlifeAndClubs from "./src/components/NightlifeAndClubs/NightlifeAndClubs";
-import PageNotFound from "./src/components/PageNotFound/PageNotFound";
-import Footer from "./src/components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CommonHeader from "./src/components/CommonHeader/CommonHeader";
-// import ResMenu from "./src/components/ResMainEntry/ResMainEntry";
-import ResMainEntry from "./src/components/ResMainEntry/ResMainEntry";
+
+// custom hook imports
 import useOnlineStatus from "./src/utils/customHooks/useOnlineStatus";
 
-const GroceryStore = lazy(()=>import("./src/components/GroceryStore/GroceryStore"))
+// dynamic components import
+const CommonHeader = lazy(()=>import("./src/components/CommonHeader/CommonHeader"))
 const About = lazy(()=>import("./src/components/About/About"))
+const GroceryStore = lazy(()=>import("./src/components/GroceryStore/GroceryStore"))
+const OrderOnline = lazy(()=>import("./src/components/OrderOnline/OrderOnline"))
+const Dining = lazy(()=>import("./src/components/Dining/Dining"))
+const NightlifeAndClubs = lazy(()=>import("./src/components/NightlifeAndClubs/NightlifeAndClubs"))
+const ResMainEntry = lazy(()=>import("./src/components/ResMainEntry/ResMainEntry"))
+const PageNotFound = lazy(()=>import("./src/components/PageNotFound/PageNotFound"))
+const Footer = lazy(()=>import("./src/components/Footer/Footer"))
+const LandingHeaderSection = lazy(()=>import("./src/components/LandingHeader/LandingHeaderSection"))
+const LandingBody = lazy(()=>import("./src/components/LandingBody/Body"))
 
 const App = () => {
   const [searchText, setSearchText] = useState("")
@@ -57,8 +57,10 @@ const App = () => {
               path="/"
               element={
                 <>
-                  <LandingHeaderSection />
-                  <LandingBody isConnectionResult={isConnectionResult}/>
+                  {/* <Suspense fallback={<h1>Loading...</h1>}> */}
+                    <LandingHeaderSection />
+                    <LandingBody isConnectionResult={isConnectionResult}/>
+                  {/* </Suspense> */}
                 </>
               }
             />
@@ -86,14 +88,14 @@ const App = () => {
               path="/grocery-store"
               element={
                 <>
-                  <CommonHeader
-                    searchText={searchText} 
-                    setSearchText={setSearchText}
-                    searchList={searchList}
-                    setSearchList={setSearchList}
-                    isConnectionResult={isConnectionResult}
-                  />
                   <Suspense fallback={<h2>Loading...</h2>}>
+                    <CommonHeader
+                      searchText={searchText} 
+                      setSearchText={setSearchText}
+                      searchList={searchList}
+                      setSearchList={setSearchList}
+                      isConnectionResult={isConnectionResult}
+                    />
                     <GroceryStore/>
                   </Suspense>
                 </>
@@ -105,17 +107,19 @@ const App = () => {
               path="/online-order"
               element={
                 <>
-                  <CommonHeader
-                    searchText={searchText} 
-                    setSearchText={setSearchText}
-                    searchList={searchList}
-                    setSearchList={setSearchList}
-                    isConnectionResult={isConnectionResult}
-                  />
-                  <OrderOnline
-                    searchText={searchText}
-                    isConnectionResult={isConnectionResult}
-                  />
+                  <Suspense fallback={<h1>Loading...</h1>}>
+                    <CommonHeader
+                      searchText={searchText} 
+                      setSearchText={setSearchText}
+                      searchList={searchList}
+                      setSearchList={setSearchList}
+                      isConnectionResult={isConnectionResult}
+                    />
+                    <OrderOnline
+                      searchText={searchText}
+                      isConnectionResult={isConnectionResult}
+                    />
+                  </Suspense>
                 </>
               }
             />
@@ -124,15 +128,17 @@ const App = () => {
               path="/dining"
               element={
                 <>
-                  <CommonHeader
-                    searchText={searchText}
-                    setSearchText={setSearchText}
-                    isConnectionResult={isConnectionResult}
-                  />
-                  <Dining
-                    searchText={searchText}
-                    isConnectionResult={isConnectionResult}
-                  />
+                  <Suspense fallback={<h1>Loading...</h1>}>
+                    <CommonHeader
+                      searchText={searchText}
+                      setSearchText={setSearchText}
+                      isConnectionResult={isConnectionResult}
+                    />
+                    <Dining
+                      searchText={searchText}
+                      isConnectionResult={isConnectionResult}
+                    />
+                  </Suspense>
                 </>
               }
             />
@@ -140,15 +146,17 @@ const App = () => {
               path="/night-life-and-clubs"
               element={
                 <>
-                  <CommonHeader
-                    searchText={searchText}
-                    setSearchText={setSearchText}
-                    isConnectionResult={isConnectionResult} 
-                  />
-                  <NightlifeAndClubs
-                    searchText={searchText}
-                    isConnectionResult={isConnectionResult}  
-                  />
+                  <Suspense fallback={<h1>Loading...</h1>}>
+                    <CommonHeader
+                      searchText={searchText}
+                      setSearchText={setSearchText}
+                      isConnectionResult={isConnectionResult} 
+                    />
+                    <NightlifeAndClubs
+                      searchText={searchText}
+                      isConnectionResult={isConnectionResult}  
+                    />
+                  </Suspense>
                 </>
               }
             />
@@ -156,12 +164,14 @@ const App = () => {
               path="/restaurant/:resId"
               element={
                 <>
-                  <CommonHeader
-                    searchText={searchText}
-                    setSearchText={setSearchText}
-                    isConnectionResult={isConnectionResult}
-                  />
-                  <ResMainEntry isConnectionResult={isConnectionResult}/>
+                  <Suspense fallback={<h1>Loading...</h1>}>
+                    <CommonHeader
+                      searchText={searchText}
+                      setSearchText={setSearchText}
+                      isConnectionResult={isConnectionResult}
+                    />
+                    <ResMainEntry isConnectionResult={isConnectionResult}/>
+                  </Suspense>
                 </>
               }
             />
@@ -169,15 +179,18 @@ const App = () => {
               path="*"
               element={
                 <>
-                {/* PAGE NOT FOUND HEADER TO BE ADDED */}
-                  <CommonHeader />
-                  <PageNotFound isConnectionResult={isConnectionResult}/>
+                  <Suspense fallback={<h1>Loading...</h1>}>
+                    <CommonHeader />
+                    <PageNotFound isConnectionResult={isConnectionResult}/>
+                  </Suspense>
                 </>
               }
             />
           </Routes>
 
-          <Footer isConnectionResult={isConnectionResult}/>
+          <Suspense>
+            <Footer isConnectionResult={isConnectionResult}/>
+          </Suspense>
         </div>
       </BrowserRouter>
     </>
