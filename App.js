@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 
 // components import
@@ -14,8 +14,10 @@ import CommonHeader from "./src/components/CommonHeader/CommonHeader";
 // import ResMenu from "./src/components/ResMainEntry/ResMainEntry";
 import ResMainEntry from "./src/components/ResMainEntry/ResMainEntry";
 import useOnlineStatus from "./src/utils/customHooks/useOnlineStatus";
-import GroceryStore from "./src/components/GoceryStore/GroceryStore";
+// import GroceryStore from "./src/components/GoceryStore/GroceryStore";
 import About from "./src/components/About/About";
+
+const GroceryStore = lazy(()=>import("./src/components/GroceryStore/GroceryStore"))
 
 const App = () => {
   const [searchText, setSearchText] = useState("")
@@ -46,6 +48,7 @@ const App = () => {
     }
   }, [])
 
+  
   return (
     <>
       <BrowserRouter>
@@ -89,7 +92,9 @@ const App = () => {
                     setSearchList={setSearchList}
                     isConnectionResult={isConnectionResult}
                   />
-                  <GroceryStore/>
+                  <Suspense fallback={<h2>Loading...</h2>}>
+                    <GroceryStore/>
+                  </Suspense>
                 </>
               }
             
