@@ -8,7 +8,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { useEffect } from "react";
 import useOnlineStatus from "../../utils/customHooks/useOnlineStatus";
 
-const LandingBody = () => {
+const Body = () => {
   return (
     <>
       {/* order-dining-nightlife cards */}
@@ -27,4 +27,4 @@ const LandingBody = () => {
   );
 };
 
-export default LandingBody;
+export default Body;

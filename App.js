@@ -4,7 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // custom hook imports
 import useOnlineStatus from "./src/utils/customHooks/useOnlineStatus";
-
+import LandingHeaderSection from "./src/components/LandingHeader/LandingHeaderSection"
+// import Body from "./src/components/LandingBody/Body";
+import Footer from "./src/components/Footer/Footer";
 // dynamic components import
 const CommonHeader = lazy(()=>import("./src/components/CommonHeader/CommonHeader"))
 const About = lazy(()=>import("./src/components/About/About"))
@@ -14,9 +16,11 @@ const Dining = lazy(()=>import("./src/components/Dining/Dining"))
 const NightlifeAndClubs = lazy(()=>import("./src/components/NightlifeAndClubs/NightlifeAndClubs"))
 const ResMainEntry = lazy(()=>import("./src/components/ResMainEntry/ResMainEntry"))
 const PageNotFound = lazy(()=>import("./src/components/PageNotFound/PageNotFound"))
-const Footer = lazy(()=>import("./src/components/Footer/Footer"))
-const LandingHeaderSection = lazy(()=>import("./src/components/LandingHeader/LandingHeaderSection"))
-const LandingBody = lazy(()=>import("./src/components/LandingBody/Body"))
+// const Footer = lazy(()=>import("./src/components/Footer/Footer"))
+// const LandingHeaderSection = lazy(()=>import("./src/components/LandingHeader/LandingHeaderSection"))
+// const LandingBody = lazy(()=>import("./src/components/LandingBody/Body"))
+const Body = lazy(()=>import("./src/components/LandingBody/Body"))
+
 
 const App = () => {
   const [searchText, setSearchText] = useState("")
@@ -57,10 +61,8 @@ const App = () => {
               path="/"
               element={
                 <>
-                  {/* <Suspense fallback={<h1>Loading...</h1>}> */}
-                    <LandingHeaderSection />
-                    <LandingBody isConnectionResult={isConnectionResult}/>
-                  {/* </Suspense> */}
+                  <LandingHeaderSection />
+                  <Body isConnectionResult={isConnectionResult}/>
                 </>
               }
             />
