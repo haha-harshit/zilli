@@ -13,8 +13,8 @@ const Body = () => {
     <>
       {/* order-dining-nightlife cards */}
 
-      <div className="offeringSection section">
-        <div className="offeringSection-main">
+      <div className="offeringSection section flex flex-col w-my-width p-8 m-auto justify-center z-2 relative mt-6">
+        <div className="offeringSection-main flex justify-start flex-wrap w-w-inherit">
           {offerCardDetails.map((offerCardItem) => (
             <OfferCard key={offerCardItem.id} details={offerCardItem} />
           ))}
