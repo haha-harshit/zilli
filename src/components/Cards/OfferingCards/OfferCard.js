@@ -5,14 +5,14 @@ const OfferCard = (props) => {
   const { url, heading, info, type } = details;
   return (
     <>
-      <div className="offer-card-layout h-[15rem] w-[21rem] border-[0.01rem] border-solid border-[rgb(227, 227, 227)] rounded-[0.7rem] m-[2%]">
-        <Link to={type} className="decoration-[none]">
+      <div className="offer-card-layout h-[15rem] w-[21rem] border-[0.01rem] border-solid border-[#E3E3E3] rounded-[0.7rem] m-[2%]">
+        <Link to={type} className="no-underline">
           <div className="offer-card-img-main h-[65%]">
             <img className="offer-card-img h-full w-full object-cover rounded-t-xl rounded-tr-xl" src={url} alt="offer-card-image" />
           </div>
           <div className="offer-card-info p-[0.7rem]">
-            <p className="offer-card-title text-xl font-medium text-[rgb(54, 54, 54)]">{heading}</p>
-            <p className="offer-card-sub-title font-normal text-[rgb(79, 79, 79)]">{info}</p>
+            <p className="offer-card-title text-xl font-medium text-[#363636]">{heading}</p>
+            <p className="offer-card-sub-title font-normal decoration-[none] text-[#4F4F4F]">{info}</p>
           </div>
         </Link>
       </div>

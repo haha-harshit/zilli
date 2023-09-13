@@ -8,7 +8,7 @@ const Search = (props) => {
       value={props.searchText}
       onChange={(e)=>props.setSearchText(e.target.value)}></input>
 
-      <button type="submit" className="submit-search h-10 p-2 items-center bg-transparent border-0.09rem border-dotted border-gainsboro rounded-md cursor-pointer" onClick={()=>console.log(props.searchText)}>Search</button>
+      <button type="submit" className="text-inherit submit-search h-10 p-2 items-center bg-transparent border-0.09rem border-dotted border-gainsboro rounded-md cursor-pointer" onClick={()=>console.log(props.searchText)}>Search</button>
 
     </div>
   );

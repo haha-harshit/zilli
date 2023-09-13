@@ -2,10 +2,10 @@
   margin: 0;
   padding: 0;
 }
-
+/* 
 .submit-search{
   display: inherit
-}
+} */
 
 @tailwind base;
 @tailwind components;
