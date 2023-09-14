@@ -1,7 +1,7 @@
 .offering-tab-list {
   display: flex;
   justify-content: flex-start;
-  position: sticky;
+  position: sticky; 
   top: 0;
   z-index: 1;
 }
@@ -18,7 +18,6 @@
   font-size: 1.5rem;
   display: flex;
   padding: 0.5rem;
-  /* color: rgb(239, 79, 95); */
 }
 
 .link-title {
@@ -41,15 +40,10 @@
   width: 2.5rem;
 }
 
-/* .link-title {
-  color: rgb(105, 105, 105);
-} */
-
 .hr-below-tablink {
   height: 0.05rem;
   border-color: transparent;
   border-radius: 0.7rem;
-  /* background-color: rgb(255, 126, 139); */
   transform: none;
   margin: 0.8rem 0rem;
 }

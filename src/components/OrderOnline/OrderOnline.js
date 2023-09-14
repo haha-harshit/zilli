@@ -10,10 +10,10 @@ import useOnlineStatus from "../../utils/customHooks/useOnlineStatus";
 // URL IMPORTS
 import { RES_API_URL } from "../../utils/constants";
 // STYLE IMPORTS
-import filterStyle from "../../utils/css/Filters.css";
-import { tabListStyle } from "../../utils/css/OfferingTab.css";
-import { OrderOnlineStyle } from "../../utils/css/OrderOnline.css";
-import { resStyle } from "../../utils/css/resCard.css";
+// import filterStyle from "../../utils/css/Filters.css";
+// import { tabListStyle } from "../../utils/css/OfferingTab.css";
+// import { OrderOnlineStyle } from "../../utils/css/OrderOnline.css";
+// import { resStyle } from "../../utils/css/resCard.css";
 import { useResList } from "../../utils/customHooks/useFetchApi";
 
 
@@ -70,12 +70,12 @@ const OrderOnline = (props) => {
 
   return (
     <>
-      <div className="section">
-        <div style={tabListStyle} className="offering-tab-list">
+      <div className="section flex flex-col w-my-width p-8 m-auto">
+        <div className="offering-tab-list">
           <OfferingTab />
         </div>
 
-        <div className="filter-section">
+        <div className="filter-section flex justify-start sticky top-0 z-[3] bg-[#fefefe] h-24 border-solid border-b-[0.05rem] border-x-0 border-t-0 border-[#ef4f5f] rounded-b-sm drop-shadow-filter-b">
           <RatingAbove4
             isLoading={isLoading}
             setIsLoading={setIsLoading}
@@ -100,19 +100,19 @@ const OrderOnline = (props) => {
             setIsPureVegFilterOn={setIsPureVegFilterOn}
             isPureVegFilterOn={isPureVegFilterOn}
           />
-          <NonVeg
+          {/* <NonVeg
             resList={resList}
             // setResList={setResList}
             setIsNonVegFilterOn={setIsNonVegFilterOn}
             isNonVegFilterOn={isNonVegFilterOn}
-          />
+          /> */}
+        </div>
+        {/* <hr/> */}
+        <div className="order-in-location-layout my-6">
+          <h1 className="text-[#1c1c1c]">Order food online in NIT - 3, Faridabad, India</h1>
         </div>
 
-        <div style={OrderOnlineStyle} className="order-in-location-layout">
-          <h1>Order food online in NIT - 3, Faridabad, India</h1>
-        </div>
-
-        <div style={resStyle} className="res-container">
+        <div className="res-container flex flex-wrap justify-between">
           {isLoading ? loadingDiv : list}
         </div>
       </div>

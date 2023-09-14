@@ -1,15 +1,13 @@
-.res-container {
+/* .res-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .res-card-layout {
-  /* height: 15rem; */
   width: 21rem;
   margin: 1.5rem 1rem;
   border: 0.01rem solid #fbfdff;
-  /* border: 0.01rem solid rgb(227, 227, 227); */
   border-radius: 0.9rem;
 }
 
@@ -18,14 +16,9 @@
   border: 0.001rem solid rgb(227, 227, 227);
 }
 
-/* .res-card-info {
-  display: flex;
-  justify-content: space-between;
-} */
 
 .res-contents {
   margin: 0.7rem;
-  /* height: 18rem; */
 }
 
 .res-link {
@@ -55,8 +48,8 @@
 .res-rating {
   display: flex;
   align-items: baseline;
-  background: rgb(36, 150, 63);
-  color: rgb(255, 255, 255);
+  background: #24963f;
+  color: #ffffff;
   height: 1.2rem;
   border-radius: 0.5rem;
   padding: 0.2rem 0.3rem;
@@ -72,8 +65,8 @@
 }
 
 .discount-info {
-  color: rgb(255, 255, 255);
-  background: rgb(37, 111, 239);
+  color: #ffffff;
+  background: #256fef;
   font-size: 0.8rem;
   padding: 0rem 0.5rem;
   font-weight: 400;
@@ -84,12 +77,12 @@
 .delivery-time {
   font-size: 0.8rem;
   font-weight: 500;
-  background: rgba(255, 255, 255, 0.5);
+  background: #ffffff80;
   backdrop-filter: blur(0.4rem);
   border-radius: 0.3rem;
   line-height: 1.2rem;
   padding: 0 0.5rem;
-  color: rgb(54, 54, 54);
+  color: #363636;
 }
 
 .star_rating {
@@ -110,7 +103,7 @@
 
 .res-cuisines {
   font-size: 1rem;
-  color: rgb(105, 105, 105);
+  color: #696969;
   font-weight: 350;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -120,6 +113,6 @@
 
 .res-costForTwo {
   font-size: 1rem;
-  color: rgb(105, 105, 105);
+  color: #696969;
   font-weight: 350;
-}
+} */

@@ -155,12 +155,12 @@ export const PureVeg = (props) => {
   );
 };
 
-export const NonVeg = () => {
-  return (
-    <>
-      <div style={filterStyle} className="non-veg-filter filter">
-        <div className="non-veg-filter-btn">Non Veg</div>
-      </div>
-    </>
-  );
-};
+// export const NonVeg = () => {
+//   return (
+//     <>
+//       <div style={filterStyle} className="non-veg-filter">
+//         <div className="non-veg-filter-btn">Non Veg</div>
+//       </div>
+//     </>
+//   );
+// };

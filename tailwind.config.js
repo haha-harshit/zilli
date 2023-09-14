@@ -41,6 +41,9 @@ module.exports = {
       },
       boxShadow: {
         'commonHeaderBoxShadow': 'rgba(33, 35, 38, 0.1) 0px 10px 10px -10px'
+      },
+      dropShadow: {
+        'filter-b': false
       }
     },
   },
