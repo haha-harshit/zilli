@@ -3,7 +3,7 @@ import Cart from "../Cart";
 
 const HeaderTop = () => {
   return (
-    <header className="landingHeader flex flex-grow-0.5 justify-between h-0">
+    <header className="landingHeader flex justify-between">
       <div className="nav-container flex">
         <NavBar />
       </div>

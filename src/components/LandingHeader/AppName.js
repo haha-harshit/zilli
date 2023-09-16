@@ -1,5 +1,5 @@
 const AppName = () => {
-  return <div className="app-name flex justify-center text-7 italic font-sans font-bold">zilli</div>;
+  return <div className="app-name flex justify-start text-7xl italic font-sans font-bold sm:text-7 sm:justify-center">zilli</div>;
 };
 
 export default AppName;
