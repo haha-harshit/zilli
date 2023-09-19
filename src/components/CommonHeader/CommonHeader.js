@@ -37,8 +37,6 @@ const CommonHeader = (props) => {
           </Link>
           <Search searchText={props.searchText} setSearchText={props.setSearchText} searchList={props.searchList} setSearchList={props.setSearchList}/>
           {isLogin ? <LogOut setIsLogin={setIsLogin}/> : <LogIn setIsLogin={setIsLogin}/>}
-          network status: {props.isConnectionResult? "🟢" : "🔴"}
-          
         </header>
       </div>
     </>
