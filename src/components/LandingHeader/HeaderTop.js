@@ -21,9 +21,9 @@ const HeaderTop = () => {
         <>
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <div className="absolute inset-y-0 left-0 flex items-center lg:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="z-10 relative inline-flex items-center justify-center p-2 text-gray-300 bg-transparent border-none scale-125  hover:text-white focus:outline-none">
+                <Disclosure.Button className="z-10 relative inline-flex items-center justify-center p-2 text-gray-300 bg-transparent border-none scale-125  hover:text-white focus:outline-none md:scale-[1.5]">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -33,9 +33,9 @@ const HeaderTop = () => {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
+              <div className="flex flex-1 items-center justify-center lg:items-stretch lg:justify-start">
+                <div className="hidden lg:ml-6 lg:block">
+                  <div className="flex space-x-4 text-7">
                     {navigation.map((item) => (
                       <a
                         key={item.name}
@@ -52,12 +52,12 @@ const HeaderTop = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 lg:static lg:inset-auto lg:pr-0">
                 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
-                    <Menu.Button className="relative flex rounded-full bg-transparent text-slate-200 border-none scale-125 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 active:border-none">
+                    <Menu.Button className="relative flex rounded-full bg-transparent text-slate-200 border-none scale-125 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 active:border-none md:scale-[1.5] md:text-lg">
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
@@ -119,7 +119,7 @@ const HeaderTop = () => {
             </div>
           </div>
 
-          <Disclosure.Panel className="mix-blend-normal absolute bg-[#bf293d] rounded-[0.5rem] mt-[-3.3rem] sm:hidden">
+          <Disclosure.Panel className="mix-blend-normal absolute bg-[#bf293d] rounded-[0.5rem] mt-[-3.3rem] md:ml-6 lg:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2 mt-6">
               {navigation.map((item) => (
                 <Disclosure.Button

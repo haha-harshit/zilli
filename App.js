@@ -55,7 +55,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <div className="appContainer font-sans bg-my-white">
+        <div className="appContainer bg-my-white">
           <Routes>
             <Route
               path="/"

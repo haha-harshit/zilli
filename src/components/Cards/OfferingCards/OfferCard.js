@@ -11,8 +11,8 @@ const OfferCard = (props) => {
             <img className="offer-card-img h-full w-full object-cover rounded-t-xl rounded-tr-xl" src={url} alt="offer-card-image" />
           </div>
           <div className="offer-card-info p-[0.7rem]">
-            <p className="offer-card-title text-xl font-medium text-[#363636]">{heading}</p>
-            <p className="offer-card-sub-title font-normal decoration-[none] text-[#4F4F4F]">{info}</p>
+            <p className="offer-card-title text-xl font-medium text-[#363636] sm:text-[1.5rem] lg:text-[1.3rem]">{heading}</p>
+            <p className="offer-card-sub-title font-normal decoration-[none] text-[#4F4F4F] sm:text-[1.2rem] lg:text-[1rem]">{info}</p>
           </div>
         </Link>
       </div>
