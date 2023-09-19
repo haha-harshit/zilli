@@ -7,6 +7,7 @@ import LogOut from "../LogOut/LogOut";
 
 // import "../../utils/css/Search.css"
 import useOnlineStatus from "../../utils/customHooks/useOnlineStatus";
+import MobileHeader from "./MobileHeader/MobileHeader";
 
 const CommonHeader = (props) => {
 
@@ -31,13 +32,14 @@ const CommonHeader = (props) => {
   return (
     <>
       <div className="shadow-commonHeaderBoxShadow">
-        <header className="flex justify-around p-8 h-8">
+        <header className="large_screen_header hidden md:flex justify-around p-8 h-8">
           <Link to="/" className="text-inherit no-underline hover:underline">
             <i><h2>Zilli</h2></i>
           </Link>
           <Search searchText={props.searchText} setSearchText={props.setSearchText} searchList={props.searchList} setSearchList={props.setSearchList}/>
           {isLogin ? <LogOut setIsLogin={setIsLogin}/> : <LogIn setIsLogin={setIsLogin}/>}
         </header>
+        <MobileHeader/>
       </div>
     </>
   );
