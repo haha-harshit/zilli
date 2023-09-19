@@ -22,11 +22,11 @@ const MobileHeader = () => {
                     <div className="relative flex h-16 items-center justify-between">
                         <div className="absolute inset-y-0 left-0 flex items-center lg:hidden">
                         {/* Mobile menu button*/}
-                        <Disclosure.Button className="z-10 relative inline-flex items-center justify-center p-2 text-gray-700 bg-transparent border-none scale-150  hover:text-white focus:outline-none md:scale-[1.5]">
+                        <Disclosure.Button className="z-20 relative inline-flex items-center justify-center p-2 text-gray-700 bg-transparent border-none scale-150  hover:text-gray-700 focus:outline-none md:scale-[1.5]">
                         <span className="absolute -inset-0.5" />
                         <span className="sr-only">Open main menu</span>
                         {open ? (
-                            <XMarkIcon className="block h-6 w-6 bg-transparent" aria-hidden="true" />
+                            <XMarkIcon className="block h-6 w-6 text-gray-300" aria-hidden="true" />
                         ) : (
                             <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                         )}
@@ -56,7 +56,7 @@ const MobileHeader = () => {
                     </div>
                 </div>
 
-                <Disclosure.Panel className="mix-blend-normal absolute bg-[#bf293d] rounded-[0.5rem] mt-[-3.3rem] md:ml-6 lg:hidden">
+                <Disclosure.Panel className="mix-blend-normal z-10 absolute bg-[#bf293d] rounded-[0.5rem] mt-[-3.3rem] md:ml-6 lg:hidden">
                     <div className="space-y-1 px-2 pb-3 pt-2 mt-6">
                     {navigation.map((item) => (
                         <Disclosure.Button

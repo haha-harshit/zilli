@@ -16,9 +16,9 @@ const OfferingTab = () => {
         className="tab-link"
         activeclassName="active"
       >
-        <div style={tabLinkStyle} className="tab-link-delivery ">
-          <h2 className="tab-link-title">
-            <div className="tab-link-delivery-img tab-link-img">
+        <div style={tabLinkStyle} className="tab-link-delivery w-[9rem] sm:mr-12">
+          <h2 className="tab-link-title flex justify-center">
+            <div className="tab-link-delivery-img tab-link-img hidden sm:inline-block">
               <img src={tabLinkDeliveryImgBw} />
             </div>
             <div className="link-title">Delivery</div>
@@ -33,9 +33,9 @@ const OfferingTab = () => {
         className="tab-link"
         activeclassName="active"
       >
-        <div style={tabLinkStyle} className="tab-link-dining-out">
-          <h2 className="tab-link-title">
-            <div className="tab-link-dining-out-img tab-link-img">
+        <div style={tabLinkStyle} className="tab-link-dining-out w-[9rem] sm:mr-12">
+          <h2 className="tab-link-title flex justify-center">
+            <div className="tab-link-dining-out-img tab-link-img hidden sm:inline-block">
               <img src={tabLinkDiningImgBw} />
             </div>
             <div className="link-title">Dining Out</div>
@@ -47,11 +47,11 @@ const OfferingTab = () => {
       <NavLink
         to="/night-life-and-clubs"
         replace
-        className="tab-link"
+        className="tab-link hidden md:inline-block"
         activeclassName="active"
       >
-        <div style={tabLinkStyle} className="tab-link-nightlife">
-          <h2 className="tab-link-title">
+        <div style={tabLinkStyle} className="tab-link-nightlife sm:mr-12">
+          <h2 className="tab-link-title flex">
             <div className="tab-link-nightlife-img tab-link-img">
               <img src={tabLinkNightlifeImgBw} />
             </div>

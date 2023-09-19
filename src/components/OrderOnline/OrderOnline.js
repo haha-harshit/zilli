@@ -70,8 +70,8 @@ const OrderOnline = (props) => {
 
   return (
     <>
-      <div className="section flex flex-col w-my-width p-8 m-auto">
-        <div className="offering-tab-list">
+      <div className="section flex flex-col md:w-my-width p-8 m-auto">
+        <div className="offering-tab-list justify-between sm:justify-start">
           <OfferingTab />
         </div>
 
