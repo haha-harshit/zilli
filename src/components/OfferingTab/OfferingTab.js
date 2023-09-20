@@ -16,7 +16,7 @@ const OfferingTab = () => {
         className="tab-link"
         activeclassName="active"
       >
-        <div style={tabLinkStyle} className="tab-link-delivery w-[9rem] sm:mr-12">
+        <div style={tabLinkStyle} className="tab-link-delivery w-[9rem] sm:w-auto sm:mr-12">
           <h2 className="tab-link-title flex justify-center">
             <div className="tab-link-delivery-img tab-link-img hidden sm:inline-block">
               <img src={tabLinkDeliveryImgBw} />
@@ -33,7 +33,7 @@ const OfferingTab = () => {
         className="tab-link"
         activeclassName="active"
       >
-        <div style={tabLinkStyle} className="tab-link-dining-out w-[9rem] sm:mr-12">
+        <div style={tabLinkStyle} className="tab-link-dining-out w-[9rem] sm:w-auto sm:mr-12">
           <h2 className="tab-link-title flex justify-center">
             <div className="tab-link-dining-out-img tab-link-img hidden sm:inline-block">
               <img src={tabLinkDiningImgBw} />

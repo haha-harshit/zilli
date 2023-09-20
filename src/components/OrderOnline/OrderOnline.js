@@ -70,12 +70,12 @@ const OrderOnline = (props) => {
 
   return (
     <>
-      <div className="section flex flex-col md:w-my-width p-8 m-auto">
-        <div className="offering-tab-list justify-between sm:justify-start">
+      <div className="section flex flex-col md:w-my-width m-auto sm:p-8">
+        <div className="offering-tab-list justify-between mt-4 fixed bottom-0 w-full bg-slate-50 sm:mx-[2rem] sm:justify-start sm:sticky sm:top-0">
           <OfferingTab />
         </div>
 
-        <div className="filter-section flex justify-start sticky top-0 z-[3] bg-[#fefefe] h-24 border-solid border-b-[0.05rem] border-x-0 border-t-0 border-[#ef4f5f] rounded-b-sm drop-shadow-filter-b">
+        <div className="filter-section flex justify-start sticky top-0 z-[3] bg-[#fefefe] h-24 border-solid border-b-[0.05rem] border-x-0 border-t-0 mx-[2rem] border-[#ef4f5f] rounded-b-sm drop-shadow-filter-b">
           <RatingAbove4
             isLoading={isLoading}
             setIsLoading={setIsLoading}
@@ -108,11 +108,11 @@ const OrderOnline = (props) => {
           /> */}
         </div>
         {/* <hr/> */}
-        <div className="order-in-location-layout my-6">
-          <h1 className="text-[#1c1c1c]">Order food online in NIT - 3, Faridabad, India</h1>
+        <div className="order-in-location-layout my-6 px-[2rem]">
+          <h2 className="text-[#1c1c1c]">Order food online in NIT - 3, Faridabad, India</h2>
         </div>
 
-        <div className="res-container flex flex-wrap justify-between">
+        <div className="res-container flex flex-wrap justify-center sm:justify-around">
           {isLoading ? loadingDiv : list}
         </div>
       </div>
