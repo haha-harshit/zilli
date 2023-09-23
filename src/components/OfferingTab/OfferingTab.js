@@ -13,34 +13,34 @@ const OfferingTab = () => {
       <NavLink
         to="/online-order"
         replace
-        className="tab-link"
+        className="tab-link active:border-t-[0.2rem] active:border-t-[#ef4f5f] sm:border-none"
         activeclassName="active"
       >
-        <div style={tabLinkStyle} className="tab-link-delivery w-[9rem] sm:w-auto sm:mr-12">
+        <div style={tabLinkStyle} className="tab-link-delivery w-[9rem] flex justify-center sm:inline-block sm:w-auto sm:mr-12">
           <h2 className="tab-link-title flex justify-center">
             <div className="tab-link-delivery-img tab-link-img hidden sm:inline-block">
               <img src={tabLinkDeliveryImgBw} />
             </div>
             <div className="link-title">Delivery</div>
           </h2>
-          <hr className="hr-below-tablink" />
+          <hr className="hr-below-tablink sm:active:bg-[#ff7e8b]" />
         </div>
       </NavLink>
 
       <NavLink
         to="/dining"
         replace
-        className="tab-link"
+        className="tab-link active:border-t-[0.2rem] active:border-t-[#ef4f5f] sm:border"
         activeclassName="active"
       >
-        <div style={tabLinkStyle} className="tab-link-dining-out w-[9rem] sm:w-auto sm:mr-12">
+        <div style={tabLinkStyle} className="tab-link-dining-out w-[9rem] flex justify-center sm:inline-block sm:w-auto sm:mr-12">
           <h2 className="tab-link-title flex justify-center">
             <div className="tab-link-dining-out-img tab-link-img hidden sm:inline-block">
               <img src={tabLinkDiningImgBw} />
             </div>
             <div className="link-title">Dining Out</div>
           </h2>
-          <hr className="hr-below-tablink" />
+          <hr className="hr-below-tablink sm:active:bg-[#ff7e8b]" />
         </div>
       </NavLink>
 
@@ -51,7 +51,7 @@ const OfferingTab = () => {
         activeclassName="active"
       >
         <div style={tabLinkStyle} className="tab-link-nightlife sm:mr-12">
-          <h2 className="tab-link-title flex">
+          <h2 className="tab-link-title flex justify-center">
             <div className="tab-link-nightlife-img tab-link-img">
               <img src={tabLinkNightlifeImgBw} />
             </div>

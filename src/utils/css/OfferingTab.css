@@ -50,10 +50,11 @@
 
 .active {
   color: rgb(239, 79, 95) !important;
+  /* border-top: 0.2rem solid #ef4f5f; */
 }
 
 .active .hr-below-tablink {
-  background-color: rgb(255, 126, 139);
+  /* background-color: rgb(255, 126, 139); */
 }
 
 .active .tab-link-delivery-img img {
