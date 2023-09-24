@@ -13,7 +13,7 @@ const OfferingTab = () => {
       <NavLink
         to="/online-order"
         replace
-        className="tab-link active:border-t-[0.2rem] active:border-t-[#ef4f5f] sm:border-none"
+        className="tab-link h-[4rem] sm:border-none"
         activeclassName="active"
       >
         <div style={tabLinkStyle} className="tab-link-delivery w-[9rem] flex justify-center sm:inline-block sm:w-auto sm:mr-12">
@@ -30,7 +30,7 @@ const OfferingTab = () => {
       <NavLink
         to="/dining"
         replace
-        className="tab-link active:border-t-[0.2rem] active:border-t-[#ef4f5f] sm:border"
+        className="tab-link h-[4rem] sm:border"
         activeclassName="active"
       >
         <div style={tabLinkStyle} className="tab-link-dining-out w-[9rem] flex justify-center sm:inline-block sm:w-auto sm:mr-12">

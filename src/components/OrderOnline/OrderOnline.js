@@ -71,7 +71,7 @@ const OrderOnline = (props) => {
   return (
     <>
       <div className="section flex flex-col md:w-my-width m-auto sm:p-8">
-        <div className="offering-tab-list justify-evenly mt-4 fixed bottom-0 w-full bg-slate-50 h-[5rem] sm:mx-[2rem] sm:justify-start sm:sticky sm:top-0 sm:bg-inherit sm:mt-0">
+        <div className="offering-tab-list justify-evenly mt-4 fixed bottom-0 w-full bg-slate-50 h-[4rem] sm:mx-[2rem] sm:justify-start sm:sticky sm:top-0 sm:bg-inherit sm:mt-0">
           <OfferingTab />
         </div>
 

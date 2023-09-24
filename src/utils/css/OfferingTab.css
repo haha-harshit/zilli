@@ -48,9 +48,21 @@
   margin: 0.8rem 0rem;
 }
 
-.active {
-  color: rgb(239, 79, 95) !important;
+/* .active {
+  color: rgb(239, 79, 95) !important; */
   /* border-top: 0.2rem solid #ef4f5f; */
+  /* @media only screen and(max){
+    
+  }
+} */
+
+@media only screen and (max-width: 600px){
+  .active{
+    color: rgb(239, 79, 95) !important;
+    border-top: 0.2rem solid #ef4f5f;
+    border-bottom-left-radius: 0.1rem;
+    border-bottom-right-radius: 1rem;
+  }
 }
 
 .active .hr-below-tablink {
