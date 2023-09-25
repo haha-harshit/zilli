@@ -47,7 +47,7 @@ const OfferingTab = () => {
       <NavLink
         to="/night-life-and-clubs"
         replace
-        className="tab-link hidden md:inline-block"
+        className="tab-link h-[4rem] hidden md:inline-block"
         activeclassName="active"
       >
         <div style={tabLinkStyle} className="tab-link-nightlife sm:mr-12">
