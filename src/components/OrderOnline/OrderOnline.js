@@ -71,41 +71,43 @@ const OrderOnline = (props) => {
   return (
     <>
       <div className="section flex flex-col md:w-my-width m-auto sm:p-8">
-        <div className="offering-tab-list justify-evenly mt-4 fixed bottom-0 w-full bg-slate-50 h-[4rem] sm:mx-[2rem] sm:justify-start sm:sticky sm:top-0 sm:bg-inherit sm:mt-0">
+        <div className="offering-tab-list justify-evenly mt-4 fixed bottom-0 w-full bg-slate-50 h-[4rem] sm:mx-[2rem] sm:justify-start sm:sticky sm:top-0 sm:bg-inherit sm:mt-0 sm:z-[0]">
           <OfferingTab />
         </div>
 
-        <div className="filter-section flex justify-start sticky top-0 z-[3] bg-[#fefefe] h-24 border-solid border-b-[0.05rem] border-x-0 border-t-0 mx-[2rem] border-[#ef4f5f] rounded-b-sm drop-shadow-filter-b">
-          <RatingAbove4
+        <div className="filter-section_WRAPPER sm:sticky top-0">
+          <div className="filter-section flex justify-start fixed z-[3] bg-[#fefefe] border-solid border-b-[0.05rem] border-x-0 border-t-0 border-[#ef4f5f] rounded-b-sm drop-shadow-filter-b w-full px-[2rem] py-[1rem] sm:w-auto sm:sticky sm:top-0 sm:z-[3]">
+            <RatingAbove4
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
+              list={list}
+              setFilteredList={setFilteredList}
+              filteredList={filteredList}
+              resList={resList}
+              setIsAbove4FilterOn={setIsAbove4FilterOn}
+              isAbove4FilterOn={isAbove4FilterOn}
+              setIsPureVegFilterOn={setIsPureVegFilterOn}
+              isPureVegFilterOn={isPureVegFilterOn}
+            />
+            <PureVeg
             isLoading={isLoading}
             setIsLoading={setIsLoading}
-            list={list}
-            setFilteredList={setFilteredList}
-            filteredList={filteredList}
-            resList={resList}
-            setIsAbove4FilterOn={setIsAbove4FilterOn}
-            isAbove4FilterOn={isAbove4FilterOn}
-            setIsPureVegFilterOn={setIsPureVegFilterOn}
-            isPureVegFilterOn={isPureVegFilterOn}
-          />
-          <PureVeg
-          isLoading={isLoading}
-          setIsLoading={setIsLoading}
-            list={list}
-            setFilteredList={setFilteredList}
-            filteredList={filteredList}
-            resList={resList}
-            setIsAbove4FilterOn={setIsAbove4FilterOn}
-            isAbove4FilterOn={isAbove4FilterOn}
-            setIsPureVegFilterOn={setIsPureVegFilterOn}
-            isPureVegFilterOn={isPureVegFilterOn}
-          />
-          {/* <NonVeg
-            resList={resList}
-            // setResList={setResList}
-            setIsNonVegFilterOn={setIsNonVegFilterOn}
-            isNonVegFilterOn={isNonVegFilterOn}
-          /> */}
+              list={list}
+              setFilteredList={setFilteredList}
+              filteredList={filteredList}
+              resList={resList}
+              setIsAbove4FilterOn={setIsAbove4FilterOn}
+              isAbove4FilterOn={isAbove4FilterOn}
+              setIsPureVegFilterOn={setIsPureVegFilterOn}
+              isPureVegFilterOn={isPureVegFilterOn}
+            />
+            {/* <NonVeg
+              resList={resList}
+              // setResList={setResList}
+              setIsNonVegFilterOn={setIsNonVegFilterOn}
+              isNonVegFilterOn={isNonVegFilterOn}
+            /> */}
+          </div>
         </div>
         {/* <hr/> */}
         <div className="order-in-location-layout my-6 px-[2rem]">

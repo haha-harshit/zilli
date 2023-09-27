@@ -31,7 +31,7 @@ const CommonHeader = (props) => {
 
   return (
     <>
-      <div className="shadow-commonHeaderBoxShadow pl-8 pt-4">
+      <div className="shadow-commonHeaderBoxShadow pl-8 pt-4 sticky top-0 z-[3] bg-[ghostwhite] sm:relative">
         <header className="large_screen_header hidden md:flex justify-around p-8 h-8">
           <Link to="/" className="text-inherit no-underline hover:underline">
             <i><h2>Zilli</h2></i>
