@@ -21,7 +21,7 @@ const OfferingTab = () => {
             <div className="tab-link-delivery-img tab-link-img hidden sm:inline-block">
               <img src={tabLinkDeliveryImgBw} />
             </div>
-            <div className="link-title">Delivery</div>
+            <div className="link-title font-bold sm:font-semibold">Delivery</div>
           </h2>
           <hr className="hr-below-tablink sm:active:bg-[#ff7e8b]" />
         </div>
@@ -38,7 +38,7 @@ const OfferingTab = () => {
             <div className="tab-link-dining-out-img tab-link-img hidden sm:inline-block">
               <img src={tabLinkDiningImgBw} />
             </div>
-            <div className="link-title">Dining Out</div>
+            <div className="link-title font-bold sm:font-semibold">Dining Out</div>
           </h2>
           <hr className="hr-below-tablink sm:active:bg-[#ff7e8b]" />
         </div>

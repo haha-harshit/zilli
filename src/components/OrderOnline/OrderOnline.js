@@ -70,12 +70,12 @@ const OrderOnline = (props) => {
 
   return (
     <>
-      <div className="section flex flex-col md:w-my-width m-auto sm:p-8">
+      <div className="section flex flex-col sm:w-full lg:w-my-width m-auto sm:p-8">
         <div className="offering-tab-list justify-evenly mt-4 fixed bottom-0 w-full bg-slate-50 h-[4rem] sm:mx-[2rem] sm:justify-start sm:sticky sm:top-0 sm:bg-inherit sm:mt-0 sm:z-[0]">
           <OfferingTab />
         </div>
 
-        <div className="filter-section_WRAPPER sm:sticky top-0">
+        <div className="filter-section_WRAPPER z-[2] sm:sticky sm:z-[0] top-0">
           <div className="filter-section flex justify-start fixed bg-[#fefefe] border-solid border-b-[0.05rem] border-x-0 border-t-0 border-[#ef4f5f] rounded-b-sm drop-shadow-filter-b w-full px-[2rem] py-[1rem] sm:w-auto sm:sticky sm:top-0">
             <RatingAbove4
               isLoading={isLoading}
@@ -110,11 +110,19 @@ const OrderOnline = (props) => {
           </div>
         </div>
         {/* <hr/> */}
-        <div className="order-in-location-layout my-6 px-[2rem]">
+        <div className="order-in-location-layout my-6 px-[2rem] hidden sm:block">
           <h2 className="text-[#1c1c1c]">Order food online in NIT - 3, Faridabad, India</h2>
         </div>
 
-        <div className="res-container flex flex-wrap justify-center sm:justify-around">
+        <div className="all-res-banner_WRAPPER flex justify-center mt-[5rem] mb-[-1rem] sm:hidden">
+          <div className="all-res-banner text-[#A9A9A9] bg-white z-[1] w-fit p-[1rem] sm:z-[0]">
+          ALL RESTAURANTS
+          </div>
+        </div>
+
+        <hr className="hr-all-res-banner relative top-[-0.6rem] w-[80%] ml-auto mr-auto sm:hidden"></hr>
+        
+        <div className="res-container flex flex-wrap justify-center pb-[3rem] sm:justify-around sm:mt-0">
           {isLoading ? loadingDiv : list}
         </div>
       </div>
