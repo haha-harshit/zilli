@@ -76,7 +76,7 @@ const OrderOnline = (props) => {
         </div>
 
         <div className="filter-section_WRAPPER sm:sticky top-0">
-          <div className="filter-section flex justify-start fixed z-[3] bg-[#fefefe] border-solid border-b-[0.05rem] border-x-0 border-t-0 border-[#ef4f5f] rounded-b-sm drop-shadow-filter-b w-full px-[2rem] py-[1rem] sm:w-auto sm:sticky sm:top-0 sm:z-[3]">
+          <div className="filter-section flex justify-start fixed bg-[#fefefe] border-solid border-b-[0.05rem] border-x-0 border-t-0 border-[#ef4f5f] rounded-b-sm drop-shadow-filter-b w-full px-[2rem] py-[1rem] sm:w-auto sm:sticky sm:top-0">
             <RatingAbove4
               isLoading={isLoading}
               setIsLoading={setIsLoading}
