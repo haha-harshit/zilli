@@ -26,7 +26,7 @@ export const RatingAbove4 = (props) => {
     borderRadius: "0.5rem",
     padding: "0.8rem",
     cursor: "pointer",
-    fontSize: "0.9rem",
+    // fontSize: "0.9rem",
     marginRight: "1rem",
     lineHeight: "0.5rem",
     height: "0.6rem",
@@ -37,7 +37,7 @@ export const RatingAbove4 = (props) => {
     <>
       <div
         style={styles4}
-        className="rating-4-plus-filter"
+        className="rating-4-plus-filter sm:text-[0.9rem]"
         onClick={() => {
           if (props.list.length > 0) {
             setTimeout(() => {
