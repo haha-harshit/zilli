@@ -49,6 +49,7 @@ const ResCard = (props) => {
                 src={CDN_IMG_URL + resData.info.cloudinaryImageId}
                 alt="res-logo"
               />
+              <hr></hr>
               <div className="img-header-info hidden sm:mt-[-2.2rem] sm:w-[95%] sm:flex sm:justify-between">
                 {discountInfo}
                 <div className="delivery-time text-[0.8rem] font-medium bg-[#ffffff80] backdrop-blur-[blur(0.4rem)] rounded-[0.3rem] leading-[1.2rem] py-0 px-2 text-[#363636]">
