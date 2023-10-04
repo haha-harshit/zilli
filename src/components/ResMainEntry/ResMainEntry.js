@@ -45,12 +45,11 @@ const ResMainEntry = () => {
 
     return(
     <>
-    <div className="menu-section" style={ResMainEntryStyle}>
+    <div className="menu-section w-[85vw] m-auto sm:w-[50vw] sm:m-0" style={ResMainEntryStyle}>
         <RestaurantHeader resMainInfo={resMainInfo} cuisines={cuisines} />
         <h2>Menu</h2>
         <br/>
         <div>
-        {resMenu ? <div>hey</div> : <Shimmer/>}
         { resMenu?.map((singleCardItem) => 
 
             (singleCardItem?.card?.card?.title ? 

@@ -167,11 +167,11 @@ const App = () => {
               element={
                 <>
                   <Suspense fallback={<h1>Loading...</h1>}>
-                    <CommonHeader
+                    {/* <CommonHeader
                       searchText={searchText}
                       setSearchText={setSearchText}
                       isConnectionResult={isConnectionResult}
-                    />
+                    /> */}
                     <ResMainEntry isConnectionResult={isConnectionResult}/>
                   </Suspense>
                 </>
