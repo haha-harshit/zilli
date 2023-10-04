@@ -45,10 +45,12 @@ const ResMainEntry = () => {
 
     return(
     <>
-    <div className="section menu-section" style={ResMainEntryStyle}>
+    <div className="menu-section" style={ResMainEntryStyle}>
         <RestaurantHeader resMainInfo={resMainInfo} cuisines={cuisines} />
         <h2>Menu</h2>
         <br/>
+        <div>
+        {resMenu ? <div>hey</div> : <Shimmer/>}
         { resMenu?.map((singleCardItem) => 
 
             (singleCardItem?.card?.card?.title ? 
@@ -66,6 +68,7 @@ const ResMainEntry = () => {
                 </ul>
             : "")
         )}
+        </div>
             
     </div>
     </>

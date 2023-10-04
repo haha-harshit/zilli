@@ -12,11 +12,13 @@ export const useResMenuItems = (resId) => {
         try {
             const data = await fetch(RES_DETAILS_URL + resId);
             const json = await data.json()
-            setResMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
+            console.log(json)
+            setResMenu(json?.data?.cards[json?.data.cards.length-1]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
         } catch (error) {
             console.log(error)
         }
     }
+    // console.log(resMenu)
     return resMenu;
 }
 
