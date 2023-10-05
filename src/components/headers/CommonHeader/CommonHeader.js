@@ -1,12 +1,12 @@
-import Search from "../Search/Search";
-import LogIn from "../LogIn/LogIn";
+import Search from "../../Search/Search";
+import LogIn from "../../LogIn/LogIn";
 // import style from "../../utils/css/CommonHeader.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import LogOut from "../LogOut/LogOut";
+import LogOut from "../../LogOut/LogOut";
 
 // import "../../utils/css/Search.css"
-import useOnlineStatus from "../../utils/customHooks/useOnlineStatus";
+import useOnlineStatus from "../../../utils/customHooks/useOnlineStatus";
 import MobileHeader from "./MobileHeader/MobileHeader";
 
 const CommonHeader = (props) => {

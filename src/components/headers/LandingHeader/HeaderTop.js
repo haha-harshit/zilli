@@ -1,5 +1,5 @@
 import NavBar from "./Navbar";
-import Cart from "../Cart";
+import Cart from "../../Cart";
 import { Fragment, useState } from "react";
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import {Bars3Icon, BellIcon, XMarkIcon} from '@heroicons/react/24/outline'

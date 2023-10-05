@@ -4,11 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // custom hook imports
 import useOnlineStatus from "./src/utils/customHooks/useOnlineStatus";
-import LandingHeaderSection from "./src/components/LandingHeader/LandingHeaderSection"
+import LandingHeaderSection from "./src/components/headers/LandingHeader/LandingHeaderSection"
 // import Body from "./src/components/LandingBody/Body";
 import Footer from "./src/components/Footer/Footer";
+import ResEntryHeader from "./src/components/headers/ResEntryHeader/ResEntryHeader";
 // dynamic components import
-const CommonHeader = lazy(()=>import("./src/components/CommonHeader/CommonHeader"))
+const CommonHeader = lazy(()=>import("./src/components/headers/CommonHeader/CommonHeader.js"))
 const About = lazy(()=>import("./src/components/About/About"))
 const GroceryStore = lazy(()=>import("./src/components/GroceryStore/GroceryStore"))
 const OrderOnline = lazy(()=>import("./src/components/OrderOnline/OrderOnline"))
@@ -172,6 +173,7 @@ const App = () => {
                       setSearchText={setSearchText}
                       isConnectionResult={isConnectionResult}
                     /> */}
+                    <ResEntryHeader/>
                     <ResMainEntry isConnectionResult={isConnectionResult}/>
                   </Suspense>
                 </>

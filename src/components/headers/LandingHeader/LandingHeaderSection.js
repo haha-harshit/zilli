@@ -1,7 +1,7 @@
 import HeaderTop from "./HeaderTop";
 import AppName from "./AppName";
 import Tagline from "./Tagline";
-import Search from "../Search/Search";
+import Search from "../../Search/Search";
 
 const LandingHeaderSection = () => {
   return (
