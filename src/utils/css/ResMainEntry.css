@@ -1,18 +1,18 @@
-.restaurant-sub-header{
+/* .restaurant-sub-header{
     display: flex;
     justify-content: space-between;
-}
+} */
 
 /* .menu-section{
     width: 50vw;
 } */
 
 .RestaurantName{
-    font-size: 1.43rem;
-    font-weight: 700;
-    color: #282c3f;
-    margin-bottom: 0.5rem;
-    text-transform: capitalize;
+    /* font-size: 1.43rem; */
+    /* font-weight: 700; */
+    /* color: #282c3f; */
+    /* margin-bottom: 0.5rem; */
+    /* text-transform: capitalize; */
 }
 
 .RestaurantCuisines{

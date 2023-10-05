@@ -7,11 +7,11 @@ const RestaurantHeader = (props) => {
 
     return (
         <>
-        <div className="restaurant-main-header">
-            <div className="restaurant-sub-header">
+        <div className="restaurant-main-header mt-[1.5rem] w-fit ml-auto mr-auto sm:m-0 sm:w-auto">
+            <div className="restaurant-sub-header flex justify-between flex-col w-max ml-auto mr-auto sm:flex-row sm:w-auto">
                 <div className="RestaurantNameAddress_wrapper">
 
-                    <div className="RestaurantName">
+                    <div className="RestaurantName font-bold text-[#282c3f] mb-[0.5rem] text-3xl">
                         {resMainInfo.name}
                     </div>
                     <div className="RestaurantCuisines">
