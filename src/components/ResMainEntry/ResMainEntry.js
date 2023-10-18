@@ -1,15 +1,22 @@
 import { useParams, useLocation } from "react-router-dom";
+import { useState, useSyncExternalStore } from "react";
 import Shimmer from "../../components/ShimmerUI/Shimmer"
 import RestaurantHeader from "./RestaurantHeader";
+import ResAccordion from "../ResMenu/ResAccordion";
 
 // import style
 import {ResMainEntryStyle} from "../../utils/css/ResMainEntry.css"
 import {useResMenuItems } from "../../utils/customHooks/useFetchApi";
 
-// import custom hooks
-
-
 const ResMainEntry = () => {
+
+    // const [accordions, setAccordion] = useState({
+    //     key: "",
+    //     title: "",
+    //     data: "",
+    //     isOpen: true
+    // })
+
     const location = useLocation()
     // console.log(location)
     // used state coming from parent - basic res details like name, price, rating, so that no need to be fetched again
@@ -47,8 +54,8 @@ const ResMainEntry = () => {
     <>
     <div className="menu-section w-[85vw] m-auto sm:w-[50vw] sm:m-0" style={ResMainEntryStyle}>
         <RestaurantHeader resMainInfo={resMainInfo} cuisines={cuisines} />
-        <h2>Menu</h2>
         <br/>
+        <div className="ml-[-2rem] mr-[-2rem] h-[0.2rem] bg-gray-100 sm:hidden"></div>
         <div>
         { resMenu?.map((singleCardItem) => 
 
