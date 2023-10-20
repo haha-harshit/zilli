@@ -9,14 +9,10 @@ import {ResMainEntryStyle} from "../../utils/css/ResMainEntry.css"
 import {useResMenuItems } from "../../utils/customHooks/useFetchApi";
 
 const ResMainEntry = () => {
-
-    // const [accordions, setAccordion] = useState({
-    //     key: "",
-    //     title: "",
-    //     data: "",
-    //     isOpen: true
-    // })
-
+    
+    const accordions = [];
+    // const [accordions, setAccordion] = useState()
+    // console.log(accordions)
     const location = useLocation()
     // console.log(location)
     // used state coming from parent - basic res details like name, price, rating, so that no need to be fetched again
@@ -27,28 +23,29 @@ const ResMainEntry = () => {
 
     // using resMenu custom hook for making code modular and maintaing Single Responsibility Principle - hook to fetch menu items as otherwise done by below commented code.
     const resMenu = useResMenuItems(resId)
-
-    // // for menu and other details
-    // const [resMenu, setResMenu] = useState(null)
-    
-    // useEffect(() => {
-    //     fetchResDetails();
-    // }, [])
-
-    // const fetchResDetails = async ()=> {
-    //     const data = await fetch(RES_DETAILS_URL + resId)
-    //     const json = await data.json()
-    //     // console.log(json)
-    //     setResMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
-    //     // console.log(json.data)
-    //     // console.log(itemCard)
-    // }
-    // console.log(resMenu)
     
     if(resMenu === null) return <Shimmer/>
     
+    
+    
+    // setAccordion(toBeAccordions)
+    // console.log(accordions, "accordions")
+
+    // const toggleAccordion = (accordionkey) => { 
+    //     const updatedAccordions = accordions.map((accord) => { 
+    //         if (accord.key === accordionkey) { 
+    //             return { ...accord, isOpen: !accord.isOpen }; 
+    //         } else { 
+    //             return { ...accord}; 
+    //         } 
+    //     }); 
+  
+    //     setAccordion(updatedAccordions); 
+    // }; 
+    
     // console.log(resMainInfo)
     const {cuisines} = resMainInfo
+    {resMenu.map((singleCardItem) => singleCardItem?.card?.card?.title ? accordions.push(singleCardItem) : "")}
 
     return(
     <>
@@ -56,24 +53,46 @@ const ResMainEntry = () => {
         <RestaurantHeader resMainInfo={resMainInfo} cuisines={cuisines} />
         <br/>
         <div className="ml-[-2rem] mr-[-2rem] h-[0.2rem] bg-gray-100 sm:hidden"></div>
+
         <div>
-        { resMenu?.map((singleCardItem) => 
-
-            (singleCardItem?.card?.card?.title ? 
-
-                <ul>
-                        {singleCardItem?.card?.card?.title}
-                        
-                            {singleCardItem?.card?.card?.itemCards?.map((sub_item) => (
-                                <h4 key={sub_item?.info?.id}>
-                                <li key={sub_item?.info?.id}>
-                                    {sub_item.card.info.name} - ₹{sub_item.card.info.defaultPrice/100 || sub_item.card.info.price/100}
-                                </li>
-                                </h4>
-                            ))}
-                </ul>
-            : "")
-        )}
+            {/* {console.log(accordions, "newa")} */}
+            {/* {setAccordion(toBeAccordions)} */}
+            {/* {setClic(false)} */}
+            {/* {console.log(accordions, "dd")} */}
+            {/* { accordions?.map((singleCardItem) =>   */}
+                <>
+                {/* <ul>
+                    {singleCardItem?.card?.card?.title}
+                    {singleCardItem?.card?.card?.itemCards?.map((sub_item) => (
+                        <h4 key={sub_item?.info?.id}>
+                        <li key={sub_item?.info?.id}>
+                            {sub_item.card.info.name} - ₹{sub_item.card.info.defaultPrice/100 || sub_item.card.info.price/100}
+                        </li>
+                        </h4>
+                    ))}
+                </ul> */}
+                
+                <div>
+                    <div className="p-2 m-8"> 
+                        {accordions.map((accordion) => ( 
+                            <ResAccordion
+                                key=""
+                                title={accordion.card?.card?.title} 
+                                data={accordion.card?.card?.itemCards?.map((sub_item) => (
+                                    <h4 key={sub_item?.info?.id}>
+                                    <li key={sub_item?.info?.id}>
+                                        {sub_item.card.info.name} - ₹{sub_item.card.info.defaultPrice/100 || sub_item.card.info.price/100}
+                                    </li>
+                                    </h4>
+                                ))} 
+                                isOpen={true} 
+                                // toggleAccordion={() => toggleAccordion(accordion.key)} 
+                            /> 
+                        ))} 
+                    </div> 
+                </div> 
+                </>
+            {/* )} */}
         </div>
             
     </div>
