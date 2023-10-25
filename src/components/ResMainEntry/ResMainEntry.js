@@ -1,5 +1,7 @@
+// import { nanoid } from 'nanoid'
 import { useParams, useLocation } from "react-router-dom";
 import { useState, useSyncExternalStore } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import Shimmer from "../../components/ShimmerUI/Shimmer"
 import RestaurantHeader from "./RestaurantHeader";
 import ResAccordion from "../ResMenu/ResAccordion";
@@ -9,9 +11,10 @@ import {ResMainEntryStyle} from "../../utils/css/ResMainEntry.css"
 import {useResMenuItems } from "../../utils/customHooks/useFetchApi";
 
 const ResMainEntry = () => {
-    
+    // const uniqueId = uuidv4()
     const accordions = [];
-    // const [accordions, setAccordion] = useState()
+    // const [accordion, setAccordion] = useState([])
+    const [openAccordion, setOpenAccordion] = useState(Array(accordions.length).fill(true))
     // console.log(accordions)
     const location = useLocation()
     // console.log(location)
@@ -31,17 +34,19 @@ const ResMainEntry = () => {
     // setAccordion(toBeAccordions)
     // console.log(accordions, "accordions")
 
-    // const toggleAccordion = (accordionkey) => { 
-    //     const updatedAccordions = accordions.map((accord) => { 
-    //         if (accord.key === accordionkey) { 
-    //             return { ...accord, isOpen: !accord.isOpen }; 
-    //         } else { 
-    //             return { ...accord}; 
-    //         } 
-    //     }); 
-  
-    //     setAccordion(updatedAccordions); 
-    // }; 
+    const toggleAccordion = (index) => { 
+        const updatedOpenAccordions = [...openAccordion];
+        updatedOpenAccordions[index] = !updatedOpenAccordions[index];
+        setOpenAccordion(updatedOpenAccordions)
+        // accordions.map((accord) => { 
+        //     if (accord.key === accordionkey) {
+        //         return { ...accord, isOpen: !accord.isOpen }; 
+        //     } else {
+        //         return { ...accord}; 
+        //     }
+        // });  
+        // setAccordion(updatedAccordions); 
+    }; 
     
     // console.log(resMainInfo)
     const {cuisines} = resMainInfo
@@ -55,7 +60,7 @@ const ResMainEntry = () => {
         <div className="ml-[-2rem] mr-[-2rem] h-[0.2rem] bg-gray-100 sm:hidden"></div>
 
         <div>
-            {/* {console.log(accordions, "newa")} */}
+            {console.log(accordions, "newa")}
             {/* {setAccordion(toBeAccordions)} */}
             {/* {setClic(false)} */}
             {/* {console.log(accordions, "dd")} */}
@@ -73,10 +78,11 @@ const ResMainEntry = () => {
                 </ul> */}
                 
                 <div>
-                    <div className="p-2 m-8"> 
-                        {accordions.map((accordion) => ( 
+                    <div className=""> 
+                        {accordions.map((accordion, index) => ( 
                             <ResAccordion
-                                key=""
+                                // key={Math.floor((Math.random()))}
+                                key={index}
                                 title={accordion.card?.card?.title} 
                                 data={accordion.card?.card?.itemCards?.map((sub_item) => (
                                     <h4 key={sub_item?.info?.id}>
@@ -85,8 +91,9 @@ const ResMainEntry = () => {
                                     </li>
                                     </h4>
                                 ))} 
-                                isOpen={true} 
-                                // toggleAccordion={() => toggleAccordion(accordion.key)} 
+                                accIsOpen={openAccordion[index]}
+                                // setAccIsOpen={setAccIsOpen}
+                                toggleAccordion={() => toggleAccordion(index)} 
                             /> 
                         ))} 
                     </div> 
