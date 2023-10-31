@@ -2,9 +2,9 @@
 const ResAccordion = (props) => {
     return (
         <>
-        <div className="accordion border rounded-md mb-1"> 
+        <div className="accordion mb-4"> 
             <button 
-                className="w-full p-4 text-left bg-gray-50 transition duration-300 sm:hover:bg-gray-300"
+                className="w-full p-4 text-left border-0  transition duration-300 sm:hover:bg-gray-300"
                 onClick={props.toggleAccordion}
             >
                 {props.title}
