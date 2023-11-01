@@ -1,10 +1,10 @@
 // import style
 // import {ResMainEntryStyle} from "../../utils/css/ResMainEntry.css"
+import resVegImg from "../../utils/images/vegetarian.png"
 
 const RestaurantHeader = (props) => {
 
     const {resMainInfo, cuisines} = props
-
     return (
         <>
         <div className="restaurant-main-header mt-[1.5rem] w-fit ml-auto mr-auto sm:m-0 sm:w-auto">
@@ -15,7 +15,8 @@ const RestaurantHeader = (props) => {
                         {resMainInfo.name}
                     </div>
                     <div className="RestaurantCuisines">
-                        {cuisines.join(", ")}
+                        <span>{resMainInfo.veg ? <img src={resVegImg} style={{height:"1.2rem", width:"1.2rem"}}/> : ""}</span>
+                        {" " + cuisines.join(", ")}
                     </div>
 
                     <div className="ratingCount_wrapper_mob flex items-center mb-[0.5rem]">

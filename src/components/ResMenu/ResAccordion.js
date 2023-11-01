@@ -4,10 +4,10 @@ const ResAccordion = (props) => {
         <>
         <div className="accordion mb-4"> 
             <button 
-                className="w-full p-4 text-left border-0  transition duration-300 sm:hover:bg-gray-300"
+                className="flex justify-between items-center w-full p-4 text-left border-0 bg-[#fbfdff] transition duration-300 sm:hover:bg-gray-300"
                 onClick={props.toggleAccordion}
             >
-                {props.title}
+                <span className="text-xl font-bold ">{props.title}</span>
                 <span className={`float-right transform ${props.accIsOpen ?
                                  'rotate-180' : 'rotate-0'}
                                  transition-transform duration-300`}>

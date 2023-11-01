@@ -38,7 +38,7 @@ const ResMainEntry = () => {
 
     return(
     <>
-    <div className="menu-section w-[85vw] m-auto sm:w-[50vw] sm:m-0" style={ResMainEntryStyle}>
+    <div className="menu-section w-[85vw] m-auto sm:w-[50vw] sm:m-auto" style={ResMainEntryStyle}>
         <RestaurantHeader resMainInfo={resMainInfo} cuisines={cuisines} />
         <br/>
         <div className="ml-[-2rem] mr-[-2rem] h-[0.2rem] bg-gray-100 sm:hidden"></div>
@@ -47,17 +47,17 @@ const ResMainEntry = () => {
             {console.log(accordions, "newa")}
                 <>                
                 <div>
-                    <div className="accodion_wrapper ml-[-1rem] mr-[-1rem]"> 
+                    <div className="accodion_wrapper bg-slate-100 ml-[-1rem] mr-[-1rem]"> 
                         {accordions.map((accordion, index) => ( 
                             <ResAccordion
                                 key={index}
                                 title={accordion.card?.card?.title} 
                                 data={accordion.card?.card?.itemCards?.map((sub_item) => (
-                                    <h4 key={sub_item?.info?.id}>
+                                    <div key={sub_item?.info?.id}>
                                     <li key={sub_item?.info?.id}>
                                         {sub_item.card.info.name} - ₹{sub_item.card.info.defaultPrice/100 || sub_item.card.info.price/100}
                                     </li>
-                                    </h4>
+                                    </div>
                                 ))} 
                                 accIsOpen={openAccordion[index]}
                                 toggleAccordion={() => toggleAccordion(index)} 
