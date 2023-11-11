@@ -8,6 +8,7 @@ import ResAccordion from "../ResMenu/ResAccordion";
 // import style
 import {ResMainEntryStyle} from "../../utils/css/ResMainEntry.css"
 import {useResMenuItems } from "../../utils/customHooks/useFetchApi";
+import MenuItemList from "../ResMenu/MenuItemList";
 
 const ResMainEntry = () => {
     const accordions = [];
@@ -53,11 +54,12 @@ const ResMainEntry = () => {
                                 key={index}
                                 title={accordion.card?.card?.title} 
                                 data={accordion.card?.card?.itemCards?.map((sub_item) => (
-                                    <div key={sub_item?.info?.id}>
-                                    <li key={sub_item?.info?.id}>
-                                        {sub_item.card.info.name} - ₹{sub_item.card.info.defaultPrice/100 || sub_item.card.info.price/100}
-                                    </li>
-                                    </div>
+                                    <MenuItemList key={sub_item?.info?.id} sub_item={sub_item}/>
+                                    // <div key={sub_item?.info?.id}>
+                                    // <li key={sub_item?.info?.id}>
+                                    //     {sub_item.card.info.name} - ₹{sub_item.card.info.defaultPrice/100 || sub_item.card.info.price/100}
+                                    // </li>
+                                    // </div>
                                 ))} 
                                 accIsOpen={openAccordion[index]}
                                 toggleAccordion={() => toggleAccordion(index)} 
