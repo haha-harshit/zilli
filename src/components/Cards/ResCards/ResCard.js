@@ -6,7 +6,7 @@ import { useState } from "react";
 const ResCard = (props) => {
   const { resData } = props;
   // const [isDefaultBorder, setIsDefaultBorder] = useState("#fbfdff");
-  const isDiscounted = "aggregatedDiscountInfoV3" in resData.info;
+  const isDiscounted = "aggregatedDiscountInfoV3" in resData?.info;
   let discountInfoMobile;
   let discountInfo;
   let deliveryRange = resData.info.sla.deliveryTime+5;

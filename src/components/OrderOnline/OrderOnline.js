@@ -1,6 +1,7 @@
 // COMPONENT AND STATE IMPORTS
 import { useState, useEffect } from "react";
-import { NonVeg, PureVeg, RatingAbove4 } from "../Filters/OnlineOrderFilters";
+import { NonVeg, PureVeg, RatingAbove4o5, FastDeliverySort } from "../Filters/OnlineOrderFilters";
+// import { FastDeliverySort } from "../Sort/FastDeliverySort";
 import OfferingTab from "../OfferingTab/OfferingTab";
 import ResCard from "../Cards/ResCards/ResCard";
 import Shimmer from "../ShimmerUI/Shimmer";
@@ -19,28 +20,52 @@ import { useResList } from "../../utils/customHooks/useFetchApi";
 
 const OrderOnline = (props) => {
   // const [resList, setResList] = useState([]);
-  const [isAbove4FilterOn, setIsAbove4FilterOn] = useState(false);
-  const [isPureVegFilterOn, setIsPureVegFilterOn] = useState(false);
-  const [isNonVegFilterOn, setIsNonVegFilterOn] = useState(false);
+  const [isAbove4o5FilterOn, setIsAbove4o5FilterOn] = useState(false);
+  // const [isPureVegFilterOn, setIsPureVegFilterOn] = useState(false);
+  // const [isNonVegFilterOn, setIsNonVegFilterOn] = useState(false);
+
+  //new Sort added
+  const [isFastDeliverySortOn, setIsFastDeliverySortOn] = useState(false);
+
   const [filteredList, setFilteredList] = useState([]);
+  const [sortedList, setSortedList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   
   useEffect(()=> {
     console.log(props.isConnectionResult, "later")
-  }, [props.isConnectionResult])
+  }, [props.isConnectionResult])  
     
   let resList = useResList()
+
+  console.log("usual reslist: ",resList)
+  // console.log(resList[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  // console.log(resList[0]?.info.id);
 
   let loadingDiv = Array(10).fill(<Shimmer />)
 
   let list;
   if (filteredList.length < 1) {
+
+    // for SHIMMER
     if (resList?.length === 0) {
-      list = Array(10).fill(<Shimmer />)
-    } else {
+      list = Array(20).fill(<Shimmer />)
+    } 
+    
+    // FOR SORTED LIST
+    if(sortedList.length > 1){
+      console.log("sorted list after clicking: ", sortedList)
+      list = sortedList?.map((restaurant) => (
+        <ResCard resData={restaurant} key={restaurant?.info?.id} />
+      ))
+    } 
+    
+    // FOR WITHOUT SORTED LIST
+    if(sortedList.length<1){
       list = resList?.map((restaurant) => (
         <ResCard resData={restaurant} key={restaurant?.info?.id} />
       ));
+      console.log("sorted before clicking:", resList.sort((a,b) => a?.info?.sla?.deliveryTime - b?.info?.sla?.deliveryTime));
+      // console.log(props.isFastDeliverySortOn, "fast delivery sort clicked")
       if (list === undefined) {
         list =  
           <div>
@@ -77,19 +102,19 @@ const OrderOnline = (props) => {
 
         <div className="filter-section_WRAPPER z-[2] sm:sticky sm:z-[0] top-0">
           <div className="filter-section flex justify-start fixed bg-[#fefefe] border-solid border-b-[0.05rem] border-x-0 border-t-0 border-[#ef4f5f] rounded-b-sm drop-shadow-filter-b w-full px-[2rem] py-[1rem] sm:w-auto sm:sticky sm:top-0">
-            <RatingAbove4
+            <RatingAbove4o5
               isLoading={isLoading}
               setIsLoading={setIsLoading}
               list={list}
               setFilteredList={setFilteredList}
               filteredList={filteredList}
               resList={resList}
-              setIsAbove4FilterOn={setIsAbove4FilterOn}
-              isAbove4FilterOn={isAbove4FilterOn}
-              setIsPureVegFilterOn={setIsPureVegFilterOn}
-              isPureVegFilterOn={isPureVegFilterOn}
+              setIsAbove4o5FilterOn={setIsAbove4o5FilterOn}
+              isAbove4o5FilterOn={isAbove4o5FilterOn}
+              // setIsPureVegFilterOn={setIsPureVegFilterOn}
+              // isPureVegFilterOn={isPureVegFilterOn}
             />
-            <PureVeg
+            {/* <PureVeg
             isLoading={isLoading}
             setIsLoading={setIsLoading}
               list={list}
@@ -100,7 +125,21 @@ const OrderOnline = (props) => {
               isAbove4FilterOn={isAbove4FilterOn}
               setIsPureVegFilterOn={setIsPureVegFilterOn}
               isPureVegFilterOn={isPureVegFilterOn}
+            /> */}
+
+            <FastDeliverySort
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
+            list={list}
+            sortedList={sortedList}
+            setSortedList={setSortedList}
+            setFilteredList={setFilteredList}
+            filteredList={filteredList}
+            resList={resList}
+            isFastDeliverySortOn={isFastDeliverySortOn}
+            setIsFastDeliverySortOn={setIsFastDeliverySortOn}
             />
+
             {/* <NonVeg
               resList={resList}
               // setResList={setResList}
@@ -111,7 +150,7 @@ const OrderOnline = (props) => {
         </div>
         {/* <hr/> */}
         <div className="order-in-location-layout my-6 px-[2rem] hidden sm:block">
-          <h2 className="text-[#1c1c1c]">Order food online in NIT - 3, Faridabad, India</h2>
+          <h2 className="text-[#1c1c1c]">Top restaurant chains in Gurgaon</h2>
         </div>
 
         <div className="all-res-banner_WRAPPER flex justify-center mt-[5rem] mb-[-1rem] sm:hidden">

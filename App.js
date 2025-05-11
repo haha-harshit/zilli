@@ -26,31 +26,31 @@ const Body = lazy(()=>import("./src/components/LandingBody/Body"))
 const App = () => {
   const [searchText, setSearchText] = useState("")
   const [searchList, setSearchList] = useState([])
-  const [isConnectionResult, setIsConnectionResult] = useState(true)
+  const [isConnectionResult, setIsConnectionResult] = useState(useOnlineStatus)
   
-  const checkConnection = setInterval(async ()=> {
-    const connectionResult = await useOnlineStatus();
-    if(!connectionResult){
-      console.log("network not ok")
-      console.log(connectionResult, "in app.js f wala ")
-      // return(
-        //   <>
-        //     <h1>Looks like you're offline! Check your internet connection</h1>
-        //   </>
-        //   )
-      }else{
-        console.log("ok")
-        console.log(connectionResult, "in app.js")
-      }
-      setIsConnectionResult(connectionResult);
-    }, 10000)
-    console.log(isConnectionResult, "updated")
+  // const checkConnection = setInterval(async ()=> {
+  //   const connectionResult = await useOnlineStatus();
+  //   if(!connectionResult){
+  //     console.log("network not ok")
+  //     console.log(connectionResult, "in app.js f wala ")
+  //     // return(
+  //       //   <>
+  //       //     <h1>Looks like you're offline! Check your internet connection</h1>
+  //       //   </>
+  //       //   )
+  //     }else{
+  //       console.log("ok")
+  //       console.log(connectionResult, "in app.js")
+  //     }
+  //     setIsConnectionResult(connectionResult);
+  //   }, 10000)
+  //   console.log(isConnectionResult, "updated")
     
-  useEffect(()=>{
-    return()=>{
-      clearInterval(checkConnection);
-    }
-  }, [])
+  // useEffect(()=>{
+  //   return()=>{
+  //     clearInterval(checkConnection);
+  //   }
+  // }, [])
 
   
   return (

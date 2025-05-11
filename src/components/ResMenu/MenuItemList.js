@@ -2,9 +2,10 @@
 const MenuItemList = (props) => {
     return(
         <>
-        <li key={props.key}>
-            {props.sub_item.card.info.name} - ₹{props.sub_item.card.info.defaultPrice/100 || props.sub_item.card.info.price/100}
+        <li className="list-none" key={props.key}>
+            <div className="font-bold">{props.sub_item.card.info.name} -</div> ₹{props.sub_item.card.info.defaultPrice/100 || props.sub_item.card.info.price/100}
         </li>
+        
         </>
     )
 }
