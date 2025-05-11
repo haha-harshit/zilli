@@ -1,5 +1,5 @@
 import { OutdoorSeating, ServesAlcohol } from "../Filters/DiningOutFilters";
-import { RatingAbove4 } from "../Filters/OnlineOrderFilters";
+import { RatingAbove4o5 } from "../Filters/OnlineOrderFilters";
 import { tabListStyle } from "../../utils/css/OfferingTab.css";
 import OfferingTab from "../OfferingTab/OfferingTab";
 const Dining = (props) => {
@@ -14,7 +14,7 @@ const Dining = (props) => {
         </div>
 
         <div className="filter-section">
-          <RatingAbove4 />
+          <RatingAbove4o5 />
           <OutdoorSeating />
           <ServesAlcohol />
         </div>

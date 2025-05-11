@@ -31,9 +31,9 @@ const OrderOnline = (props) => {
   const [sortedList, setSortedList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   
-  useEffect(()=> {
-    console.log(props.isConnectionResult, "later")
-  }, [props.isConnectionResult])  
+  // useEffect(()=> {
+  //   console.log(props.isConnectionResult, "later")
+  // }, [props.isConnectionResult])  
     
   let resList = useResList()
 
@@ -64,12 +64,12 @@ const OrderOnline = (props) => {
       list = resList?.map((restaurant) => (
         <ResCard resData={restaurant} key={restaurant?.info?.id} />
       ));
-      console.log("sorted before clicking:", resList.sort((a,b) => a?.info?.sla?.deliveryTime - b?.info?.sla?.deliveryTime));
+      // console.log("sorted before clicking:", resList.sort((a,b) => a?.info?.sla?.deliveryTime - b?.info?.sla?.deliveryTime));
       // console.log(props.isFastDeliverySortOn, "fast delivery sort clicked")
       if (list === undefined) {
         list =  
-          <div>
-            <h1>No restaurants delivering in your area 😭</h1>
+          <div className="text-[#1c1c1c] px-[2rem]">
+            <h2>No restaurants delivering in your area 😭</h2>
           </div>
       }
     }
@@ -149,11 +149,11 @@ const OrderOnline = (props) => {
           </div>
         </div>
         {/* <hr/> */}
-        <div className="order-in-location-layout my-6 px-[2rem] hidden sm:block">
+        <div className="order-in-location-layout my-6 px-[2rem] py-[4.5rem] sm:block">
           <h2 className="text-[#1c1c1c]">Top restaurant chains in Gurgaon</h2>
         </div>
 
-        <div className="all-res-banner_WRAPPER flex justify-center mt-[5rem] mb-[-1rem] sm:hidden">
+        <div className="all-res-banner_WRAPPER flex justify-center mt-[-5rem] mb-[-1rem] sm:hidden">
           <div className="all-res-banner text-[#A9A9A9] bg-white z-[1] w-fit p-[1rem] sm:z-[0]">
           ALL RESTAURANTS
           </div>

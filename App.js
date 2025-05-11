@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // custom hook imports
-import useOnlineStatus from "./src/utils/customHooks/useOnlineStatus";
+// import useOnlineStatus from "./src/utils/customHooks/useOnlineStatus";
 import LandingHeaderSection from "./src/components/headers/LandingHeader/LandingHeaderSection"
 // import Body from "./src/components/LandingBody/Body";
 import Footer from "./src/components/Footer/Footer";
@@ -24,10 +24,9 @@ const Body = lazy(()=>import("./src/components/LandingBody/Body"))
 
 
 const App = () => {
-  const [searchText, setSearchText] = useState("")
+  const [searchText, setSearchText] = useState("");
   const [searchList, setSearchList] = useState([])
-  const [isConnectionResult, setIsConnectionResult] = useState(useOnlineStatus)
-  
+  // const [isConnectionResult, setIsConnectionResult] = useState(useOnlineStatus)
   // const checkConnection = setInterval(async ()=> {
   //   const connectionResult = await useOnlineStatus();
   //   if(!connectionResult){
@@ -63,7 +62,9 @@ const App = () => {
               element={
                 <>
                   <LandingHeaderSection />
-                  <Body isConnectionResult={isConnectionResult}/>
+                  <Body 
+                  // isConnectionResult={isConnectionResult}
+                  />
                 </>
               }
             />
@@ -78,7 +79,7 @@ const App = () => {
                       setSearchText={setSearchText}
                       searchList={searchList}
                       setSearchList={setSearchList}
-                      isConnectionResult={isConnectionResult}
+                      // isConnectionResult={isConnectionResult}
                     />
                     <About/>
                   </Suspense>
@@ -97,7 +98,7 @@ const App = () => {
                       setSearchText={setSearchText}
                       searchList={searchList}
                       setSearchList={setSearchList}
-                      isConnectionResult={isConnectionResult}
+                      // isConnectionResult={isConnectionResult}
                     />
                     <GroceryStore/>
                   </Suspense>
@@ -116,11 +117,11 @@ const App = () => {
                       setSearchText={setSearchText}
                       searchList={searchList}
                       setSearchList={setSearchList}
-                      isConnectionResult={isConnectionResult}
+                      // isConnectionResult={isConnectionResult}
                     />
                     <OrderOnline
                       searchText={searchText}
-                      isConnectionResult={isConnectionResult}
+                      // isConnectionResult={isConnectionResult}
                     />
                   </Suspense>
                 </>
@@ -135,11 +136,11 @@ const App = () => {
                     <CommonHeader
                       searchText={searchText}
                       setSearchText={setSearchText}
-                      isConnectionResult={isConnectionResult}
+                      // isConnectionResult={isConnectionResult}
                     />
                     <Dining
                       searchText={searchText}
-                      isConnectionResult={isConnectionResult}
+                      // isConnectionResult={isConnectionResult}
                     />
                   </Suspense>
                 </>
@@ -153,18 +154,18 @@ const App = () => {
                     <CommonHeader
                       searchText={searchText}
                       setSearchText={setSearchText}
-                      isConnectionResult={isConnectionResult} 
+                      // isConnectionResult={isConnectionResult} 
                     />
                     <NightlifeAndClubs
                       searchText={searchText}
-                      isConnectionResult={isConnectionResult}  
+                      // isConnectionResult={isConnectionResult}  
                     />
                   </Suspense>
                 </>
               }
             />
             <Route
-              path="/restaurant/:resId"
+              path="/online-order/restaurant/:resId"
               element={
                 <>
                   <Suspense fallback={<h1>Loading...</h1>}>
@@ -174,7 +175,9 @@ const App = () => {
                       isConnectionResult={isConnectionResult}
                     /> */}
                     <ResEntryHeader/>
-                    <ResMainEntry isConnectionResult={isConnectionResult}/>
+                    <ResMainEntry 
+                    // isConnectionResult={isConnectionResult}
+                    />
                   </Suspense>
                 </>
               }
@@ -185,7 +188,9 @@ const App = () => {
                 <>
                   <Suspense fallback={<h1>Loading...</h1>}>
                     <CommonHeader />
-                    <PageNotFound isConnectionResult={isConnectionResult}/>
+                    <PageNotFound 
+                    // isConnectionResult={isConnectionResult}
+                    />
                   </Suspense>
                 </>
               }
@@ -193,7 +198,7 @@ const App = () => {
           </Routes>
 
           <Suspense>
-            <Footer isConnectionResult={isConnectionResult}/>
+            {/* <Footer isConnectionResult={isConnectionResult}/> */}
           </Suspense>
         </div>
       </BrowserRouter>

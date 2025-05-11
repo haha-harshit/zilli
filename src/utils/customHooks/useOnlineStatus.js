@@ -18,24 +18,24 @@ import { useEffect, useState } from "react"
 //     return onlineStatus
 // }
 
-const useOnlineStatus = () => {
-    const [isOnline, setIsOnline] = useState(navigator.onLine);
+// const useOnlineStatus = () => {
+//     const [isOnline, setIsOnline] = useState(navigator.onLine);
 
-    const updateStatus = () => {
-        setIsOnline(navigator.onLine);
-    };
+//     const updateStatus = () => {
+//         setIsOnline(navigator.onLine);
+//     };
 
-    useEffect(() => {
-        window.addEventListener("online", updateStatus);
-        window.addEventListener("offline", updateStatus);
+//     useEffect(() => {
+//         window.addEventListener("online", updateStatus);
+//         window.addEventListener("offline", updateStatus);
 
-        return () => {
-            window.addEventListener("online", updateStatus);
-            window.addEventListener("offline", updateStatus);
-        };
-    }, []);
+//         return () => {
+//             window.addEventListener("online", updateStatus);
+//             window.addEventListener("offline", updateStatus);
+//         };
+//     }, []);
 
-}
+// }
 
 // const useOnlineStatus = async() => {
 //     try {
@@ -54,4 +54,4 @@ const useOnlineStatus = () => {
 //     }
 // }
 
-export default useOnlineStatus;
+// export default useOnlineStatus;
