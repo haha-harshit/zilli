@@ -1,6 +1,6 @@
 import { CDN_IMG_URL } from "../../../utils/constants";
 import { Link } from "react-router-dom";
-import star_rating from "../../../utils/images/star_rating.png";
+import {star_rating} from "../../../utils/images/star_rating.png";
 import { useState } from "react";
 
 const ResCard = (props) => {
@@ -64,7 +64,8 @@ const ResCard = (props) => {
                   <div className="res-rating flex items-baseline bg-[#24963f] text-[#ffffff] rounded-lg py-[0.2rem] px-[0.3rem] font-medium text-[0.875rem]">
                     <div>{resData.info.avgRating}</div>
                     &nbsp;
-                    <img className="star_rating h-3 w-3" src={star_rating} alt="" />
+                    <img src="../../../utils/images/star_rating.png"/>
+                    {/* ../../../utils/images/star_rating.png */}
                   </div>
                 </div>
                 <div className="res-card-info-body-subhead flex justify-between sm:mt-[0.4rem]">

@@ -24,19 +24,29 @@
   align-self: center;
 }
 
+.active .link-title{
+  color: rgb(239, 79, 95) !important;
+  border-top: 0.2rem solid #ef4f5f;
+  border-bottom-left-radius: 0.1rem;
+  border-bottom-right-radius: 1rem;
+}
+
 .tab-link-img {
   margin-right: 1rem;
 }
 
 .tab-link-delivery-img > img {
+  content: url("../images/delivery-man-bw.png");
   width: 2.5rem;
 }
 
 .tab-link-dining-out-img > img {
+  content: url("../images/dine-out-bw.png");
   width: 2.5rem;
 }
 
 .tab-link-nightlife-img > img {
+  content: url("../images/beer-bw.png");
   width: 2.5rem;
 }
 

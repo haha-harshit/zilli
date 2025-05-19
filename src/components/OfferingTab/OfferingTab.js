@@ -13,13 +13,13 @@ const OfferingTab = () => {
       <NavLink
         to="/online-order"
         replace
-        className="tab-link h-[4rem] sm:border-none"
-        activeclassName="active"
+        // activeclassName="tab-link h-[4rem] sm:border-none"
+        className={({ isActive }) => (isActive ? 'active tab-link h-[4rem] sm:border-none' : 'tab-link h-[4rem] sm:border-none')}
       >
         <div style={tabLinkStyle} className="tab-link-delivery w-[9rem] flex justify-center sm:inline-block sm:w-auto sm:mr-12">
           <h2 className="tab-link-title flex justify-center">
             <div className="tab-link-delivery-img tab-link-img hidden sm:inline-block">
-              <img src={tabLinkDeliveryImgBw} />
+              <img/>
             </div>
             <div className="link-title font-bold sm:font-semibold">Delivery</div>
           </h2>
@@ -30,13 +30,13 @@ const OfferingTab = () => {
       <NavLink
         to="/dining"
         replace
-        className="tab-link h-[4rem] sm:border"
-        activeclassName="active"
+        // activeclassName="tab-link h-[4rem] sm:border"
+        className={({ isActive }) => (isActive ? 'active tab-link h-[4rem] sm:border' : 'tab-link h-[4rem] sm:border')}
       >
         <div style={tabLinkStyle} className="tab-link-dining-out w-[9rem] flex justify-center sm:inline-block sm:w-auto sm:mr-12">
           <h2 className="tab-link-title flex justify-center">
             <div className="tab-link-dining-out-img tab-link-img hidden sm:inline-block">
-              <img src={tabLinkDiningImgBw} />
+              <img/>
             </div>
             <div className="link-title font-bold sm:font-semibold">Dining Out</div>
           </h2>
@@ -47,15 +47,17 @@ const OfferingTab = () => {
       <NavLink
         to="/night-life-and-clubs"
         replace
-        className="tab-link h-[4rem] hidden md:inline-block"
-        activeclassName="active"
+        // className="tab-link h-[4rem] hidden md:inline-block"
+        className={({ isActive }) => (isActive ? 'active tab-link h-[4rem] hidden md:inline-block' : 'tab-link h-[4rem] hidden md:inline-block')}
       >
         <div style={tabLinkStyle} className="tab-link-nightlife sm:mr-12">
           <h2 className="tab-link-title flex justify-center">
             <div className="tab-link-nightlife-img tab-link-img">
-              <img src={tabLinkNightlifeImgBw} />
+              <img/>
             </div>
+
             <div className="link-title">Nightlife</div>
+
           </h2>
           <hr className="hr-below-tablink" />
         </div>

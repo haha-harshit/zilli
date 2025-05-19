@@ -3,11 +3,11 @@ import "../../utils/css/Shimmer.css"
 const Shimmer = () => {
     return (
         <>
-            <div class="shimmer-layout res-card-layout">
-                <div class ="shimmer-contents res-contents ">
-                    <a class = "shimmer-link res-link" >
-                        <div class="shimmer-img res-card-img-main"></div> 
-                        <div class="shimmer-info res-card-info">
+            <div className="shimmer-layout res-card-layout">
+                <div className ="shimmer-contents res-contents ">
+                    <a className = "shimmer-link res-link" >
+                        <div className="shimmer-img res-card-img-main"></div> 
+                        <div className="shimmer-info res-card-info">
                         </div>
                     </a>
                 </div>

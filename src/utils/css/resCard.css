@@ -57,6 +57,12 @@
   font-size: smaller;
 }
 
+.res-rating > img {
+  /* content: url("../images/star_rating.png"); */
+  height: 0.65rem;
+  width: 0.65rem;
+}
+
 .img-header-info {
   margin-top: -2.2rem;
   width: 95%;
@@ -85,10 +91,10 @@
   color: #363636;
 }
 
-.star_rating {
+/* .star_ratingg {
   height: 0.65rem;
   width: 0.65rem;
-}
+} */
 
 .res-card-info-body-head {
   display: flex;

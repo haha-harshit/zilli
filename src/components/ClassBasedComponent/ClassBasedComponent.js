@@ -1,11 +1,11 @@
-import React from "react";
+// import React from "react";
 
-class ClassBasedComponent extends React.Component{
-    render(){
-        return(
-            <h1>Hey i'm class based component</h1>
-        )
-    }
-}
+// class ClassBasedComponent extends React.Component{
+//     render(){
+//         return(
+//             <h1>Hey i'm class based component</h1>
+//         )
+//     }
+// }
 
-export default ClassBasedComponent
+// export default ClassBasedComponent

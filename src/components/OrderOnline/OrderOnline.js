@@ -44,6 +44,9 @@ const OrderOnline = (props) => {
   let loadingDiv = Array(10).fill(<Shimmer />)
 
   let list;
+  if (resList?.length === 0) {
+    list = Array(20).fill(<Shimmer />)
+  } 
   if (filteredList.length < 1) {
 
     // for SHIMMER
@@ -55,14 +58,14 @@ const OrderOnline = (props) => {
     if(sortedList.length > 1){
       console.log("sorted list after clicking: ", sortedList)
       list = sortedList?.map((restaurant) => (
-        <ResCard resData={restaurant} key={restaurant?.info?.id} />
+        <ResCard key={restaurant?.info?.id} resData={restaurant}/>
       ))
     } 
     
     // FOR WITHOUT SORTED LIST
     if(sortedList.length<1){
       list = resList?.map((restaurant) => (
-        <ResCard resData={restaurant} key={restaurant?.info?.id} />
+        <ResCard key={restaurant?.info?.id} resData={restaurant} />
       ));
       // console.log("sorted before clicking:", resList.sort((a,b) => a?.info?.sla?.deliveryTime - b?.info?.sla?.deliveryTime));
       // console.log(props.isFastDeliverySortOn, "fast delivery sort clicked")
@@ -76,22 +79,22 @@ const OrderOnline = (props) => {
   } 
   if(filteredList.length > 1) {
     list = filteredList?.map((restaurant) => (
-      <ResCard resData={restaurant} key={restaurant?.info?.id} />
+      <ResCard key={restaurant?.info?.id} resData={restaurant} />
     ));
   }
 
-  if(props.searchText.length > 0){
-    let afterSearchList=[]
-    if(filteredList.length > 1){
-      setFilteredList(filteredList.filter((res)=> res?.info?.name.toLowerCase().includes(props.searchText.toLowerCase())))
-      console.log(filteredList.map((result) => result.info.name))
-    }else{
-      console.log(props.searchText)
-      resList?.map((res)=>res?.info?.name.toLowerCase().includes(props.searchText.toLowerCase()) ? afterSearchList.push(res?.info?.name) : "")
-      console.log(afterSearchList)
-      resList = afterSearchList
-    }
-  }
+  // if(props.searchText.length > 0){
+  //   let afterSearchList=[]
+  //   if(filteredList.length > 1){
+  //     setFilteredList(filteredList.filter((res)=> res?.info?.name.toLowerCase().includes(props.searchText.toLowerCase())))
+  //     console.log(filteredList.map((result) => result.info.name))
+  //   }else{
+  //     console.log(props.searchText)
+  //     resList?.map((res)=>res?.info?.name.toLowerCase().includes(props.searchText.toLowerCase()) ? afterSearchList.push(res?.info?.name) : "")
+  //     console.log(afterSearchList)
+  //     resList = afterSearchList
+  //   }
+  // }
 
   return (
     <>
@@ -149,7 +152,7 @@ const OrderOnline = (props) => {
           </div>
         </div>
         {/* <hr/> */}
-        <div className="order-in-location-layout my-6 px-[2rem] py-[4.5rem] sm:block">
+        <div className="order-in-location-layout my-6 px-[2rem] py-[4.5rem] sm:block md:py-0">
           <h2 className="text-[#1c1c1c]">Top restaurant chains in Gurgaon</h2>
         </div>
 
